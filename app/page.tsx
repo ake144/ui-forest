@@ -22,6 +22,7 @@ import { ComponentPacks } from "@/components/component/component-packs"
 import { TemplatesShowcase } from "@/components/template/template-showcase"
 import { SiteHeader } from "@/components/header"
 import Navbar from "@/components/main-nav"
+import { LinkPreviews } from "@/components/link-preview"
 
 
 export default function Home() {
@@ -32,6 +33,8 @@ export default function Home() {
         <Hero />
         {/* <FeaturesList /> */}
          <H1Text/>
+
+         <LinkPreviews  />
           <ComponentPacks /> 
         {/* <FeaturesSection /> */}
         <BuildText  />

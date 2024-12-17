@@ -53,7 +53,7 @@ export default function Navbar() {
                 <div className="h-8 w-8 bg-white rounded-lg flex items-center justify-center">
                   <div className="h-6 w-6 bg-black rounded" />
                 </div>
-                <span className="text-white font-bold text-xl">CURSOR</span>
+                <span className="text-white font-bold text-xl">Ui Forest</span>
               </Link>
             </motion.div>
 

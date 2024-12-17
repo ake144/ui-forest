@@ -14,9 +14,9 @@ export default function Hero() {
         <SparklesCore
           id="tsparticlesfullpage"
           background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
-          particleDensity={100}
+          minSize={0.4}
+          maxSize={1}
+          particleDensity={50}
           className="w-full h-full"
           particleColor="#FFFFFF"
         />

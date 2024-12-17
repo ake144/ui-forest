@@ -24,8 +24,8 @@ const Footer = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-2xl font-bold text-white">Cursor</h2>
-              <p className="mt-2 text-sm">Empowering developers with AI-assisted coding</p>
+              <h2 className="text-2xl font-bold text-white">Ui Forest</h2>
+              <p className="mt-2 text-sm">Your #1 choices for customized ui</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -99,8 +99,8 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-12 pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center"
         >
-          <p className="text-sm">© {currentYear} Cursor. All rights reserved.</p>
-          <p className="text-sm mt-4 md:mt-0">Made with ❤️ by Anysphere</p>
+          <p className="text-sm">© {currentYear} Ui-forest. All rights reserved.</p>
+          <p className="text-sm mt-4 md:mt-0">Made with ❤️ by Akanji</p>
         </motion.div>
       </div>
     </footer>
