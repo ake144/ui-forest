@@ -31,7 +31,7 @@ export default function CTA() {
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          Get started with DesignKit today and build beautiful, responsive websites in no time.
+          Get started with ui-forest today and build beautiful, responsive websites in no time.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

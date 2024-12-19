@@ -22,19 +22,25 @@ import { ComponentPacks } from "@/components/component/component-packs"
 import { TemplatesShowcase } from "@/components/template/template-showcase"
 import { SiteHeader } from "@/components/header"
 import Navbar from "@/components/main-nav"
-import { LinkPreviews } from "@/components/link-preview"
+import CodePreview from "@/components/link-preview"
+import { Spotlight } from "@/components/ui/Spotlight"
+
 
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-gray-100">
       <main>
+      <Spotlight
+              className="-top-40 left-0 md:left-60 md:-top-20"
+              fill="white"
+            />
         <Navbar  />
         <Hero />
         {/* <FeaturesList /> */}
          <H1Text/>
 
-         <LinkPreviews  />
+         <CodePreview   />
           <ComponentPacks /> 
         {/* <FeaturesSection /> */}
         <BuildText  />

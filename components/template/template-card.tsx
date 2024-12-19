@@ -38,7 +38,7 @@ export function TemplateCard({
             <Button className="bg-purple-600 hover:bg-purple-700 text-white">
               Get Access - ${price} USD
             </Button>
-            <Button variant="outline" className="text-purple-400 border-purple-400 hover:bg-purple-400/10">
+            <Button variant="outline" className="text-purple-400 border-purple-400  hover:text-md hover:text-white">
               Live Preview
             </Button>
           </div>

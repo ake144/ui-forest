@@ -9,7 +9,7 @@ const templates = [
     title: "Developer First Headless CMS",
     description: "A professional headless CMS designed for solo developers and enterprises. Build powerful content management systems with our SDK wrapper and extensive customization options.",
     price: 49,
-    image: "/placeholder.svg?height=800&width=1200",
+    image: "https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     techStack: [
       { icon: "N", label: "Next.js" },
       { icon: "⚛", label: "React" },
@@ -20,16 +20,29 @@ const templates = [
     ]
   },
   {
-    title: "Fullstack OSS Problem Solving",
-    description: "A complete solution for developers who love solving real-world problems. Features code collaboration, competitive programming tools, and extensive problem sets.",
+    title: "E-commerce site",
+    description: "A complete solution for building a modern e-commerce site. Includes a powerful CMS, payment gateway integration, and a customizable storefront.",
     price: 59,
-    image: "/placeholder.svg?height=800&width=1200",
+    image: "/e-commerce.png",
     techStack: [
-      { icon: "⚛", label: "React" },
-      { icon: "🐍", label: "Python" },
+      { icon: "⚛", label: "Nextjs" },
+      { icon: "🐍", label: "React" },
       { icon: "⚡", label: "API" },
       { icon: "TS", label: "TypeScript" },
-      { icon: "☁️", label: "Cloud" }
+      { icon: "☁️", label: "Tailwindcss" }
+    ]
+  },
+  {
+    title: "one profile",
+    description: "A complete solution for building a modern prfile with modern features and templates.build effortlessly your profile and improve your online presence.",
+    price: 59,
+    image: "/profile.png",
+    techStack: [
+      { icon: "⚛", label: "Nextjs" },
+      { icon: "🐍", label: "React" },
+      { icon: "⚡", label: "API" },
+      { icon: "TS", label: "TypeScript" },
+      { icon: "☁️", label: "Tailwindcss" }
     ]
   },
   {
