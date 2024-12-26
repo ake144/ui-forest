@@ -35,9 +35,9 @@ export function ComponentCard({ title, description, imageUrl, count, price }: Co
               {description}
             </CardItem>
             <CardItem translateZ="70" className="mt-6">
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold text-white">${price}</span>
-                <button className="px-4 py-2 bg-white text-black rounded-md hover:bg-zinc-200 transition-colors text-sm font-medium">
+              <div className="flex items-center flex-row  justify-between">
+                <span className="text-2xl flex font-bold flex-start justify-start text-white">${price}</span>
+                <button className="px-4 flex items-end justify-end py-2 bg-white text-black rounded-md hover:bg-zinc-200 transition-colors text-sm font-medium">
                   Add to Cart
                 </button>
               </div>

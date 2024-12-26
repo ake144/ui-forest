@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ComponentCard } from "./component-card"
 import { motion } from "framer-motion"
 import { Spotlight } from "../ui/Spotlight"
+import { ExploreButton } from "../explorebutton"
 
 const componentPacks = [
   {
@@ -93,9 +94,7 @@ export function ComponentPacks() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex justify-center mt-16"
         >
-          <Button size="lg" className="bg-white text-black hover:bg-zinc-200 transition-colors">
-            Explore All Packs
-          </Button>
+         <ExploreButton />
         </motion.div>
       </div>
     </section>
