@@ -51,8 +51,8 @@ const ComponentsPage = ({ component }: { component: ComponentType }) => {
                             <TabsTrigger value="examples">Examples</TabsTrigger>
                         </TabsList>
 
-                        <TabsContent value="preview" className="mt-6">
-                            <div className="rounded-lg border border-zinc-800 bg-zinc-900/80 backdrop-blur-sm p-6">
+                        <TabsContent value="preview" className="mt-8">
+                            <div className="rounded-lg border border-zinc-800 mt-[50px] bg-zinc-900/80 backdrop-blur-sm p-6">
                                 <ComponentPreview name={component.name as ComponentName} />
                             </div>
                         </TabsContent>

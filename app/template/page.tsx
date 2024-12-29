@@ -73,8 +73,8 @@ export default function TemplatesPage() {
           </div>
 
           <Tabs defaultValue="all" className="w-full">
-            <TabsList className="bg-zinc-900/50 border border-zinc-800/50 backdrop-blur-sm w-fit">
-              <TabsTrigger value="all" className="data-[state=active]:bg-zinc-800">All</TabsTrigger>
+            <TabsList className="bg-zinc-900/50 border border-zinc-800/50 text-gray-100 backdrop-blur-sm w-fit">
+              <TabsTrigger value="all" className="data-[state=active]:bg-zinc-800 ">All</TabsTrigger>
               <TabsTrigger value="free" className="data-[state=active]:bg-zinc-800">Free</TabsTrigger>
               <TabsTrigger value="premium" className="data-[state=active]:bg-zinc-800">Premium</TabsTrigger>
             </TabsList>
@@ -149,7 +149,7 @@ function FeaturedTemplateCard({ name, description, price, image, stack = [] }: T
         </CardContent>
         <CardFooter className="p-6 pt-0">
           <Button className="w-full bg-zinc-800 hover:bg-zinc-700" asChild>
-            <a href="#" className="flex items-center justify-center gap-2">
+            <a href="#" className="flex items-center  text-gray-50 justify-center gap-2">
               View Template
               <ChevronRight className="h-4 w-4" />
             </a>

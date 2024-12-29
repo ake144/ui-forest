@@ -41,7 +41,7 @@ export function TestimonialSlider() {
   return (
     <div className="bg-gray-100 py-16">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
+        <h2 className="text-3xl text-gray-600 font-bold text-center mb-12">What Our Customers Say</h2>
         <div className="relative h-64">
           <AnimatePresence initial={false} custom={currentIndex}>
             <motion.div
@@ -54,13 +54,13 @@ export function TestimonialSlider() {
               className="absolute inset-0"
             >
               <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-                <p className="text-xl mb-4">&ldquo;{testimonials[currentIndex].content}&rdquo;</p>
+                <p className="text-xl text-gray-500 mb-4">&ldquo;{testimonials[currentIndex].content}&rdquo;</p>
                 <div className="flex justify-center mb-2">
                   {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
                     <Star key={i} className="text-yellow-400" fill="currentColor" />
                   ))}
                 </div>
-                <p className="font-semibold">{testimonials[currentIndex].name}</p>
+                <p className="font-semibold text-gray-500">{testimonials[currentIndex].name}</p>
                 <p className="text-gray-600">{testimonials[currentIndex].role}</p>
               </div>
             </motion.div>

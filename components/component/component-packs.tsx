@@ -94,7 +94,7 @@ export function ComponentPacks() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex justify-center mt-16"
         >
-         <ExploreButton />
+         <ExploreButton  link="/components"/>
         </motion.div>
       </div>
     </section>

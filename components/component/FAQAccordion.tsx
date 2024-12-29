@@ -29,7 +29,7 @@ export function FAQAccordion() {
   return (
     <div className="py-16 bg-gray-50">
       <div className="max-w-3xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+        <h2 className="text-3xl text-gray-700 font-bold text-center mb-8">Frequently Asked Questions</h2>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
@@ -37,7 +37,7 @@ export function FAQAccordion() {
                 className="flex justify-between items-center w-full p-4 text-left bg-white hover:bg-gray-50 transition-colors"
                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
               >
-                <span className="text-lg font-medium">{faq.question}</span>
+                <span className="text-lg text-gray-600 font-medium">{faq.question}</span>
                 <ChevronDown
                   className={`w-5 h-5 transition-transform ${
                     activeIndex === index ? 'transform rotate-180' : ''

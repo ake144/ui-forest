@@ -20,7 +20,7 @@ export function FloatingCTABanner() {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
-          className="fixed bottom-4 left-4 right-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white p-4 rounded-lg shadow-lg z-50"
+          className="fixed bottom-4 left-4  right-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white p-4 rounded-lg shadow-lg z-50"
         >
           <div className="flex items-center justify-between">
             <p className="text-lg font-semibold mr-4">Get 20% off your first purchase!</p>
