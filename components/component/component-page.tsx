@@ -15,6 +15,10 @@ import { AnimatedStatsCounter } from "./AnimatedStatsCounter";
 import { NewsletterForm } from "./NewsletterForm";
 import { FAQAccordion } from "./FAQAccordion";
 import { JSX } from "react";
+import { MorphingSearchBar } from "./SearchBar";
+import { InteractiveTimeline } from "./InteractiveTimeLine";
+import { AnimatedSkillBars } from "./AnimatedSkillBars";
+import { AnimatedCardCarousel } from "./AnimatedCardCarousel";
 
 interface ComponentType {
     name: string;
@@ -105,7 +109,7 @@ const ComponentsPage = ({ component }: { component: ComponentType }) => {
 export default ComponentsPage;
 
 // Preview component logic can be added below
-type ComponentName = "Animated Hero" | "Floating CTA Banner" | "Product Carousel" | "Testimonial Slider" | "Pricing Calculator" | "Feature Comparison Table" | "Animated CTA" | "Animated Stats Counter" | "Newsletter Form" | "FAQ Accordion";
+type ComponentName = "Animated Hero" | "Floating CTA Banner" | "Product Carousel" | "Testimonial Slider" | "Pricing Calculator" | "Feature Comparison Table" | "Animated CTA" | "Animated Stats Counter" | "Newsletter Form" | "FAQ Accordion" | "Morphing Search Bar" | "Interactive Timeline" |  "Animated Card Carousel" | "Animated Skill Bars";
 
 interface ComponentPreviewProps {
     name: ComponentName;
@@ -123,7 +127,10 @@ const ComponentPreview: React.FC<ComponentPreviewProps> = ({ name }) => {
          "FAQ Accordion": <FAQAccordion  />,
         "Pricing Calculator": <PricingCalculator  />,
         "Feature Comparison Table": <FeatureComparisonTable />,
-
+        "Morphing Search Bar" : <MorphingSearchBar />,
+         "Interactive Timeline": <InteractiveTimeline  />,
+        "Animated Skill Bars":  <AnimatedSkillBars  />,
+         "Animated Card Carousel": <AnimatedCardCarousel  />,
     };
 
     return (

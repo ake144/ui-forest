@@ -18,6 +18,10 @@ const components = [
   { name: "Newsletter Form", description: "A stylish form for newsletter subscriptions with validation.", pro: false },
   { name: "Animated CTA Section", description: "A bold call-to-action section with animated elements.", pro: false },
   { name: "Pricing Calculator", description: "An interactive tool for users to calculate pricing based on their needs.", pro: false },
+  { name: "Morphing Search Bar",description: "A morphing search bar with dynamic expansion, customizable styles, and integrated search functionality.", pro: false },
+  { name: "Interactive Timeline", description: "A timeline component with interactive dots, customizable styles, and animated transitions.", pro: false },
+  { name: "Animated Skill Bars",  description: "A component displaying skill levels with animated progress bars.", pro: false  },
+  { name: "Animated Card Carousel",  description: "A carousel displaying cards with animated transitions and navigation controls.", pro: false  },
 ]
 
 export default function ComponentsPage() {

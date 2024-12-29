@@ -663,5 +663,322 @@ export function AnimatedCTA() {
       ]
   },
 
+  {
+    slug: "morphing-search-bar",
+    name: "Morphing Search Bar",
+    description: "A morphing search bar with dynamic expansion, customizable styles, and integrated search functionality.",
+    pro: false,
+    code: `"use client"
+
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Search, X } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+
+interface MorphingSearchBarProps {
+  onSearch: (query: string) => void;
+  placeholder?: string;
+  backgroundColor?: string;
+  textColor?: string;
+}
+
+export function MorphingSearchBar({
+  onSearch,
+  placeholder = "Search...",
+  backgroundColor = "bg-primary",
+  textColor = "text-primary-foreground",
+}: MorphingSearchBarProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onSearch(searchQuery);
+  };
+
+  return (
+    <motion.form
+      className={\`flex items-center justify-end \${backgroundColor} rounded-full overflow-hidden\`}
+      initial={{ width: "48px", height: "48px" }}
+      animate={{ width: isExpanded ? "300px" : "48px" }}
+      transition={{ duration: 0.3 }}
+      onSubmit={handleSubmit}
+    >
+      {isExpanded ? (
+        <>
+          <Input
+            type="text"
+            placeholder={placeholder}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className={\`flex-grow border-none \${backgroundColor} \${textColor} placeholder:\${textColor} focus-visible:ring-0 focus-visible:ring-offset-0\`}
+          />
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            className={textColor}
+            onClick={() => setIsExpanded(false)}
+          >
+            <X className="h-4 w-4" />
+          </Button>
+        </>
+      ) : (
+        <Button
+          type="button"
+          variant="ghost"
+          size="icon"
+          className={\`\${backgroundColor} \${textColor}\`}
+          onClick={() => setIsExpanded(true)}
+        >
+          <Search className="h-4 w-4" />
+        </Button>
+      )}
+    </motion.form>
+  );
+}`,
+    examples: [
+        {
+            title: "Morphing Search Bar Example",
+            preview: `<MorphingSearchBar onSearch={(query) => console.log(query)} />`,
+            code: `<MorphingSearchBar onSearch={(query) => console.log(query)} />`,
+        },
+    ],
+},
+{
+  slug: "interactive-timeline",
+  name: "Interactive Timeline",
+  description: "A timeline component with interactive dots, customizable styles, and animated transitions.",
+  pro: false,
+  code: `"use client"
+
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+
+interface TimelineEvent {
+date: string;
+title: string;
+description: string;
+}
+
+interface InteractiveTimelineProps {
+events: TimelineEvent[];
+lineColor?: string;
+dotColor?: string;
+activeColor?: string;
+}
+
+export function InteractiveTimeline({
+events,
+lineColor = "bg-gray-200",
+dotColor = "bg-primary",
+activeColor = "bg-secondary",
+}: InteractiveTimelineProps) {
+const [activeEvent, setActiveEvent] = useState<number | null>(null);
+
+return (
+  <div className="relative w-full max-w-3xl mx-auto py-16">
+    <div className={\`absolute left-1/2 transform -translate-x-1/2 h-full w-1 \${lineColor}\`} />
+    {events.map((event, index) => (
+      <motion.div
+        key={index}
+        className={\`relative \${index % 2 === 0 ? "left-0 pr-8" : "left-1/2 pl-8"} mb-8\`}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+      >
+        <div
+          className={\`absolute top-0 \${index % 2 === 0 ? "right-0" : "left-0"} transform translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full \${activeEvent === index ? activeColor : dotColor} cursor-pointer\`}
+          onClick={() => setActiveEvent(activeEvent === index ? null : index)}
+        />
+        <Card>
+          <CardContent className="p-4">
+            <h3 className="text-lg font-semibold mb-1">{event.title}</h3>
+            <p className="text-sm text-gray-500 mb-2">{event.date}</p>
+            {activeEvent === index && <p className="text-sm">{event.description}</p>}
+          </CardContent>
+        </Card>
+      </motion.div>
+    ))}
+  </div>
+);
+}`,
+  examples: [
+      {
+          title: "Interactive Timeline Example",
+          preview: `<InteractiveTimeline events={[{date: "2023", title: "Event 1", description: "Details about Event 1"}]} />`,
+          code: `<InteractiveTimeline events={[{date: "2023", title: "Event 1", description: "Details about Event 1"}]} />`,
+      },
+  ],
+},
+{
+  slug: "animated-skill-bars",
+  name: "Animated Skill Bars",
+  description: "A component displaying skill levels with animated progress bars.",
+  pro: false,
+  code: `"use client"
+
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+interface Skill {
+name: string;
+level: number;
+color: string;
+}
+
+interface AnimatedSkillBarsProps {
+skills: Skill[];
+barHeight?: string;
+animationDuration?: number;
+}
+
+export function AnimatedSkillBars({
+skills,
+barHeight = "h-6",
+animationDuration = 1,
+}: AnimatedSkillBarsProps) {
+const [isVisible, setIsVisible] = useState(false);
+
+useEffect(() => {
+  const timer = setTimeout(() => setIsVisible(true), 500);
+  return () => clearTimeout(timer);
+}, []);
+
+return (
+  <div className="w-full max-w-md mx-auto space-y-4">
+    {skills.map((skill, index) => (
+      <div key={index} className="relative">
+        <div className="flex justify-between mb-1">
+          <span className="text-sm font-medium">{skill.name}</span>
+          <span className="text-sm font-medium">{skill.level}%</span>
+        </div>
+        <div className={\`w-full bg-gray-200 rounded-full \${barHeight} overflow-hidden\`}>
+          <motion.div
+            className={\`\${barHeight} rounded-full\`}
+            style={{ backgroundColor: skill.color }}
+            initial={{ width: 0 }}
+            animate={isVisible ? { width: \`\${skill.level}%\` } : { width: 0 }}
+            transition={{ duration: animationDuration, delay: index * 0.2 }}
+          />
+        </div>
+      </div>
+    ))}
+  </div>
+);
+}`,
+  examples: [
+      {
+          title: "Animated Skill Bars Example",
+          preview: `<AnimatedSkillBars skills={[{name: "JavaScript", level: 90, color: "#f7df1e"}]} />`,
+          code: `<AnimatedSkillBars skills={[{name: "JavaScript", level: 90, color: "#f7df1e"}]} />`,
+      },
+  ],
+},
+{
+  slug: "animated-card-carousel",
+  name: "Animated Card Carousel",
+  description: "A carousel displaying cards with animated transitions and navigation controls.",
+  pro: false,
+  code: `"use client"
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+
+interface CardData {
+title: string;
+content: string;
+color: string;
+}
+
+interface AnimatedCardCarouselProps {
+cards: CardData[];
+}
+
+export function AnimatedCardCarousel({ cards }: AnimatedCardCarouselProps) {
+const [currentIndex, setCurrentIndex] = useState(0);
+
+const nextCard = () => {
+  setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
+};
+
+const prevCard = () => {
+  setCurrentIndex((prevIndex) => (prevIndex - 1 + cards.length) % cards.length);
+};
+
+return (
+  <div className="relative w-full max-w-md mx-auto">
+    <div className="overflow-hidden rounded-lg">
+      <AnimatePresence initial={false} custom={currentIndex}>
+        <motion.div
+          key={currentIndex}
+          custom={currentIndex}
+          variants={{
+            enter: (direction: number) => ({
+              x: direction > 0 ? 1000 : -1000,
+              opacity: 0,
+            }),
+            center: {
+              zIndex: 1,
+              x: 0,
+              opacity: 1,
+            },
+            exit: (direction: number) => ({
+              zIndex: 0,
+              x: direction < 0 ? 1000 : -1000,
+              opacity: 0,
+            }),
+          }}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{
+            x: { type: "spring", stiffness: 300, damping: 30 },
+            opacity: { duration: 0.2 },
+          }}
+        >
+          <Card className="w-full h-64" style={{ backgroundColor: cards[currentIndex].color }}>
+            <CardContent className="flex flex-col items-center justify-center h-full text-white">
+              <h2 className="text-2xl font-bold mb-4">{cards[currentIndex].title}</h2>
+              <p className="text-center">{cards[currentIndex].content}</p>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </AnimatePresence>
+    </div>
+    <Button
+      variant="outline"
+      size="icon"
+      className="absolute top-1/2 left-2 transform -translate-y-1/2"
+      onClick={prevCard}
+    >
+      <ChevronLeft className="h-4 w-4" />
+    </Button>
+    <Button
+      variant="outline"
+      size="icon"
+      className="absolute top-1/2 right-2 transform -translate-y-1/2"
+      onClick={nextCard}
+    >
+      <ChevronRight className="h-4 w-4" />
+    </Button>
+  </div>
+);
+}`,
+  examples: [
+      {
+          title: "Animated Card Carousel Example",
+          preview: `<AnimatedCardCarousel cards={[{title: "Card 1", content: "Content 1", color: "#3498db"}]} />`,
+          code: `<AnimatedCardCarousel cards={[{title: "Card 1", content: "Content 1", color: "#3498db"}]} />`,
+      },
+  ],
+},
+
+
 
 ];

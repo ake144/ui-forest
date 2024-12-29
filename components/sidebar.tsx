@@ -20,9 +20,13 @@ const components = [
   { name: "FAQ Accordion", icon: Layers },
   { name: "Newsletter Form", icon: LayoutGrid },
   { name: "Animated CTA Section", icon: Cpu },
-  { name: "Pricing Calculator", icon: Layers },
-]
+  { name: "Morphing Search Bar", icon: Search },
+  { name: "Interactive Timeline", icon: LayoutGrid },
+  { name: "Animated Skill Bars", icon: Cpu },
+  { name: "Animated Card Carousel", icon: Cpu },
+ ]
 
+ 
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')

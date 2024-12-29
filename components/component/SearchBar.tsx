@@ -1,35 +1,27 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Search, X } from 'lucide-react'
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Search, X } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
-interface MorphingSearchBarProps {
-  onSearch: (query: string) => void
-  placeholder?: string
-  backgroundColor?: string
-  textColor?: string
-}
+export function MorphingSearchBar() {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
-export function MorphingSearchBar({
-  onSearch,
-  placeholder = "Search...",
-  backgroundColor = "bg-primary",
-  textColor = "text-primary-foreground",
-}: MorphingSearchBarProps) {
-  const [isExpanded, setIsExpanded] = useState(false)
-  const [searchQuery, setSearchQuery] = useState("")
+  const handleSearch = (query: string) => {
+    console.log("Search query submitted:", query);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    onSearch(searchQuery)
-  }
+    e.preventDefault();
+    handleSearch(searchQuery);
+  };
 
   return (
     <motion.form
-      className={`flex items-center justify-end ${backgroundColor} rounded-full overflow-hidden`}
+      className="flex items-center justify-end bg-primary rounded-full overflow-hidden"
       initial={{ width: "48px", height: "48px" }}
       animate={{ width: isExpanded ? "300px" : "48px" }}
       transition={{ duration: 0.3 }}
@@ -39,16 +31,16 @@ export function MorphingSearchBar({
         <>
           <Input
             type="text"
-            placeholder={placeholder}
+            placeholder="Search..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className={`flex-grow border-none ${backgroundColor} ${textColor} placeholder:${textColor} focus-visible:ring-0 focus-visible:ring-offset-0`}
+            className="flex-grow border-none bg-primary text-primary-foreground placeholder:text-primary-foreground focus-visible:ring-0 focus-visible:ring-offset-0"
           />
           <Button
             type="button"
             variant="ghost"
             size="icon"
-            className={textColor}
+            className="text-primary-foreground"
             onClick={() => setIsExpanded(false)}
           >
             <X className="h-4 w-4" />
@@ -59,13 +51,12 @@ export function MorphingSearchBar({
           type="button"
           variant="ghost"
           size="icon"
-          className={`${backgroundColor} ${textColor}`}
+          className="bg-primary text-primary-foreground"
           onClick={() => setIsExpanded(true)}
         >
           <Search className="h-4 w-4" />
         </Button>
       )}
     </motion.form>
-  )
+  );
 }
-
