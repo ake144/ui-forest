@@ -31,7 +31,7 @@ export function BuildText() {
         }}
         className="bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
       >
-         Build Sites <br /> the right way
+         Build Amazing Sites <br /> Within a minutes.
          </motion.h1>
   
    

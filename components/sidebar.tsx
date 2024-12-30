@@ -10,6 +10,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import { Input } from "@/components/ui/input"
 import { Home, Package, Layers, Cpu, LayoutGrid, Search, ChevronDown, Menu } from 'lucide-react'
 
+
 const components = [
   { name: "Animated Hero", icon: Cpu },
   { name: "Floating CTA Banner", icon: Layers },
@@ -28,6 +29,7 @@ const components = [
 
  
 export function Sidebar() {
+  
   const [isOpen, setIsOpen] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
   const [isComponentsOpen, setIsComponentsOpen] = useState(true)
@@ -88,8 +90,7 @@ export function Sidebar() {
           )}
 
           <NavItem href="/docs" icon={Home} isOpen={isOpen}>Docs</NavItem>
-          <NavItem href="/installation" icon={Package} isOpen={isOpen}>Installation</NavItem>
-
+        
           <div>
             <Button
               variant="ghost"

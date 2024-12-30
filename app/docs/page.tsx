@@ -3,6 +3,7 @@
 import { Copy } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import Link from 'next/link'
 
 export default function DocsPage() {
   return (
@@ -19,7 +20,11 @@ export default function DocsPage() {
             <span className="text-sm text-zinc-600">/</span>
             <span className="text-sm text-zinc-400">Next.js</span>
           </div>
-          
+          <div className="mb-4">
+            <p className="text-zinc-400 mb-2 mt-5">
+              Note: We have the exact same installation process as <a href="https://ui.shadcn.com/docs/installation" className="text-purple-400 hover:text-purple-300">shadcn/ui</a>.
+            </p>
+          </div>
           <h1 className="text-4xl font-bold mb-4">Next.js</h1>
           <p className="text-xl text-zinc-400 mb-12">Install and configure Next.js.</p>
 
@@ -99,6 +104,8 @@ Are you using React Server Components? › yes`}
                   <Copy className="h-4 w-4" />
                 </Button>
               </div>
+
+                 <p className='mt-9 p-3 mx-5 '>For others frameworks visit <Link href='https://ui.shadcn.com/docs/installation'><span className='text-purple-600 p-1 '>here</span></Link></p>
             </section>
           </div>
         </div>

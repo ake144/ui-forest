@@ -7,11 +7,12 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
-import { ChevronRight, Search, Sparkles } from 'lucide-react'
+import { ChevronRight, Search, Sparkles, Grid, List } from 'lucide-react'
 import { cn } from "@/lib/utils"
 
 export default function TemplatesPage() {
   const [searchTerm, setSearchTerm] = useState('')
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
 
   const filteredTemplates = allTemplates.filter(template =>
     template.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -31,9 +32,9 @@ export default function TemplatesPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80"
           >
-            Collections of beautifully
+            Discover Our Cutting-Edge
             <br />
-            crafted modern templates
+            Web Templates Collection
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -41,8 +42,8 @@ export default function TemplatesPage() {
             transition={{ delay: 0.1 }}
             className="text-xl text-zinc-400 mb-8 max-w-2xl mx-auto"
           >
-            A collection of styled and beautifully designed website templates,
-            built with React, Next.js with Tailwind CSS.
+            Explore our curated selection of modern, responsive website templates
+            built with React, Next.js, and Tailwind CSS. Perfect for your next project.
           </motion.p>
           
           <motion.div 
@@ -60,15 +61,31 @@ export default function TemplatesPage() {
         <section className="mb-16 relative">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-3xl font-semibold text-white">Featured Templates</h2>
-            <div className="relative">
-              <Input
-                type="search"
-                placeholder="Search templates..."
-                className="w-64 bg-zinc-900/50 border-zinc-800 text-white placeholder-zinc-400 rounded-full"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-              <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-zinc-400 h-4 w-4" />
+            <div className="flex items-center gap-4">
+              <div className="relative">
+                <Input
+                  type="search"
+                  placeholder="Search templates..."
+                  className="w-64 bg-zinc-900/50 border-zinc-800 text-white placeholder-zinc-400 rounded-full"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+                <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-zinc-400 h-4 w-4" />
+              </div>
+              <Button
+                variant={viewMode === 'grid' ? 'secondary' : 'outline'}
+                size="icon"
+                onClick={() => setViewMode('grid')}
+              >
+                <Grid className="h-4 w-4" />
+              </Button>
+              <Button
+                variant={viewMode === 'list' ? 'secondary' : 'outline'}
+                size="icon"
+                onClick={() => setViewMode('list')}
+              >
+                <List className="h-4 w-4" />
+              </Button>
             </div>
           </div>
 
@@ -79,23 +96,32 @@ export default function TemplatesPage() {
               <TabsTrigger value="premium" className="data-[state=active]:bg-zinc-800">Premium</TabsTrigger>
             </TabsList>
             <TabsContent value="all" className="mt-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className={cn(
+                "grid gap-8",
+                viewMode === 'grid' ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"
+              )}>
                 {featuredTemplates.map((template) => (
-                  <FeaturedTemplateCard key={template.name} {...template} />
+                  <FeaturedTemplateCard key={template.name} {...template} viewMode={viewMode} />
                 ))}
               </div>
             </TabsContent>
             <TabsContent value="free" className="mt-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className={cn(
+                "grid gap-8",
+                viewMode === 'grid' ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"
+              )}>
                 {filteredTemplates.filter(t => t.price === 0).map((template) => (
-                  <TemplateCard key={template.name} {...template} />
+                  <TemplateCard key={template.name} {...template} viewMode={viewMode} />
                 ))}
               </div>
             </TabsContent>
             <TabsContent value="premium" className="mt-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className={cn(
+                "grid gap-8",
+                viewMode === 'grid' ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" : "grid-cols-1"
+              )}>
                 {filteredTemplates.filter(t => t.price > 0).map((template) => (
-                  <TemplateCard key={template.name} {...template} />
+                  <TemplateCard key={template.name} {...template} viewMode={viewMode} />
                 ))}
               </div>
             </TabsContent>
@@ -118,87 +144,97 @@ function StatsCard({ label, value }: { label: string; value: string }) {
   )
 }
 
-function FeaturedTemplateCard({ name, description, price, image, stack = [] }: TemplatesType) {
+function FeaturedTemplateCard({ name, description, price, image, stack = [], viewMode }: TemplatesType & { viewMode: 'grid' | 'list' }) {
   return (
     <motion.div
       whileHover={{ y: -5 }}
       transition={{ duration: 0.2 }}
     >
-      <Card className="group bg-gradient-to-br from-zinc-900 to-zinc-950 border-zinc-800/50 overflow-hidden">
-        <CardHeader className="p-0">
+      <Card className={cn(
+        "group bg-gradient-to-br from-zinc-900 to-zinc-950 border-zinc-800/50 my-8 overflow-hidden",
+        viewMode === 'list' && "flex"
+      )}>
+        <CardHeader className={cn("p-0", viewMode === 'list' && "w-1/3")}>
           <div className="aspect-video relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 via-transparent to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
             <img src={image} alt={name} className="w-full h-full object-cover transition-transform group-hover:scale-105" />
           </div>
         </CardHeader>
-        <CardContent className="p-6">
-          <div className="flex items-center justify-between mb-4">
-            <CardTitle className="text-xl text-white">{name}</CardTitle>
-            <Badge variant="secondary" className="bg-zinc-800 text-white">
-              {price === 0 ? 'Free' : `$${price}`}
-            </Badge>
-          </div>
-          <CardDescription className="text-zinc-400 mb-4">{description}</CardDescription>
-          <div className="flex flex-wrap gap-2">
-            {stack.map((tech, index) => (
-              <Badge key={index} variant="outline" className="bg-zinc-900/50 border-zinc-700 text-zinc-400">
-                {tech}
+        <div className={cn(viewMode === 'list' && "w-2/3")}>
+          <CardContent className="p-6">
+            <div className="flex items-center justify-between mb-4">
+              <CardTitle className="text-xl text-white">{name}</CardTitle>
+              <Badge variant="secondary" className="bg-zinc-800 text-white">
+                {price === 0 ? 'Free' : `$${price}`}
               </Badge>
-            ))}
-          </div>
-        </CardContent>
-        <CardFooter className="p-6 pt-0">
-          <Button className="w-full bg-zinc-800 hover:bg-zinc-700" asChild>
-            <a href="#" className="flex items-center  text-gray-50 justify-center gap-2">
-              View Template
-              <ChevronRight className="h-4 w-4" />
-            </a>
-          </Button>
-        </CardFooter>
+            </div>
+            <CardDescription className="text-zinc-400 mb-4">{description}</CardDescription>
+            <div className="flex flex-wrap gap-2">
+              {stack.map((tech, index) => (
+                <Badge key={index} variant="outline" className="bg-zinc-900/50 border-zinc-700 text-zinc-400">
+                  {tech}
+                </Badge>
+              ))}
+            </div>
+          </CardContent>
+          <CardFooter className="p-6 pt-0">
+            <Button className="w-full bg-zinc-800 hover:bg-zinc-700" asChild>
+              <a href="#" className="flex items-center text-gray-50/50 justify-center gap-2">
+                View Template
+                <ChevronRight className="h-4 w-4" />
+              </a>
+            </Button>
+          </CardFooter>
+        </div>
       </Card>
     </motion.div>
   )
 }
 
-function TemplateCard({ name, description, price, image, stack = [], link, buyLink }: TemplatesType) {
+function TemplateCard({ name, description, price, image, stack = [], link, buyLink, viewMode }: TemplatesType & { viewMode: 'grid' | 'list' }) {
   return (
     <motion.div
       whileHover={{ y: -5 }}
       transition={{ duration: 0.2 }}
     >
-      <Card className="group bg-zinc-900 border-zinc-800/50 overflow-hidden">
-        <CardHeader className="p-0">
+      <Card className={cn(
+        "group bg-zinc-900 border-zinc-800/50 overflow-hidden",
+        viewMode === 'list' && "flex"
+      )}>
+        <CardHeader className={cn("p-0", viewMode === 'list' && "w-1/3")}>
           <div className="aspect-video relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
             <img src={image} alt={name} className="w-full h-full object-cover transition-transform group-hover:scale-105" />
           </div>
         </CardHeader>
-        <CardContent className="p-6">
-          <div className="flex items-center justify-between mb-4">
-            <CardTitle className="text-xl text-white">{name}</CardTitle>
-            <Badge variant="secondary" className="bg-zinc-800 text-white">
-              {price === 0 ? 'Free' : `$${price}`}
-            </Badge>
-          </div>
-          <CardDescription className="text-zinc-400 mb-4">{description}</CardDescription>
-          <div className="flex flex-wrap gap-2">
-            {stack.map((tech, index) => (
-              <Badge key={index} variant="outline" className="bg-zinc-900/50 border-zinc-700 text-zinc-400">
-                {tech}
+        <div className={cn(viewMode === 'list' && "w-2/3")}>
+          <CardContent className="p-6">
+            <div className="flex items-center justify-between mb-4">
+              <CardTitle className="text-xl text-white">{name}</CardTitle>
+              <Badge variant="secondary" className="bg-zinc-800 text-white">
+                {price === 0 ? 'Free' : `$${price}`}
               </Badge>
-            ))}
-          </div>
-        </CardContent>
-        <CardFooter className="p-6 pt-0 flex gap-4">
-          <Button variant="outline" className="flex-1" asChild>
-            <a href={link}>Demo</a>
-          </Button>
-          <Button className="flex-1 bg-zinc-800 hover:bg-zinc-700" asChild>
-            <a href={buyLink}>
-              {price === 0 ? 'Download' : 'Purchase'}
-            </a>
-          </Button>
-        </CardFooter>
+            </div>
+            <CardDescription className="text-zinc-400 mb-4">{description}</CardDescription>
+            <div className="flex flex-wrap gap-2">
+              {stack.map((tech, index) => (
+                <Badge key={index} variant="outline" className="bg-zinc-900/50 border-zinc-700 text-zinc-400">
+                  {tech}
+                </Badge>
+              ))}
+            </div>
+          </CardContent>
+          <CardFooter className="p-6 pt-0 flex gap-4">
+            <Button variant="outline" className="flex-1" asChild>
+              <a href={link}>Demo</a>
+            </Button>
+            <Button className="flex-1 bg-zinc-800 hover:bg-zinc-700" asChild>
+              <a href={buyLink}>
+                {price === 0 ? 'Download' : 'Purchase'}
+              </a>
+            </Button>
+          </CardFooter>
+        </div>
       </Card>
     </motion.div>
   )
@@ -228,13 +264,13 @@ const featuredTemplates: TemplatesType[] = [
     stack: ['Next.js', 'React', 'Tailwind CSS']
   },
   {
-    name: "/e-commerce.png",
-    link: '#',
-    buyLink: '#',
-    stack: ['Next.js', 'React', 'Tailwind CSS'],
+    name: "E-commerce Plus",
     description: "Complete e-commerce solution with cart, checkout, and inventory management.",
     price: 99,
-    image: "/e-commerce.png"
+    image: "/e-commerce.png",
+    link: '#',
+    buyLink: '#',
+    stack: ['Next.js', 'React', 'Tailwind CSS']
   },
   {
     name: "Dashboard",
@@ -266,6 +302,12 @@ const allTemplates: TemplatesType[] = [
     buyLink: '',
     stack: ['Next.js', 'React', 'Stripe', 'Prisma', 'PostgreSQL']
   },
-  // ... rest of the templates remain the same
+  { name: "Blog", description: "Clean and minimal blog", price: 39, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "Portfolio", description: "Showcase your work", price: 29, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "Landing Page", description: "High-converting landing page", price: 59, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "SaaS Application", description: "Ready-to-use SaaS template", price: 99, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "Personal Blog", description: "Minimalist personal blog", price: 0, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "Startup Landing", description: "Modern startup landing page", price: 0, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "Restaurant Menu", description: "Digital menu for restaurants", price: 19, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
 ]
 
