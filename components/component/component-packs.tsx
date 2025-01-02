@@ -1,9 +1,8 @@
 'use client'
 
-import { Button } from "@/components/ui/button"
+
 import { ComponentCard } from "./component-card"
 import { motion } from "framer-motion"
-import { Spotlight } from "../ui/Spotlight"
 import { ExploreButton } from "../explorebutton"
 
 const componentPacks = [
