@@ -4,6 +4,166 @@ const transition = (currentIndex:number, index:number) => {
 
 export const components = [
   {
+    slug: 'animated-cta-section',
+    name: "Animated CTA",
+    description: "A dynamic Animated Stats Counter with configurable options.",
+    pro: false,
+    code: `"use client"
+
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
+import { Button } from "@/components/ui/button"
+import { ArrowRight } from 'lucide-react'
+
+export function AnimatedCTA() {
+const ref = useRef(null)
+const isInView = useInView(ref, { once: true, margin: "-100px" })
+
+return (
+  <div ref={ref} className="bg-gray-900 py-16">
+    <div className="max-w-4xl mx-auto px-4 text-center">
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+        className="text-4xl font-bold text-white mb-6"
+      >
+        Ready to Transform Your Business?
+      </motion.h2>
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="text-xl text-gray-300 mb-8"
+      >
+        Join thousands of satisfied customers and take your company to the next level.
+      </motion.p>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
+        <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+          Get Started Now
+          <ArrowRight className="ml-2" />
+        </Button>
+      </motion.div>
+    </div>
+  </div>
+)
+}
+`,
+    examples: [
+        {
+            title: "Newsletter Form",
+            preview: `<NewsletterForm />`,
+            code: `<NewsletterForm />`
+        }
+    ]
+},
+{
+  slug: "animated-card-carousel",
+  name: "Animated Card Carousel",
+  description: "A carousel displaying cards with animated transitions and navigation controls.",
+  pro: false,
+  code: `"use client"
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+
+interface CardData {
+title: string;
+content: string;
+color: string;
+}
+
+interface AnimatedCardCarouselProps {
+cards: CardData[];
+}
+
+export function AnimatedCardCarousel({ cards }: AnimatedCardCarouselProps) {
+const [currentIndex, setCurrentIndex] = useState(0);
+
+const nextCard = () => {
+  setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
+};
+
+const prevCard = () => {
+  setCurrentIndex((prevIndex) => (prevIndex - 1 + cards.length) % cards.length);
+};
+
+return (
+  <div className="relative w-full max-w-md mx-auto">
+    <div className="overflow-hidden rounded-lg">
+      <AnimatePresence initial={false} custom={currentIndex}>
+        <motion.div
+          key={currentIndex}
+          custom={currentIndex}
+          variants={{
+            enter: (direction: number) => ({
+              x: direction > 0 ? 1000 : -1000,
+              opacity: 0,
+            }),
+            center: {
+              zIndex: 1,
+              x: 0,
+              opacity: 1,
+            },
+            exit: (direction: number) => ({
+              zIndex: 0,
+              x: direction < 0 ? 1000 : -1000,
+              opacity: 0,
+            }),
+          }}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{
+            x: { type: "spring", stiffness: 300, damping: 30 },
+            opacity: { duration: 0.2 },
+          }}
+        >
+          <Card className="w-full h-64" style={{ backgroundColor: cards[currentIndex].color }}>
+            <CardContent className="flex flex-col items-center justify-center h-full text-white">
+              <h2 className="text-2xl font-bold mb-4">{cards[currentIndex].title}</h2>
+              <p className="text-center">{cards[currentIndex].content}</p>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </AnimatePresence>
+    </div>
+    <Button
+      variant="outline"
+      size="icon"
+      className="absolute top-1/2 left-2 transform -translate-y-1/2"
+      onClick={prevCard}
+    >
+      <ChevronLeft className="h-4 w-4" />
+    </Button>
+    <Button
+      variant="outline"
+      size="icon"
+      className="absolute top-1/2 right-2 transform -translate-y-1/2"
+      onClick={nextCard}
+    >
+      <ChevronRight className="h-4 w-4" />
+    </Button>
+  </div>
+);
+}`,
+  examples: [
+      {
+          title: "Animated Card Carousel Example",
+          preview: `<AnimatedCardCarousel cards={[{title: "Card 1", content: "Content 1", color: "#3498db"}]} />`,
+          code: `<AnimatedCardCarousel cards={[{title: "Card 1", content: "Content 1", color: "#3498db"}]} />`,
+      },
+  ],
+},
+
+  {
       slug: 'animated-hero',
       name: "Animated Hero",
       description: "A dynamic hero section with mouse-following gradient background.",
@@ -69,6 +229,7 @@ export function AnimatedHero() {
       </section>
   );
 }`,
+
       examples: [
           {
               title: "Basic Example",
@@ -77,6 +238,72 @@ export function AnimatedHero() {
           }
       ]
   },
+
+  {
+    slug: "animated-skill-bars",
+    name: "Animated Skill Bars",
+    description: "A component displaying skill levels with animated progress bars.",
+    pro: false,
+    code: `"use client"
+  
+  import { useEffect, useState } from "react";
+  import { motion } from "framer-motion";
+  
+  interface Skill {
+  name: string;
+  level: number;
+  color: string;
+  }
+  
+  interface AnimatedSkillBarsProps {
+  skills: Skill[];
+  barHeight?: string;
+  animationDuration?: number;
+  }
+  
+  export function AnimatedSkillBars({
+  skills,
+  barHeight = "h-6",
+  animationDuration = 1,
+  }: AnimatedSkillBarsProps) {
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 500);
+    return () => clearTimeout(timer);
+  }, []);
+  
+  return (
+    <div className="w-full max-w-md mx-auto space-y-4">
+      {skills.map((skill, index) => (
+        <div key={index} className="relative">
+          <div className="flex justify-between mb-1">
+            <span className="text-sm font-medium">{skill.name}</span>
+            <span className="text-sm font-medium">{skill.level}%</span>
+          </div>
+          <div className={\`w-full bg-gray-200 rounded-full \${barHeight} overflow-hidden\`}>
+            <motion.div
+              className={\`\${barHeight} rounded-full\`}
+              style={{ backgroundColor: skill.color }}
+              initial={{ width: 0 }}
+              animate={isVisible ? { width: \`\${skill.level}%\` } : { width: 0 }}
+              transition={{ duration: animationDuration, delay: index * 0.2 }}
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+  }`,
+    examples: [
+        {
+            title: "Animated Skill Bars Example",
+            preview: `<AnimatedSkillBars skills={[{name: "JavaScript", level: 90, color: "#f7df1e"}]} />`,
+            code: `<AnimatedSkillBars skills={[{name: "JavaScript", level: 90, color: "#f7df1e"}]} />`,
+        },
+    ],
+  },
+  
   {
       slug: 'floating-cta-banner',
       name: "Floating CTA Banner",
@@ -154,6 +381,79 @@ export function ProductCarousel() {
           }
       ]
   },
+
+  {
+    slug: 'animated-stats-counter',
+    name: "Animated Stats Counter",
+    description: "A dynamic Animated Stats Counter with configurable options.",
+    pro: false,
+    code: `"use client"
+
+import { useState, useEffect, useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
+
+const stats = [
+{ label: "Happy Customers", value: 10000, prefix: "+" },
+{ label: "Products Sold", value: 500000, prefix: "" },
+{ label: "5-Star Reviews", value: 25000, prefix: "" },
+{ label: "Countries Served", value: 50, prefix: "" },
+]
+
+export function AnimatedStatsCounter() {
+const ref = useRef(null)
+const isInView = useInView(ref, { once: true, margin: "-100px" })
+const [hasAnimated, setHasAnimated] = useState(false)
+
+useEffect(() => {
+if (isInView && !hasAnimated) {
+  setHasAnimated(true)
+}
+}, [isInView, hasAnimated])
+
+return (
+<div ref={ref} className="bg-gradient-to-r from-blue-600 to-purple-600 py-16">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+      {stats.map((stat, index) => (
+        <div key={index} className="text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: index * 0.1 }}
+          >
+            <motion.span
+              className="text-4xl font-bold text-white"
+              initial={{ opacity: 0 }}
+              animate={hasAnimated ? { opacity: 1 } : {}}
+              transition={{ duration: 0.8, delay: index * 0.1 + 0.4 }}
+            >
+              {hasAnimated ? (
+                <>
+                  {stat.prefix}
+                  {stat.value.toLocaleString()}
+                </>
+              ) : (
+                '0'
+              )}
+            </motion.span>
+            <p className="mt-2 text-xl text-white opacity-80">{stat.label}</p>
+          </motion.div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+)
+}`,
+    examples: [
+        {
+            title: "Animated Stats Counter",
+            preview: `<AnimatedStatsCounter />`,
+            code: `<AnimatedStatsCounter />`
+        }
+    ]
+},
+
   {
       slug: 'testimonial-slider',
       name: "Testimonial Slider",
@@ -366,78 +666,7 @@ export function FeatureComparisonTable() {
       ]
   },
 
-    {
-        slug: 'animated-stats-counter',
-        name: "Animated Stats Counter",
-        description: "A dynamic Animated Stats Counter with configurable options.",
-        pro: false,
-        code: `"use client"
-
-import { useState, useEffect, useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
-
-const stats = [
-  { label: "Happy Customers", value: 10000, prefix: "+" },
-  { label: "Products Sold", value: 500000, prefix: "" },
-  { label: "5-Star Reviews", value: 25000, prefix: "" },
-  { label: "Countries Served", value: 50, prefix: "" },
-]
-
-export function AnimatedStatsCounter() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [hasAnimated, setHasAnimated] = useState(false)
-
-  useEffect(() => {
-    if (isInView && !hasAnimated) {
-      setHasAnimated(true)
-    }
-  }, [isInView, hasAnimated])
-
-  return (
-    <div ref={ref} className="bg-gradient-to-r from-blue-600 to-purple-600 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-              >
-                <motion.span
-                  className="text-4xl font-bold text-white"
-                  initial={{ opacity: 0 }}
-                  animate={hasAnimated ? { opacity: 1 } : {}}
-                  transition={{ duration: 0.8, delay: index * 0.1 + 0.4 }}
-                >
-                  {hasAnimated ? (
-                    <>
-                      {stat.prefix}
-                      {stat.value.toLocaleString()}
-                    </>
-                  ) : (
-                    '0'
-                  )}
-                </motion.span>
-                <p className="mt-2 text-xl text-white opacity-80">{stat.label}</p>
-              </motion.div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-}`,
-        examples: [
-            {
-                title: "Animated Stats Counter",
-                preview: `<AnimatedStatsCounter />`,
-                code: `<AnimatedStatsCounter />`
-            }
-        ]
-    },
-
+   
     {
       slug: 'faq-accordion',
       name: "FAQ Accordion",
@@ -604,64 +833,7 @@ export function NewsletterForm() {
         ]
     },
 
-    {
-      slug: 'animated-cta-section',
-      name: "Animated CTA",
-      description: "A dynamic Animated Stats Counter with configurable options.",
-      pro: false,
-      code: `"use client"
-
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from 'lucide-react'
-
-export function AnimatedCTA() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-
-  return (
-    <div ref={ref} className="bg-gray-900 py-16">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-4xl font-bold text-white mb-6"
-        >
-          Ready to Transform Your Business?
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-xl text-gray-300 mb-8"
-        >
-          Join thousands of satisfied customers and take your company to the next level.
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-            Get Started Now
-            <ArrowRight className="ml-2" />
-          </Button>
-        </motion.div>
-      </div>
-    </div>
-  )
-}
-`,
-      examples: [
-          {
-              title: "Newsletter Form",
-              preview: `<NewsletterForm />`,
-              code: `<NewsletterForm />`
-          }
-      ]
-  },
+   
 
   {
     slug: "morphing-search-bar",
@@ -810,171 +982,6 @@ return (
           title: "Interactive Timeline Example",
           preview: `<InteractiveTimeline events={[{date: "2023", title: "Event 1", description: "Details about Event 1"}]} />`,
           code: `<InteractiveTimeline events={[{date: "2023", title: "Event 1", description: "Details about Event 1"}]} />`,
-      },
-  ],
-},
-{
-  slug: "animated-skill-bars",
-  name: "Animated Skill Bars",
-  description: "A component displaying skill levels with animated progress bars.",
-  pro: false,
-  code: `"use client"
-
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-
-interface Skill {
-name: string;
-level: number;
-color: string;
-}
-
-interface AnimatedSkillBarsProps {
-skills: Skill[];
-barHeight?: string;
-animationDuration?: number;
-}
-
-export function AnimatedSkillBars({
-skills,
-barHeight = "h-6",
-animationDuration = 1,
-}: AnimatedSkillBarsProps) {
-const [isVisible, setIsVisible] = useState(false);
-
-useEffect(() => {
-  const timer = setTimeout(() => setIsVisible(true), 500);
-  return () => clearTimeout(timer);
-}, []);
-
-return (
-  <div className="w-full max-w-md mx-auto space-y-4">
-    {skills.map((skill, index) => (
-      <div key={index} className="relative">
-        <div className="flex justify-between mb-1">
-          <span className="text-sm font-medium">{skill.name}</span>
-          <span className="text-sm font-medium">{skill.level}%</span>
-        </div>
-        <div className={\`w-full bg-gray-200 rounded-full \${barHeight} overflow-hidden\`}>
-          <motion.div
-            className={\`\${barHeight} rounded-full\`}
-            style={{ backgroundColor: skill.color }}
-            initial={{ width: 0 }}
-            animate={isVisible ? { width: \`\${skill.level}%\` } : { width: 0 }}
-            transition={{ duration: animationDuration, delay: index * 0.2 }}
-          />
-        </div>
-      </div>
-    ))}
-  </div>
-);
-}`,
-  examples: [
-      {
-          title: "Animated Skill Bars Example",
-          preview: `<AnimatedSkillBars skills={[{name: "JavaScript", level: 90, color: "#f7df1e"}]} />`,
-          code: `<AnimatedSkillBars skills={[{name: "JavaScript", level: 90, color: "#f7df1e"}]} />`,
-      },
-  ],
-},
-{
-  slug: "animated-card-carousel",
-  name: "Animated Card Carousel",
-  description: "A carousel displaying cards with animated transitions and navigation controls.",
-  pro: false,
-  code: `"use client"
-
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-
-interface CardData {
-title: string;
-content: string;
-color: string;
-}
-
-interface AnimatedCardCarouselProps {
-cards: CardData[];
-}
-
-export function AnimatedCardCarousel({ cards }: AnimatedCardCarouselProps) {
-const [currentIndex, setCurrentIndex] = useState(0);
-
-const nextCard = () => {
-  setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
-};
-
-const prevCard = () => {
-  setCurrentIndex((prevIndex) => (prevIndex - 1 + cards.length) % cards.length);
-};
-
-return (
-  <div className="relative w-full max-w-md mx-auto">
-    <div className="overflow-hidden rounded-lg">
-      <AnimatePresence initial={false} custom={currentIndex}>
-        <motion.div
-          key={currentIndex}
-          custom={currentIndex}
-          variants={{
-            enter: (direction: number) => ({
-              x: direction > 0 ? 1000 : -1000,
-              opacity: 0,
-            }),
-            center: {
-              zIndex: 1,
-              x: 0,
-              opacity: 1,
-            },
-            exit: (direction: number) => ({
-              zIndex: 0,
-              x: direction < 0 ? 1000 : -1000,
-              opacity: 0,
-            }),
-          }}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{
-            x: { type: "spring", stiffness: 300, damping: 30 },
-            opacity: { duration: 0.2 },
-          }}
-        >
-          <Card className="w-full h-64" style={{ backgroundColor: cards[currentIndex].color }}>
-            <CardContent className="flex flex-col items-center justify-center h-full text-white">
-              <h2 className="text-2xl font-bold mb-4">{cards[currentIndex].title}</h2>
-              <p className="text-center">{cards[currentIndex].content}</p>
-            </CardContent>
-          </Card>
-        </motion.div>
-      </AnimatePresence>
-    </div>
-    <Button
-      variant="outline"
-      size="icon"
-      className="absolute top-1/2 left-2 transform -translate-y-1/2"
-      onClick={prevCard}
-    >
-      <ChevronLeft className="h-4 w-4" />
-    </Button>
-    <Button
-      variant="outline"
-      size="icon"
-      className="absolute top-1/2 right-2 transform -translate-y-1/2"
-      onClick={nextCard}
-    >
-      <ChevronRight className="h-4 w-4" />
-    </Button>
-  </div>
-);
-}`,
-  examples: [
-      {
-          title: "Animated Card Carousel Example",
-          preview: `<AnimatedCardCarousel cards={[{title: "Card 1", content: "Content 1", color: "#3498db"}]} />`,
-          code: `<AnimatedCardCarousel cards={[{title: "Card 1", content: "Content 1", color: "#3498db"}]} />`,
       },
   ],
 },

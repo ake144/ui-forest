@@ -11,8 +11,8 @@ const navItems = [
   { name: 'COMPONENTS', href: '/components' },
   { name: 'BLOG', href: '/blog' },
   { name: 'PRICING', href: '/pricing' },
-  { name: 'DOCS', href: '/docs' },
-  { name: 'CAREERS', href: '/careers' },
+  // { name: 'DOCS', href: '/docs' },
+  // { name: 'CAREERS', href: '/careers' },
 ]
 
 export default function Navbar() {
@@ -72,15 +72,15 @@ export default function Navbar() {
           </nav>
 
           {/* Desktop Call to Action */}
-          <div className="hidden md:flex items-center space-x-4">
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <div className="hidden md:flex ml-6 items-center space-x-4">
+            {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button variant="ghost" className="text-white hover:text-white/90">
                 SIGN IN
               </Button>
-            </motion.div>
+            </motion.div> */}
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button className="bg-white text-black hover:bg-white/90">
-                DOWNLOAD
+              SIGN IN
               </Button>
             </motion.div>
           </div>
@@ -125,11 +125,11 @@ export default function Navbar() {
                   </motion.div>
                 ))}
                 <div className="pt-4 space-y-2">
-                  <Button variant="ghost" className="w-full text-white hover:text-white/90">
-                    SIGN IN
-                  </Button>
-                  <Button className="w-full bg-white text-black hover:bg-white/90">
-                    DOWNLOAD
+                  {/* <Button variant="ghost" className="w-full text-white hover:text-white/90">
+                   
+                  </Button> */}
+                  <Button className="w-full  bg-white text-black hover:bg-white/90">
+                  SIGN IN
                   </Button>
                 </div>
               </div>

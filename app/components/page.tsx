@@ -8,21 +8,22 @@ import { ArrowRight, Component, Lock } from 'lucide-react'
 import Link from "next/link"
 
 const components = [
+  { name: "Animated Card Carousel", description: "A carousel displaying cards with animated transitions and navigation controls.", pro: false },
+  { name: "Animated CTA Section", description: "A bold call-to-action section with animated elements.", pro: false },
   { name: "Animated Hero", description: "A dynamic hero section with mouse-following gradient background.", pro: false },
-  { name: "Floating CTA Banner", description: "An attention-grabbing call-to-action banner that appears after a delay.", pro: false },
-  { name: "Product Carousel", description: "A sleek product showcase with smooth transitions between items.", pro: false },
-  { name: "Testimonial Slider", description: "An auto-rotating testimonial display to showcase customer feedback.", pro: false },
-  { name: "Feature Comparison Table", description: "A clear and concise table to compare different product tiers.", pro: false },
+  { name: "Animated Skill Bars", description: "A component displaying skill levels with animated progress bars.", pro: false },
   { name: "Animated Stats Counter", description: "Eye-catching animated counters to display key statistics.", pro: false },
   { name: "FAQ Accordion", description: "An interactive accordion to present frequently asked questions.", pro: false },
-  { name: "Newsletter Form", description: "A stylish form for newsletter subscriptions with validation.", pro: false },
-  { name: "Animated CTA Section", description: "A bold call-to-action section with animated elements.", pro: false },
-  { name: "Pricing Calculator", description: "An interactive tool for users to calculate pricing based on their needs.", pro: false },
-  { name: "Morphing Search Bar",description: "A morphing search bar with dynamic expansion, customizable styles, and integrated search functionality.", pro: false },
+  { name: "Feature Comparison Table", description: "A clear and concise table to compare different product tiers.", pro: false },
+  { name: "Floating CTA Banner", description: "An attention-grabbing call-to-action banner that appears after a delay.", pro: false },
   { name: "Interactive Timeline", description: "A timeline component with interactive dots, customizable styles, and animated transitions.", pro: false },
-  { name: "Animated Skill Bars",  description: "A component displaying skill levels with animated progress bars.", pro: false  },
-  { name: "Animated Card Carousel",  description: "A carousel displaying cards with animated transitions and navigation controls.", pro: false  },
-]
+  { name: "Morphing Search Bar", description: "A morphing search bar with dynamic expansion, customizable styles, and integrated search functionality.", pro: false },
+  { name: "Newsletter Form", description: "A stylish form for newsletter subscriptions with validation.", pro: false },
+  { name: "Pricing Calculator", description: "An interactive tool for users to calculate pricing based on their needs.", pro: false },
+  { name: "Product Carousel", description: "A sleek product showcase with smooth transitions between items.", pro: false },
+  { name: "Testimonial Slider", description: "An auto-rotating testimonial display to showcase customer feedback.", pro: false },
+];
+
 
 export default function ComponentsPage() {
   return (

@@ -178,7 +178,7 @@ function FeaturedTemplateCard({ name, description, price, image, stack = [], vie
             </div>
           </CardContent>
           <CardFooter className="p-6 pt-0">
-            <Button className="w-full bg-zinc-800 hover:bg-zinc-700" asChild>
+            <Button className="w-full bg-zinc-800 text-white hover:bg-zinc-700" asChild>
               <a href="#" className="flex items-center text-gray-50/50 justify-center gap-2">
                 View Template
                 <ChevronRight className="h-4 w-4" />
