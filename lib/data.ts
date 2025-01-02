@@ -1,3 +1,5 @@
+import { TemplatesType } from "./types";
+
 const transition = (currentIndex:number, index:number) => {
   return `absolute transition-opacity duration-500 ${currentIndex === index ? 'opacity-100' : 'opacity-0'}`;
 }
@@ -989,3 +991,70 @@ return (
 
 
 ];
+
+
+
+
+
+
+
+
+
+export const featuredTemplates: TemplatesType[] = [
+  {
+    name: "Pro Dashboard",
+    description: "A modern and responsive admin dashboard with dark mode support and comprehensive analytics.",
+    price: 79,
+    image: "/placeholder.svg?height=720&width=1280",
+    link: '#',
+    buyLink: '#',
+    stack: ['Next.js', 'React', 'Tailwind CSS']
+  },
+  {
+    name: "E-commerce Plus",
+    description: "Complete e-commerce solution with cart, checkout, and inventory management.",
+    price: 99,
+    image: "/e-commerce.png",
+    link: '#',
+    buyLink: '#',
+    stack: ['Next.js', 'React', 'Tailwind CSS']
+  },
+  {
+    name: "Dashboard",
+    description: "Modern admin dashboard with dark mode and real-time analytics.",
+    price: 49,
+    image: "/placeholder.svg?height=720&width=1280",
+    link: '',
+    buyLink: '',
+    stack: ['Next.js', 'React', 'NextAuth', 'Prisma', 'Supabase']
+  },
+]
+
+export const allTemplates: TemplatesType[] = [
+  {
+    name: "Dashboard",
+    description: "Modern admin dashboard with dark mode and real-time analytics.",
+    price: 49,
+    image: "/placeholder.svg?height=720&width=1280",
+    link: '',
+    buyLink: '',
+    stack: ['Next.js', 'React', 'NextAuth', 'Prisma', 'Supabase']
+  },
+  {
+    name: "E-commerce",
+    description: "Full-featured online store with product management and payments.",
+    price: 79,
+    image: "/placeholder.svg?height=720&width=1280",
+    link: '',
+    buyLink: '',
+    stack: ['Next.js', 'React', 'Stripe', 'Prisma', 'PostgreSQL']
+  },
+  { name: "Blog", description: "Clean and minimal blog", price: 39, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "Portfolio", description: "Showcase your work", price: 29, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "Landing Page", description: "High-converting landing page", price: 59, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "SaaS Application", description: "Ready-to-use SaaS template", price: 99, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "Personal Blog", description: "Minimalist personal blog", price: 0, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "Startup Landing", description: "Modern startup landing page", price: 0, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "Restaurant Menu", description: "Digital menu for restaurants", price: 19, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+]
+

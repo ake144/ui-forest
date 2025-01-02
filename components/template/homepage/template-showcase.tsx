@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { TemplateSection } from './template-section'
 
+
 const templates = [
   {
     title: "Developer First Headless CMS",

@@ -5,23 +5,29 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+import { cn } from "@/lib/utils"
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
 
 const navItems = [
-  { name: 'TEMPLATES', href: '/template' },
-  { name: 'COMPONENTS', href: '/components' },
-  { name: 'BLOG', href: '/blog' },
-  { name: 'PRICING', href: '/pricing' },
-  // { name: 'DOCS', href: '/docs' },
-  // { name: 'CAREERS', href: '/careers' },
+  { name: 'Templates', href: '/template' },
+  { name: 'Components', href: '/components' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Pricing', href: '/pricing' },
 ]
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0)
+      setIsScrolled(window.scrollY > 20)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
@@ -29,114 +35,77 @@ export default function Navbar() {
 
   return (
     <motion.header
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'backdrop-blur-md bg-black/50' : ''
-      }`}
+      className={cn(
+        "fixed top-0 right-0 left-[var(--sidebar-width,0px)] z-50 transition-all duration-300",
+        isScrolled ? "bg-background/80 backdrop-blur-sm shadow-sm" : "bg-background"
+      )}
     >
-      <div className="relative mx-auto max-w-[calc(100%-240px)] ml-[240px] px-4 sm:px-6 lg:px-8">
-        {/* Navigation Content */}
+      <div className="container mx-auto max-w-7xl">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex-shrink-0"
-          >
-            <Link href="/" className="flex items-center p-5 m-6 space-x-2">
-              <div className="h-8 w-8 bg-white rounded-lg flex items-center justify-center">
-                <div className="h-6 w-6 bg-black rounded" />
-              </div>
-              <span className="text-white font-bold text-xl">Ui Forest</span>
-            </Link>
-          </motion.div>
+          <Link href="/" className="flex items-center space-x-2">
+            <div className="h-8 w-8 bg-primary rounded-lg flex items-center justify-center">
+              <div className="h-6 w-6 bg-background rounded" />
+            </div>
+            <span className="font-bold text-xl">Ui Forest</span>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item) => (
-              <motion.div
+              <Link
                 key={item.name}
-                whileHover={{ y: -2 }}
-                whileTap={{ y: 0 }}
+                href={item.href}
+                className="text-sm font-medium transition-colors hover:text-primary"
               >
-                <Link
-                  href={item.href}
-                  className="text-white/90 hover:text-white text-sm font-medium transition-colors"
-                >
-                  {item.name}
-                </Link>
-              </motion.div>
+                {item.name}
+              </Link>
             ))}
           </nav>
 
-          {/* Desktop Call to Action */}
-          <div className="hidden md:flex ml-6 items-center space-x-4">
-            {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button variant="ghost" className="text-white hover:text-white/90">
-                SIGN IN
+          {/* Mobile Menu */}
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="md:hidden">
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Open menu</span>
               </Button>
-            </motion.div> */}
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="bg-white text-black hover:bg-white/90">
-              SIGN IN
-              </Button>
-            </motion.div>
-          </div>
+            </SheetTrigger>
+            <SheetContent side="right">
+              <SheetHeader>
+                <SheetTitle>Menu</SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col text-white space-y-4 mt-4">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="text-sm font-medium transition-colors hover:text-primary"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
 
-          {/* Mobile Menu Button */}
-          <div className="flex md:hidden">
-            <motion.button
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white p-2"
-            >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </motion.button>
+          {/* Call to Action */}
+          <div className="hidden md:flex text-gray-50 items-center space-x-4">
+          <SignedIn>
+            {/* Mount the UserButton component */}
+            <UserButton />
+          </SignedIn>
+          <SignedOut>
+            {/* Signed out users get sign in button */}
+            <SignInButton />
+          </SignedOut>
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden relative bg-black/95 backdrop-blur-lg"
-            >
-              <div className="space-y-1 px-4 pb-3 pt-2">
-                {navItems.map((item) => (
-                  <motion.div
-                    key={item.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    className="block py-2"
-                  >
-                    <Link
-                      href={item.href}
-                      className="text-white/90 hover:text-white text-sm font-medium"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  </motion.div>
-                ))}
-                <div className="pt-4 space-y-2">
-                  {/* <Button variant="ghost" className="w-full text-white hover:text-white/90">
-                   
-                  </Button> */}
-                  <Button className="w-full  bg-white text-black hover:bg-white/90">
-                  SIGN IN
-                  </Button>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
     </motion.header>
   )
 }
+
