@@ -59,12 +59,12 @@ export async function generateStaticParams() {
 
   
 
-export default function ComponentPage({ params }: { params: paramsType }) {
+export default async function ComponentPage({ params }: { params: Promise<paramsType> }) {
 
-  const component = components.find(c => c.slug === params.slug)
+          const SlugParams =  (await params).slug
 
-
-  console.log(component, params.slug)
+  const component = components.find(c => c.slug === SlugParams)
+ 
 
   if (!component) return null
 
