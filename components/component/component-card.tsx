@@ -3,8 +3,13 @@
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card"
-import { CardSpotlight } from "../ui/card-spootlight"
+// import { CardSpotlight } from "../ui/card-spootlight"
+import dynamic from "next/dynamic";
 
+
+const CardSpotlight = dynamic(() => import("../ui/card-spootlight").then((mod) => mod.CardSpotlight), {
+  ssr: false, // Disable server-side rendering for this component
+});
 interface ComponentCardProps {
   title: string
   description: string
@@ -15,7 +20,7 @@ interface ComponentCardProps {
 
 export function ComponentCard({ title, description, imageUrl, count, price }: ComponentCardProps) {
   return (
-    <CardSpotlight className="w-full">
+    // <CardSpotlight className="w-full">
       <CardContainer className="flex flex-col h-full">
         <CardBody className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden flex-1 flex flex-col">
           <CardItem
@@ -45,7 +50,7 @@ export function ComponentCard({ title, description, imageUrl, count, price }: Co
           </div>
         </CardBody>
       </CardContainer>
-    </CardSpotlight>
+    // </CardSpotlight>
   )
 }
 

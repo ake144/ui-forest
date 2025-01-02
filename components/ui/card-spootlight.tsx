@@ -1,7 +1,7 @@
 "use client";
 
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
-import React, { MouseEvent as ReactMouseEvent, useState } from "react";
+import React, { MouseEvent as ReactMouseEvent, useEffect, useState } from "react";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
 import { cn } from "@/lib/utils";
 
@@ -12,10 +12,19 @@ export const CardSpotlight = ({
   className,
   ...props
 }: {
-  radius?: number;
+  radius?: number; 
   color?: string;
   children: React.ReactNode;
 } & React.HTMLAttributes<HTMLDivElement>) => {
+  // const [isClient, setIsClient] = useState(false);
+
+  // useEffect(() => {
+  //   setIsClient(true); // Mark as client-side when component is mounted
+  // }, []);
+
+  // if (!isClient) return null; // Don't render the component on server-side
+
+
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   function handleMouseMove({

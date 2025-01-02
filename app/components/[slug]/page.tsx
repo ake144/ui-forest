@@ -1,11 +1,11 @@
 import ComponentsPage from "@/components/component/component-page";
 import { components } from "@/lib/data";
 
-export async function generateStaticParams() {
-  return components.map(component => ({
-    slug: component.slug,
-  }));
-}
+// export async function generateStaticParams() {
+//   return components.map(component => ({
+//     slug: component.slug,
+//   }));
+// }
 
 type tParams = 
 Promise<{ slug: string }>;
