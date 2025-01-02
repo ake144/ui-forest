@@ -51,7 +51,7 @@ export default function Home() {
           className="text-center mb-16 relative"
         >
           <h2 className="text-6xl p-3 font-extrabold text-white mb-4 relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500">
-            Component Packs
+          Web Templates Collection
           </h2>
           {/* Title Glow Effect */}
           <div className="absolute inset-0 flex justify-center items-center">
@@ -59,7 +59,7 @@ export default function Home() {
             <div className="w-72 h-72 bg-[#b845ff] rounded-full blur-3xl opacity-20 animate-pulse"></div>
           </div>
           <p className="text-zinc-400 text-lg max-w-2xl mx-auto relative z-10">
-            Elevate your website with our curated collection of modern, customizable building blocks.
+            Elevate your website with our curated collection of modern, customizable templates.
           </p>
         </motion.div>
            </div>
