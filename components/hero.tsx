@@ -36,7 +36,7 @@ export default function Hero() {
             className="mb-6 inline-block"
           >
             <span className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium bg-gray-800 text-gray-300 ring-1 ring-inset ring-gray-700">
-              Introducing DesignKit Pro
+              Introducing Ui-Forest
               <span className="ml-2 inline-flex items-center rounded-full bg-blue-500 px-2 py-0.5 text-xs font-medium text-white">
                 New
               </span>
@@ -49,9 +49,9 @@ export default function Hero() {
             transition={{ delay: 0.3, duration: 0.5 }}
             className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500 mb-6"
           >
-            Make your websites look
+            Transform your websites into professional masterpieces
             <br />
-            10x better
+            100x better
           </motion.h1>
 
           <motion.p
@@ -60,8 +60,8 @@ export default function Hero() {
             transition={{ delay: 0.4, duration: 0.5 }}
             className="text-gray-400 text-xl mb-8 max-w-2xl mx-auto"
           >
-            Copy paste our premium components and templates into your projects.
-            Stop worrying about styling and animations.
+              Seamlessly integrate our premium components and templates into your projects. 
+             Say goodbye to styling and animation hassles!
           </motion.p>
 
           <motion.div
@@ -76,7 +76,7 @@ export default function Hero() {
           <div className="flex gap-4">
               {/* Browse Components Button */}
               <a
-                href="#"
+                href="/components"
                 className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium text-white transition-all bg-black rounded-lg shadow-lg group"
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-purple-500 group-hover:opacity-50"></span>
@@ -95,7 +95,7 @@ export default function Hero() {
 
               {/* Browse Templates Button */}
               <a
-                href="#"
+                href="template"
                 className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium text-black transition-all bg-white border border-blue-500 rounded-lg shadow-lg group"
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-purple-500 group-hover:opacity-20"></span>
