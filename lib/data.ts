@@ -668,6 +668,88 @@ export function FeatureComparisonTable() {
       ]
   },
 
+  {
+    slug: "footer",
+    name: "Footer",
+    description: "A modern customizable footer page.",
+    pro: false,
+    code: `
+   'use client'
+
+import Image from "next/image";
+import { Twitter, Linkedin } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+const Footer = () => {
+  const separatorStyle =
+    "w-[0.35rem] h-[.35rem] bg-black  dark:bg-white rounded-full mx-3";
+  return (
+    <footer className="w-full text-white bg-black/90 border-white/20 relative mt-0 border-t border-transparent-white/10 px-8 py-[3rem] gap-8 text-sm ">
+      <div
+        className="
+             grid place-items-center grid-cols-1 md:grid-cols-2
+             lg:grid-cols-3 mx-auto justify-between items-center gap-4
+           "
+      >
+        <div className="flex items-center gap-4 text-grey transition-colors hover:text-off-white">
+          <Image
+            src="/vercel.svg"
+            alt="PLC Logo"
+            width={40}
+            height={40}
+            className="h-10 rounded-full w-10"
+          />
+          {/* <Image src={Logos} alt="logo" className="rounded-full w-12 h-12" /> */}
+          PLC
+        </div>
+        <div className=" flex mt-[-20px] justify-center items-center gap-2">
+          Need Help?{" "}
+          <span className="flex gap-2 items-center underline underline-offset-4 cursor-pointer opacity-60">
+            <Link href={"mailto:hello@yourcompany.com"}>
+              Plc@yourcompany.com
+            </Link>
+            <ArrowUpRight className="w-4 h-4" />
+          </span>
+        </div>
+
+        <div className="flex space-x-4 col-span-1 md:col-span-2 lg:col-span-1 mt-2 md:mt-0 text-grey items-center ">
+          <Link href={"https://x.com/yourcompany"} target="_blank">
+            <Twitter />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/company/yourcompany/"
+            target="_blank"
+          >
+            <Linkedin />
+          </Link>
+          <div className="w-[0.12rem] h-[1.3rem] bg-black dark:bg-white dark:opacity-70"></div>
+        </div>
+      </div>
+      <div className="flex items-center justify-center mx-auto mt-3 md:mt-0">
+        <Link href="/privacy">Privacy Policy</Link>
+        <div className={separatorStyle}></div>
+        <Link href="/terms">Terms</Link>
+        <div className={separatorStyle}></div>
+        <Link href="/contact">Contact</Link>
+        <div className={separatorStyle}></div>
+        <Link href="/" className="cursor-not-allowed">
+          Pricing
+        </Link>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;`,
+    examples: [
+        {
+            title: "FOoter Example",
+            preview: `<AnimatedCardCarousel cards={[{title: "Card 1", content: "Content 1", color: "#3498db"}]} />`,
+            code: `<AnimatedCardCarousel cards={[{title: "Card 1", content: "Content 1", color: "#3498db"}]} />`,
+        },
+    ],
+  },
+
    
     {
       slug: 'faq-accordion',
@@ -835,7 +917,169 @@ export function NewsletterForm() {
         ]
     },
 
-   
+    {
+      slug: 'navbar',
+      name: "Nav Bar",
+      description: "A dynamic modern navigation bar with scroll effects and mobile responsiveness.",
+      pro: false,
+      code: `"use client";
+
+import { ArrowRight, Sun, Menu, X } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { Button } from "../ui/button";
+
+const NavBar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <header
+      className={\`fixed top-0 w-full z-[55] transition-all duration-300 \${
+        scrolled ? "bg-black/50 backdrop-blur-lg" : ""
+      }\`}
+    >
+      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+        {/* Logo */}
+        <div className="flex items-center space-x-2">
+          <Image
+            src="/image3.png"
+            alt="ProductFrontiers Logo"
+            width={40}
+            height={40}
+            className="h-10 w-10"
+          />
+          <span className="font-bold text-white text-lg">ProductFrontiers</span>
+        </div>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center space-x-8 bg-transparent/20 backdrop-blur-md rounded-full px-6 py-3 border border-gray-800">
+          <Link
+            href="#"
+            className="text-sm text-gray-300 hover:text-white transition-colors"
+          >
+            Home
+          </Link>
+          <Link
+            href="#"
+            className="text-sm text-gray-300 hover:text-white transition-colors"
+          >
+            Services
+          </Link>
+          <Link
+            href="#"
+            className="text-sm text-gray-300 hover:text-white transition-colors"
+          >
+            Features
+          </Link>
+          <Link
+            href="#"
+            className="text-sm text-gray-300 hover:text-white transition-colors"
+          >
+            About
+          </Link>
+        </div>
+
+        {/* Mobile Menu Toggle */}
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            className="text-gray-400 p-2 focus:outline-none"
+          >
+            {menuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="hidden md:flex items-center space-x-4">
+          <Button variant="ghost" size="icon" className="text-gray-400 ">
+            <Sun className="h-5 w-5" />
+          </Button>
+          <Button className="group bg-purple-600 rounded-full hover:bg-purple-700">
+            Start Now
+            <ArrowRight className="translate-x-0 duration-300 group-hover:translate-x-2 ml-2 h-4 w-4" />
+          </Button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <nav className="absolute top-20 left-0 w-full bg-black/90 backdrop-blur-md border-t border-gray-800">
+          <ul className="flex flex-col items-center space-y-4 py-6">
+            <li>
+              <Link
+                href="#"
+                className="text-sm text-gray-300 hover:text-white transition-colors"
+                onClick={() => setMenuOpen(false)}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#"
+                className="text-sm text-gray-300 hover:text-white transition-colors"
+                onClick={() => setMenuOpen(false)}
+              >
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#"
+                className="text-sm text-gray-300 hover:text-white transition-colors"
+                onClick={() => setMenuOpen(false)}
+              >
+                Features
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#"
+                className="text-sm text-gray-300 hover:text-white transition-colors"
+                onClick={() => setMenuOpen(false)}
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Button className="bg-purple-600 hover:bg-purple-700">
+                Start Now
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </li>
+          </ul>
+        </nav>
+      )}
+    </header>
+  );
+};
+
+export default NavBar;
+
+`,
+      examples: [
+          {
+              title: "Nav Bar ",
+              preview: `<NavBar />`,
+              code: `<NewsletterForm />`
+          }
+      ]
+  },
 
   {
     slug: "morphing-search-bar",
@@ -1007,7 +1251,7 @@ export const featuredTemplates: TemplatesType[] = [
     price: 79,
     image: "/placeholder.svg?height=720&width=1280",
     link: '#',
-    buyLink: '#',
+    repo: '#',
     stack: ['Next.js', 'React', 'Tailwind CSS']
   },
   {
@@ -1015,9 +1259,9 @@ export const featuredTemplates: TemplatesType[] = [
     description: "Complete e-commerce solution with cart, checkout, and inventory management.",
     price: 99,
     image: "/e-commerce.png",
-    link: '#',
-    buyLink: '#',
-    stack: ['Next.js', 'React', 'Tailwind CSS']
+    link: 'https://e-commerce-plus-next.vercel.app/',
+    repo: 'https://github.com/ake144/e-commerce',
+    stack: ['Next.js', 'React','Wix', 'Tailwind CSS']
   },
   {
     name: "Dashboard",
@@ -1025,9 +1269,18 @@ export const featuredTemplates: TemplatesType[] = [
     price: 49,
     image: "/placeholder.svg?height=720&width=1280",
     link: '',
-    buyLink: '',
+    repo: '',
     stack: ['Next.js', 'React', 'NextAuth', 'Prisma', 'Supabase']
   },
+  {
+    name: "SaaS Starter",
+    description: "A complete SaaS starter kit with user management, billing, and subscription features.",
+    price: 0,
+    image: "/saas.png",
+    link: 'next-saas-starter1.vercel.app',
+    repo: 'https://github.com/ake144/saas-starter',
+    stack: ['Next.js', 'React', 'Tailwind CSS']
+  }
 ]
 
 export const allTemplates: TemplatesType[] = [
@@ -1037,7 +1290,7 @@ export const allTemplates: TemplatesType[] = [
     price: 49,
     image: "/placeholder.svg?height=720&width=1280",
     link: '',
-    buyLink: '',
+    repo: '',
     stack: ['Next.js', 'React', 'NextAuth', 'Prisma', 'Supabase']
   },
   {
@@ -1046,15 +1299,15 @@ export const allTemplates: TemplatesType[] = [
     price: 79,
     image: "/placeholder.svg?height=720&width=1280",
     link: '',
-    buyLink: '',
+    repo: '',
     stack: ['Next.js', 'React', 'Stripe', 'Prisma', 'PostgreSQL']
   },
-  { name: "Blog", description: "Clean and minimal blog", price: 39, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
-  { name: "Portfolio", description: "Showcase your work", price: 29, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
-  { name: "Landing Page", description: "High-converting landing page", price: 59, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
-  { name: "SaaS Application", description: "Ready-to-use SaaS template", price: 99, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
-  { name: "Personal Blog", description: "Minimalist personal blog", price: 0, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
-  { name: "Startup Landing", description: "Modern startup landing page", price: 0, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
-  { name: "Restaurant Menu", description: "Digital menu for restaurants", price: 19, image: "/placeholder.svg?height=720&width=1280", link: '', buyLink: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "Blog", description: "Clean and minimal blog", price: 39, image: "/placeholder.svg?height=720&width=1280", link: '', repo: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "Portfolio", description: "Showcase your work", price: 29, image: "/placeholder.svg?height=720&width=1280", link: '', repo: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "Landing Page", description: "High-converting landing page", price: 59, image: "/placeholder.svg?height=720&width=1280", link: '', repo: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "SaaS Application", description: "Ready-to-use SaaS template", price: 99, image: "/placeholder.svg?height=720&width=1280", link: '', repo: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "Personal Blog", description: "Minimalist personal blog", price: 0, image: "/placeholder.svg?height=720&width=1280", link: '', repo: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "Startup Landing", description: "Modern startup landing page", price: 0, image: "/placeholder.svg?height=720&width=1280", link: '', repo: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "Restaurant Menu", description: "Digital menu for restaurants", price: 19, image: "/placeholder.svg?height=720&width=1280", link: '', repo: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
 ]
 

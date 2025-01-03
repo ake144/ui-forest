@@ -1,4 +1,5 @@
 import ComponentsPage from "@/components/component/component-page";
+
 import { components } from "@/lib/data";
 
 // export async function generateStaticParams() {

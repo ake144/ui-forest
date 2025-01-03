@@ -47,14 +47,14 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 bg-primary rounded-lg flex items-center justify-center">
-              <div className="h-6 w-6 bg-background rounded" />
+            <div className="h-8 w-8   bg-purple-400 rounded-lg flex items-center justify-center">
+              <div className="h-6 w-6 bg-background rounded "  />
             </div>
-            <span className="font-bold text-xl">Ui Forest</span>
+            <span className="font-bold text-gray-50 text-xl">Ui Forest</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex text-gray-50 space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.name}

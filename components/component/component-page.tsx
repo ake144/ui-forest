@@ -19,6 +19,8 @@ import { MorphingSearchBar } from "./SearchBar";
 import { InteractiveTimeline } from "./InteractiveTimeLine";
 import { AnimatedSkillBars } from "./AnimatedSkillBars";
 import { AnimatedCardCarousel } from "./AnimatedCardCarousel";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 interface ComponentType {
     name: string;
@@ -55,11 +57,17 @@ const ComponentsPage = ({ component }: { component: ComponentType }) => {
                             <TabsTrigger value="examples">Examples</TabsTrigger>
                         </TabsList>
 
-                        <TabsContent value="preview" className="mt-8">
-                            <div className="rounded-lg border border-zinc-800 mt-[50px] bg-zinc-900/80 backdrop-blur-sm p-6">
+                        <TabsContent
+                            value="preview"
+                            className="mt-8 " 
+                            >
+                            <div
+                                className="rounded-lg border border-zinc-800 mt-[50px] mb-7 bg-zinc-900/80 backdrop-blur-sm p-6 max-h-full " // Constrain height and allow scrolling if needed
+                            >
                                 <ComponentPreview name={component.name as ComponentName} />
                             </div>
-                        </TabsContent>
+                            </TabsContent>
+
 
                         <TabsContent value="code" className="mt-6">
                             <div className="rounded-lg border border-zinc-800 bg-zinc-900/80 backdrop-blur-sm p-6">
@@ -109,7 +117,7 @@ const ComponentsPage = ({ component }: { component: ComponentType }) => {
 export default ComponentsPage;
 
 // Preview component logic can be added below
-type ComponentName = "Animated Hero" | "Floating CTA Banner" | "Product Carousel" | "Testimonial Slider" | "Pricing Calculator" | "Feature Comparison Table" | "Animated CTA" | "Animated Stats Counter" | "Newsletter Form" | "FAQ Accordion" | "Morphing Search Bar" | "Interactive Timeline" |  "Animated Card Carousel" | "Animated Skill Bars";
+type ComponentName = "Animated Hero" | "Floating CTA Banner" | "Product Carousel" | "Testimonial Slider" | "Pricing Calculator" | "Feature Comparison Table" | "Animated CTA" | "Animated Stats Counter" | "Newsletter Form" | "FAQ Accordion" | "Morphing Search Bar" | "Interactive Timeline" |  "Animated Card Carousel" | "Animated Skill Bars" | "Nav Bar" | "Footer";
 
 interface ComponentPreviewProps {
     name: ComponentName;
@@ -118,13 +126,15 @@ interface ComponentPreviewProps {
 const ComponentPreview: React.FC<ComponentPreviewProps> = ({ name }) => {
     const componentsMap: Record<ComponentName, JSX.Element> = {
         "Animated Hero": <AnimatedHero />,
+        "Nav Bar": <NavBar  />,
+        "Footer": <Footer />,
         "Floating CTA Banner": <FloatingCTABanner />,
         "Product Carousel": <ProductCarousel />,
         "Testimonial Slider": <TestimonialSlider />,
         "Animated CTA":<AnimatedCTA  />,
         "Animated Stats Counter": <AnimatedStatsCounter />,
-         "Newsletter Form": <NewsletterForm  />,
-         "FAQ Accordion": <FAQAccordion  />,
+        "Newsletter Form": <NewsletterForm  />,   
+        "FAQ Accordion": <FAQAccordion  />,
         "Pricing Calculator": <PricingCalculator  />,
         "Feature Comparison Table": <FeatureComparisonTable />,
         "Morphing Search Bar" : <MorphingSearchBar />,

@@ -10,7 +10,7 @@ import { TemplatesType } from '@/lib/types'
 
 
 
-export function FeaturedTemplateCard({ name, description, price, image, stack = [], viewMode }: TemplatesType & { viewMode: 'grid' | 'list' }) {
+export function FeaturedTemplateCard({ name, description, price, image, stack = [],link, repo,  viewMode }: TemplatesType & { viewMode: 'grid' | 'list' }) {
     return (
       <motion.div
         whileHover={{ y: -5 }}
@@ -43,10 +43,17 @@ export function FeaturedTemplateCard({ name, description, price, image, stack = 
                 ))}
               </div>
             </CardContent>
-            <CardFooter className="p-6 pt-0">
+            <CardFooter className="p-6 flex gap-4 flex-row pt-0">
+            <  Button className="w-full bg-zinc-800 text-white hover:bg-zinc-700" asChild>
+                <a href={link} className="flex items-center text-gray-50/50 justify-center gap-2">
+                  View Demo
+                  <ChevronRight className="h-4 w-4" />
+                </a>
+              </Button>
+              
               <Button className="w-full bg-zinc-800 text-white hover:bg-zinc-700" asChild>
-                <a href="#" className="flex items-center text-gray-50/50 justify-center gap-2">
-                  View Template
+                <a href={repo} className="flex items-center text-gray-50/50 justify-center gap-2">
+                  Get Template
                   <ChevronRight className="h-4 w-4" />
                 </a>
               </Button>
@@ -57,7 +64,7 @@ export function FeaturedTemplateCard({ name, description, price, image, stack = 
     )
   }
   
-  export function TemplateCard({ name, description, price, image, stack = [], link, buyLink, viewMode }: TemplatesType & { viewMode: 'grid' | 'list' }) {
+  export function TemplateCard({ name, description, price, image, stack = [], link, repo, viewMode }: TemplatesType & { viewMode: 'grid' | 'list' }) {
     return (
       <motion.div
         whileHover={{ y: -5 }}
@@ -95,7 +102,7 @@ export function FeaturedTemplateCard({ name, description, price, image, stack = 
                 <a href={link}>Demo</a>
               </Button>
               <Button className="flex-1 bg-zinc-800 hover:bg-zinc-700" asChild>
-                <a href={buyLink}>
+                <a href={repo}>
                   {price === 0 ? 'Download' : 'Purchase'}
                 </a>
               </Button>

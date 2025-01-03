@@ -14,6 +14,8 @@ const components = [
   { name: "Animated Skill Bars", description: "A component displaying skill levels with animated progress bars.", pro: false },
   { name: "Animated Stats Counter", description: "Eye-catching animated counters to display key statistics.", pro: false },
   { name: "FAQ Accordion", description: "An interactive accordion to present frequently asked questions.", pro: false },
+  { name: "Moder Nav Bar", description: "Eye-catching animated modern navabr.", pro: false },
+  { name: "Footer", description: "an attention-grabbing clear and concise footer page.", pro: false },
   { name: "Feature Comparison Table", description: "A clear and concise table to compare different product tiers.", pro: false },
   { name: "Floating CTA Banner", description: "An attention-grabbing call-to-action banner that appears after a delay.", pro: false },
   { name: "Interactive Timeline", description: "A timeline component with interactive dots, customizable styles, and animated transitions.", pro: false },

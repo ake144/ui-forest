@@ -13,6 +13,8 @@ import { Home, Package, Layers, Cpu, LayoutGrid, Search, ChevronDown, Menu } fro
 
 const components = [
   { name: "Animated Hero", icon: Cpu },
+  {name:"NavBar", icon:Layers},
+  { name: "Footer", icon: LayoutGrid },
   { name: "Floating CTA Banner", icon: Layers },
   { name: "Product Carousel", icon: LayoutGrid },
   { name: "Testimonial Slider", icon: Layers },

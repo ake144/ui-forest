@@ -7,7 +7,7 @@ export type TemplateType = {
   
   export type TemplatesType = TemplateType & {
     link: string;
-    buyLink: string;
+    repo: string;
     stack: string[];
   }
   
