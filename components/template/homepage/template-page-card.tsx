@@ -3,9 +3,10 @@
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card"
-import { CardSpotlight } from "../ui/card-spootlight"
+
 import Link from "next/link"
-import { Button } from "../ui/button"
+import { CardSpotlight } from "@/components/ui/card-spootlight"
+import { Button } from "@/components/ui/button"
 
 
 type TemplatesType = {

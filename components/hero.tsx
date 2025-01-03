@@ -51,7 +51,6 @@ export default function Hero() {
           >
             Transform your websites into professional masterpieces
             <br />
-            100x better
           </motion.h1>
 
           <motion.p
