@@ -1248,16 +1248,16 @@ export const featuredTemplates: TemplatesType[] = [
   {
     name: "Pro Dashboard",
     description: "A modern and responsive admin dashboard with dark mode support and comprehensive analytics.",
-    price: 79,
-    image: "/placeholder.svg?height=720&width=1280",
-    link: '#',
-    repo: '#',
+    price: 0,
+    image: "/",
+    link: 'https://dashboard-ui-forest.vercel.app/',
+    repo: 'https://github.com/ake144/dashboard',
     stack: ['Next.js', 'React', 'Tailwind CSS']
   },
   {
     name: "E-commerce Plus",
     description: "Complete e-commerce solution with cart, checkout, and inventory management.",
-    price: 99,
+    price: 5,
     image: "/e-commerce.png",
     link: 'https://e-commerce-plus-next.vercel.app/',
     repo: 'https://github.com/ake144/e-commerce',
@@ -1266,11 +1266,11 @@ export const featuredTemplates: TemplatesType[] = [
   {
     name: "Dashboard",
     description: "Modern admin dashboard with dark mode and real-time analytics.",
-    price: 49,
-    image: "/placeholder.svg?height=720&width=1280",
+    price: 0,
+    image: "/dashboard.png",
     link: '',
     repo: '',
-    stack: ['Next.js', 'React', 'NextAuth', 'Prisma', 'Supabase']
+    stack: ['Next.js', 'React', 'Rechart', 'Shadcn', 'Tailwind CSS']
   },
   {
     name: "SaaS Starter",
