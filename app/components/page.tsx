@@ -107,10 +107,10 @@ function ComponentCard({ name, description, pro }: { name: string; description: 
         <div className="flex items-center justify-between gap-4">
           <CardTitle className="text-lg text-white">{name}</CardTitle>
           {pro && (
-            <Badge variant="secondary" className="bg-zinc-800 text-zinc-300 gap-1">
+            <div className="bg-zinc-800 text-zinc-300 gap-1 flex items-center rounded px-2 py-1">
               <Lock className="h-3 w-3" />
-              Pro
-            </Badge>
+              <span>Pro</span>
+            </div>
           )}
         </div>
         <CardDescription className="line-clamp-2 text-sm text-zinc-400">
