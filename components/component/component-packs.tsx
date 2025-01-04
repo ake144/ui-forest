@@ -4,51 +4,9 @@
 import { ComponentCard } from "./component-card"
 import { motion } from "framer-motion"
 import { ExploreButton } from "../explorebutton"
+import { testComponentPacks } from "@/lib/data"
 
-const componentPacks = [
-  {
-    title: "Hero Sections",
-    description: "Modern, eye-catching hero sections",
-    imageUrl: "/hero.png",
-    count: 8,
-    price: 12,
-  },
-  {
-    title: "Logo Clouds",
-    description: "Animated logo clouds with micro-interactions",
-    imageUrl: "/placeholder.svg?height=300&width=400",
-    count: 3,
-    price: 10,
-  },
-  {
-    title: "Feature Sections",
-    description: "Versatile feature layouts including bento grids",
-    imageUrl: "/features.png",
-    count: 4,
-    price: 9,
-  },
-  {
-    title: "Bento Grids",
-    description: "Customizable, modern bento grid layouts",
-    imageUrl: "/bento.png",
-    count: 3,
-    price: 12,
-  },
-  {
-    title: "Blog Content",
-    description: "Stylish layouts for blog posts and articles",
-    imageUrl: "/blog-content.png",
-    count: 2,
-    price: 9,
-  },
-  {
-    title: "Blog Sections",
-    description: "Versatile blog section components",
-    imageUrl: "/blog.png",
-    count: 2,
-    price: 12,
-  },
-]
+
 
 export function ComponentPacks() {
   return (
@@ -76,7 +34,7 @@ export function ComponentPacks() {
 
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {componentPacks.map((pack, index) => (
+          {testComponentPacks.map((pack, index) => (
             <motion.div
               key={pack.title}
               initial={{ opacity: 0, y: 20 }}

@@ -1241,6 +1241,50 @@ return (
 
 
 
+export const testComponentPacks = [
+  {
+    title: "Hero Sections",
+    description: "Modern, eye-catching hero sections",
+    imageUrl: "/hero.png",
+    count: 8,
+    price: 0,
+  },
+  {
+    title: "Logo Clouds",
+    description: "Animated logo clouds with micro-interactions",
+    imageUrl: "/placeholder.svg?height=300&width=400",
+    count: 3,
+    price: 5,
+  },
+  {
+    title: "Feature Sections",
+    description: "Versatile feature layouts including bento grids",
+    imageUrl: "/features.png",
+    count: 4,
+    price: 0,
+  },
+  {
+    title: "Bento Grids",
+    description: "Customizable, modern bento grid layouts",
+    imageUrl: "/bento.png",
+    count: 3,
+    price: 2,
+  },
+  {
+    title: "Blog Content",
+    description: "Stylish layouts for blog posts and articles",
+    imageUrl: "/blog-content.png",
+    count: 2,
+    price: 0,
+  },
+  {
+    title: "Blog Sections",
+    description: "Versatile blog section components",
+    imageUrl: "/blog.png",
+    count: 2,
+    price: 0,
+  },
+]
 
 
 
@@ -1287,7 +1331,7 @@ export const allTemplates: TemplatesType[] = [
   {
     name: "Dashboard",
     description: "Modern admin dashboard with dark mode and real-time analytics.",
-    price: 49,
+    price: 4,
     image: "/placeholder.svg?height=720&width=1280",
     link: '',
     repo: '',
@@ -1296,16 +1340,16 @@ export const allTemplates: TemplatesType[] = [
   {
     name: "E-commerce",
     description: "Full-featured online store with product management and payments.",
-    price: 79,
+    price: 5,
     image: "/placeholder.svg?height=720&width=1280",
     link: '',
     repo: '',
     stack: ['Next.js', 'React', 'Stripe', 'Prisma', 'PostgreSQL']
   },
-  { name: "Blog", description: "Clean and minimal blog", price: 39, image: "/placeholder.svg?height=720&width=1280", link: '', repo: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
-  { name: "Portfolio", description: "Showcase your work", price: 29, image: "/placeholder.svg?height=720&width=1280", link: '', repo: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
-  { name: "Landing Page", description: "High-converting landing page", price: 59, image: "/placeholder.svg?height=720&width=1280", link: '', repo: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
-  { name: "SaaS Application", description: "Ready-to-use SaaS template", price: 99, image: "/placeholder.svg?height=720&width=1280", link: '', repo: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "Blog", description: "Clean and minimal blog", price:7, image: "/placeholder.svg?height=720&width=1280", link: '', repo: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "Portfolio", description: "Showcase your work", price: 20, image: "/placeholder.svg?height=720&width=1280", link: '', repo: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "Landing Page", description: "High-converting landing page", price: 14, image: "/placeholder.svg?height=720&width=1280", link: '', repo: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
+  { name: "SaaS Application", description: "Ready-to-use SaaS template", price: 4, image: "/placeholder.svg?height=720&width=1280", link: '', repo: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
   { name: "Personal Blog", description: "Minimalist personal blog", price: 0, image: "/placeholder.svg?height=720&width=1280", link: '', repo: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
   { name: "Startup Landing", description: "Modern startup landing page", price: 0, image: "/placeholder.svg?height=720&width=1280", link: '', repo: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },
   { name: "Restaurant Menu", description: "Digital menu for restaurants", price: 19, image: "/placeholder.svg?height=720&width=1280", link: '', repo: '', stack: ['nextjs', 'react', 'nextauth', 'prisma', 'supabase'] },

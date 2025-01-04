@@ -35,7 +35,7 @@ export function ComponentCard({ title, description, imageUrl, count, price }: Co
             <Badge variant="secondary" className="bg-zinc-800 text-white">
               {count} items
             </Badge>
-            <span className="text-sm font-bold text-white ml-12">${price}</span>
+            <span className="text-sm font-bold text-white ml-12"> {price===0 ? 'Free': `${price}`}</span>
           </CardItem>
             <CardItem translateZ="60" className="text-sm text-zinc-400 flex-grow">
               {description}
