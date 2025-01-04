@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 interface TemplateSectionProps {
   title: string
@@ -50,7 +51,7 @@ export function TemplateSection({
               </Button>
               
               <Button variant="outline" className="text-purple-400 border-purple-400 hover:bg-purple-400/10">
-                <span>Live Preview</span>
+                <span> <Link href='/template'>Live Preview</Link></span>
                 <svg
                   className="ml-2 h-4 w-4"
                   fill="none"
