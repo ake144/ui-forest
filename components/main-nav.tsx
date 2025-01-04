@@ -39,7 +39,8 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-background/80 backdrop-blur-sm shadow-sm" : "bg-background"
+        isScrolled ? "bg-background/80 backdrop-blur-sm shadow-sm" : "bg-background",
+        "md:pl-[200px]" // Add padding to account for the sidebar on larger screens
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

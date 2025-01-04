@@ -1,18 +1,22 @@
-import Navbar from "@/components/main-nav"
-import { Sidebar } from "@/components/sidebar"
+import { Inter } from 'next/font/google'
 
-export default function DashboardLayout({
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata = {
+  title: 'UI Forest Documentation',
+  description: 'Documentation for UI Forest components and templates',
+}
+
+export default function DocsLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <div className="flex h-screen bg-black text-white ">
-      <Sidebar />
-
-      <main className="flex-1  overflow-y-auto p-4">
-         <Navbar />
-        {children}</main>
+    <div className={inter.className}>
+      <main className="min-h-screen bg-black text-white">
+        {children}
+      </main>
     </div>
   )
 }

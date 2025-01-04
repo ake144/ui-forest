@@ -49,7 +49,7 @@ export function Sidebar() {
   return (
     <motion.div 
       className={cn(
-        "flex flex-col h-screen bg-zinc-900 text-white border-r border-zinc-800 overflow-hidden",
+        "flex flex-col z-100 h-screen bg-zinc-900 text-white border-r border-zinc-800 overflow-hidden",
         isOpen ? "items-start" : "items-center"
       )}
       initial="open"
@@ -61,19 +61,12 @@ export function Sidebar() {
         "flex items-center h-16 px-4 border-b border-zinc-800 w-full",
         isOpen ? "justify-between" : "justify-center"
       )}>
-        {isOpen && (
+        {/* {isOpen && (
           <Link href='/' className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
             Ui Forest
           </Link>
-        )}
-        <Button 
-          variant="ghost" 
-          size="icon"
-          onClick={() => setIsOpen(!isOpen)}
-          className="text-zinc-400 hover:text-white hover:bg-zinc-800"
-        >
-          <Menu className="h-5 w-5" />
-        </Button>
+        )} */}
+     
       </div>
 
       <ScrollArea className="flex-grow w-full">

@@ -1,114 +1,183 @@
 "use client"
 
-import { Copy } from 'lucide-react'
+import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+import { Input } from "@/components/ui/input"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Search, Book, Layers, Copy, Github } from 'lucide-react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from 'next/link'
 
 export default function DocsPage() {
+  const [searchQuery, setSearchQuery] = useState('')
+  const [activeTab, setActiveTab] = useState('components')
+
+  const components = [
+    { name: 'Button', description: 'A clickable button component with various styles.' },
+    { name: 'Card', description: 'A versatile card component for displaying content.' },
+    { name: 'Input', description: 'An input field for collecting user data.' },
+  ]
+
+  const templates = [
+    { name: 'Landing Page', description: 'A responsive landing page template.' },
+    { name: 'Dashboard', description: 'An admin dashboard template with various widgets.' },
+    { name: 'Blog', description: 'A clean and modern blog template.' },
+  ]
+
+  const filteredComponents = components.filter(c => 
+    c.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    c.description.toLowerCase().includes(searchQuery.toLowerCase())
+  )
+
+  const filteredTemplates = templates.filter(t => 
+    t.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    t.description.toLowerCase().includes(searchQuery.toLowerCase())
+  )
+
   return (
-    <div className="min-h-screen bg-black text-white">
-      <div className="relative">
-        {/* Purple Spotlight Effects */}
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-purple-500/20 rounded-full blur-[128px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[128px] pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 via-transparent to-blue-500/10 pointer-events-none" />
+    <div className="min-h-screen bg-black">
+      {/* Purple gradient spotlight effect */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 via-transparent to-blue-500/20 pointer-events-none" />
+      
+      <div className="container mx-auto px-4 py-12 relative">
+        <header className="text-center mb-24 mt-[100px] relative">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/30 rounded-full blur-[128px] pointer-events-none" />
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80"
+          >
+            UI Forest Documentation
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-xl text-zinc-400 mb-8 max-w-2xl mx-auto"
+          >
+            Explore our collection of modern, responsive UI components and templates
+            built with React, Next.js, and Tailwind CSS.
+          </motion.p>
+        </header>
 
-        <div className="relative max-w-4xl mx-auto px-6 py-16">
-          <div className="flex items-center gap-4 mb-2">
-            <span className="text-sm text-zinc-400">Docs</span>
-            <span className="text-sm text-zinc-600">/</span>
-            <span className="text-sm text-zinc-400">Next.js</span>
+        <section className="mb-16 relative">
+          <div className="flex justify-between items-center mb-8">
+            <div className="relative">
+              <Input
+                type="search"
+                placeholder="Search components and templates..."
+                className="w-64 bg-zinc-900/50 border-zinc-800 text-white placeholder-zinc-400 rounded-full"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-zinc-400 h-4 w-4" />
+            </div>
           </div>
-          <div className="mb-4">
-            <p className="text-zinc-400 mb-2 mt-5">
-              Note: We have the exact same installation process as <a href="https://ui.shadcn.com/docs/installation" className="text-purple-400 hover:text-purple-300">shadcn/ui</a>.
-            </p>
-          </div>
-          <h1 className="text-4xl font-bold mb-4">Next.js</h1>
-          <p className="text-xl text-zinc-400 mb-12">Install and configure Next.js.</p>
 
-          <div className="space-y-12">
-            <section>
-              <h2 className="text-2xl font-semibold mb-6" id="create-project">Create project</h2>
-              <p className="text-zinc-400 mb-4">
-                Run the <code className="px-2 py-1 rounded bg-zinc-800 text-sm">init</code> command to create a new Next.js project or to setup an existing one:
-              </p>
-              <div className="relative">
-                <pre className="bg-zinc-900 border border-zinc-800 rounded-lg p-4 overflow-x-auto">
-                  <code className="text-sm text-zinc-100">
-                    <span className="text-zinc-500">npx</span> shadcn@latest init
-                  </code>
-                </pre>
-                <Button 
-                  variant="ghost" 
-                  size="icon" 
-                  className="absolute right-2 top-2 text-zinc-400 hover:text-white"
-                  onClick={() => navigator.clipboard.writeText("npx shadcn@latest init")}
-                >
-                  <Copy className="h-4 w-4" />
-                </Button>
+          <Tabs defaultValue="components" className="w-full" onValueChange={(value) => setActiveTab(value)}>
+            <TabsList className="bg-zinc-900/50 border border-zinc-800/50 text-gray-100 backdrop-blur-sm w-fit mb-8">
+              <TabsTrigger value="components" className="data-[state=active]:bg-zinc-800">
+                <Book className="w-5 h-5 mr-2" />
+                Components
+              </TabsTrigger>
+              <TabsTrigger value="templates" className="data-[state=active]:bg-zinc-800">
+                <Layers className="w-5 h-5 mr-2" />
+                Templates
+              </TabsTrigger>
+            </TabsList>
+            
+            <TabsContent value="components">
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {filteredComponents.map((component) => (
+                  <Card key={component.name} className="bg-zinc-900/50 border-zinc-800/50 text-white">
+                    <CardHeader>
+                      <CardTitle>{component.name}</CardTitle>
+                      <CardDescription className="text-zinc-400">{component.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <Button variant="secondary" className="w-full mb-2">
+                        <Link href="/components/docs" className="flex items-center justify-center">
+                          <Book className="w-4 h-4 mr-2" />
+                          View Documentation
+                        </Link>
+                      </Button>
+                      <Button variant="outline" className="w-full">
+                        <Copy className="w-4 h-4 mr-2" />
+                        Copy Code
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
-              <div className="mt-4 p-4 border border-zinc-800 rounded-lg bg-zinc-900">
-                <p className="text-sm text-zinc-400">
-                  You can use the <code className="px-1.5 py-0.5 rounded bg-zinc-800 text-xs">-d</code> flag for defaults i.e <code className="px-1.5 py-0.5 rounded bg-zinc-800 text-xs">new-york</code>, <code className="px-1.5 py-0.5 rounded bg-zinc-800 text-xs">zinc</code> and <code className="px-1.5 py-0.5 rounded bg-zinc-800 text-xs">yes</code> for the css variables.
-                </p>
-                <div className="mt-2">
-                  <pre className="bg-zinc-950 rounded p-2 overflow-x-auto">
-                    <code className="text-sm text-zinc-100">
-                      <span className="text-zinc-500">npx</span> shadcn@latest init -d
-                    </code>
-                  </pre>
-                </div>
+              {filteredComponents.length === 0 && (
+                <p className="text-center text-zinc-400 mt-8">No components found matching your search.</p>
+              )}
+            </TabsContent>
+            
+            <TabsContent value="templates">
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                {filteredTemplates.map((template) => (
+                  <Card key={template.name} className="bg-zinc-900/50 border-zinc-800/50 text-white">
+                    <CardHeader>
+                      <CardTitle>{template.name}</CardTitle>
+                      <CardDescription className="text-zinc-400">{template.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <Button variant="secondary" className="w-full">
+                        <Link href="#" className="flex items-center justify-center">
+                          <Github className="w-4 h-4 mr-2" />
+                          Clone Repository
+                        </Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
-            </section>
+              {filteredTemplates.length === 0 && (
+                <p className="text-center text-zinc-400 mt-8">No templates found matching your search.</p>
+              )}
+            </TabsContent>
+          </Tabs>
+        </section>
 
-            <section>
-              <h2 className="text-2xl font-semibold mb-6" id="configure">Configure components.json</h2>
-              <p className="text-zinc-400 mb-4">
-                You will be asked a few questions to configure <code className="px-2 py-1 rounded bg-zinc-800 text-sm">components.json</code>:
-              </p>
-              <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-4">
-                <pre className="overflow-x-auto">
-                  <code className="text-sm text-zinc-100">
-                    {`Which style would you like to use? › New York
-Which color would you like to use as base color? › Zinc
-Where is your global CSS file? › app/globals.css
-Do you want to use CSS variables for colors? › yes
-Where is your tailwind.config.js located? › tailwind.config.js
-Configure the import alias for components? › @/components
-Configure the import alias for utils? › @/lib/utils
-Are you using React Server Components? › yes`}
-                  </code>
-                </pre>
-              </div>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold mb-6" id="thats-it">That's it!</h2>
-              <p className="text-zinc-400 mb-4">
-                You can now start adding components to your project. Run <code className="px-2 py-1 rounded bg-zinc-800 text-sm">add</code> to add components:
-              </p>
-              <div className="relative">
-                <pre className="bg-zinc-900 border border-zinc-800 rounded-lg p-4 overflow-x-auto">
-                  <code className="text-sm text-zinc-100">
-                    <span className="text-zinc-500">npx</span> shadcn@latest add button
-                  </code>
-                </pre>
-                <Button 
-                  variant="ghost" 
-                  size="icon" 
-                  className="absolute right-2 top-2 text-zinc-400 hover:text-white"
-                  onClick={() => navigator.clipboard.writeText("npx shadcn@latest add button")}
-                >
-                  <Copy className="h-4 w-4" />
-                </Button>
-              </div>
-
-                 <p className='mt-9 p-3 mx-5 '>For others frameworks visit <Link href='https://ui.shadcn.com/docs/installation'><span className='text-purple-600 p-1 '>here</span></Link></p>
-            </section>
-          </div>
-        </div>
+        <section className="mb-16">
+          <h2 className="text-3xl font-semibold text-white mb-4">Installation</h2>
+          <Card className="bg-zinc-900/50 border-zinc-800/50 text-white">
+            <CardContent className="pt-6">
+              {activeTab === 'components' ? (
+                <>
+                  <p className="mb-4 text-zinc-400">To use our components, simply copy the code and paste it into your project. Then customize as needed.</p>
+                  <p className="mb-4 text-zinc-400">For detailed documentation on each component, visit:</p>
+                  <code className="bg-zinc-800 px-2 py-1 rounded">/components/docs</code>
+                </>
+              ) : (
+                <>
+                  <p className="mb-4 text-zinc-400">To use our templates, follow these steps:</p>
+                  <ol className="list-decimal list-inside text-zinc-400">
+                    <li className="mb-2">Clone the repository:
+                      <br />
+                      <code className="bg-zinc-800 px-2 py-1 rounded">git clone https://github.com/ui-forest/templates.git</code>
+                    </li>
+                    <li className="mb-2">Navigate to the project directory:
+                      <br />
+                      <code className="bg-zinc-800 px-2 py-1 rounded">cd templates</code>
+                    </li>
+                    <li className="mb-2">Install dependencies:
+                      <br />
+                      <code className="bg-zinc-800 px-2 py-1 rounded">npm install</code>
+                    </li>
+                    <li className="mb-2">Start the development server:
+                      <br />
+                      <code className="bg-zinc-800 px-2 py-1 rounded">npm run dev</code>
+                    </li>
+                    <li>Open your browser and visit <code className="bg-zinc-800 px-2 py-1 rounded">http://localhost:3000</code></li>
+                  </ol>
+                </>
+              )}
+            </CardContent>
+          </Card>
+        </section>
       </div>
     </div>
   )
