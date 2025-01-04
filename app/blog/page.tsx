@@ -1,3 +1,4 @@
+import Navbar from '@/components/main-nav'
 import NewsletterSignup from '@/components/NewsletterSignup/NewsletterSignup'
 import { Metadata } from 'next'
 
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-black text-white p-4">
+      <Navbar />
       <div className="text-center">
         <h1 className="mb-6 text-5xl font-bold tracking-tight sm:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
           Blog Coming Soon
