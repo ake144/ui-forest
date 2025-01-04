@@ -19,8 +19,7 @@ const navItems = [
   { name: 'Templates', href: '/template' },
   { name: 'Components', href: '/components' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Pricing', href: '/pricing' },
-]
+ ]
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
