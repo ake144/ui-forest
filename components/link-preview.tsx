@@ -98,9 +98,11 @@ const CodePreview = () => {
 
   return (
     <div  className="mx-12 p-8 ">
-    <h1 className="text-6xl ml-6 font-bold">Customization made easy  <br/>
-      
-     <span   className="text-pink-500 to-fuchsia-600">Just Copy and Paste</span> </h1>
+      <h1 className="text-4xl md:text-6xl font-bold text-center mb-8">
+        Customization made easy
+        <br />
+        <span className="text-pink-500">Just Copy and Paste</span>
+      </h1>
     <div className="grid grid-cols-1 md:grid-cols-2 min-h-screen bg-black text-white h-screen">
      
         

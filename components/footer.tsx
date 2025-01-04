@@ -1,22 +1,22 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import { Github, Twitter, Mail } from 'lucide-react'
+import React from "react";
+import { motion } from "framer-motion";
+import { Github, Twitter, Mail } from "lucide-react";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { title: 'Product', links: ['Pricing', 'Downloads', 'Integrations', 'Features'] },
-    { title: 'Company', links: ['About', 'Careers', 'Press', 'News'] },
-    { title: 'Resources', links: ['Blog', 'Newsletter', 'Events', 'Help center'] },
-  ]
+    { title: "Product", links: ["Pricing", "Downloads", "Integrations", "Features"] },
+    { title: "Company", links: ["About", "Careers", "Press", "News"] },
+    { title: "Resources", links: ["Blog", "Newsletter", "Events", "Help center"] },
+  ];
 
   return (
     <footer className="bg-gradient-to-b from-black to-zinc-900 text-zinc-400 py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 items-center text-center md:text-left md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Section */}
           <div className="lg:col-span-2 space-y-6">
             <motion.div
@@ -25,13 +25,13 @@ const Footer = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-2xl font-bold text-white">Ui Forest</h2>
-              <p className="mt-2 text-sm">Your #1 choices for customized ui</p>
+              <p className="mt-2 text-sm">Your #1 choice for customized UI</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex items-center space-x-4"
+              className="flex justify-center md:justify-start items-center space-x-4"
             >
               <a
                 href="mailto:hi@cursor.com"
@@ -97,15 +97,14 @@ const Footer = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-12 pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center"
+          className="mt-12 pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-center md:justify-between items-center text-center"
         >
-          <p className="text-sm">© {currentYear} Ui-forest. All rights reserved.</p>
+          <p className="text-sm">© {currentYear} Ui Forest. All rights reserved.</p>
           <p className="text-sm mt-4 md:mt-0">Made with ❤️ by Akanji</p>
         </motion.div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
-
+export default Footer;
