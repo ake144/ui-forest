@@ -108,8 +108,11 @@ importers:
       '@types/node':
         specifier: ^20
         version: 20.17.11
+      '@types/react':
+        specifier: ^19.0.2
+        version: 19.0.2
       '@types/react-dom':
-        specifier: ^19
+        specifier: ^19.0.2
         version: 19.0.2(@types/react@19.0.2)
       '@types/react-syntax-highlighter':
         specifier: ^15.5.13
