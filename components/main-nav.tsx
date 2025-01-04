@@ -18,6 +18,7 @@ import { cn } from "@/lib/utils";
 const navItems = [
   { name: "Templates", href: "/template" },
   { name: "Components", href: "/components" },
+  { name: "Docs", href: "/docs" },
   { name: "Blog", href: "/blog" },
 ];
 
@@ -69,7 +70,7 @@ export default function Navbar() {
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 text-white w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>

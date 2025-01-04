@@ -1,3 +1,4 @@
+import Navbar from "@/components/main-nav";
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -14,9 +15,18 @@ export default function DocsLayout({
 }) {
   return (
     <div className={inter.className}>
-      <main className="min-h-screen bg-black text-white">
-        {children}
-      </main>
+      <div className="min-h-screen bg-black overflow-x-hidden relative">
+        {/* Base gradient background that covers the entire viewport */}
+        <div className="fixed inset-0 bg-gradient-to-tr from-purple-500/20 via-transparent to-blue-500/20 pointer-events-none" />
+        
+        {/* Purple spotlight effect that follows the content */}
+        <div className="fixed inset-0 bg-gradient-to-b from-purple-900/50 to-transparent pointer-events-none" />
+        
+        <Navbar />
+        <main className="relative pt-16">
+          {children}
+        </main>
+      </div>
     </div>
   )
 }

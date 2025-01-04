@@ -84,7 +84,7 @@ export function Sidebar() {
             </div>
           )}
 
-          <NavItem href="/docs" icon={Home} isOpen={isOpen}>Docs</NavItem>
+          <NavItem href="/components/docs" icon={Home} isOpen={isOpen}>Docs</NavItem>
         
           <div>
             <Button
