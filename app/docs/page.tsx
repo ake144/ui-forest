@@ -21,7 +21,7 @@ export default function DocsPage() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80"
+            className="text-2xl sm:text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80"
           >
             UI Forest Documentation
           </motion.h1>
@@ -29,7 +29,7 @@ export default function DocsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-zinc-400 mb-8 max-w-2xl mx-auto"
+            className="text-md md:text-xl text-zinc-400 mb-8 max-w-2xl mx-auto"
           >
             Your comprehensive guide to understanding and implementing our modern UI components
             and templates built with React, Next.js, and Tailwind CSS.
@@ -134,8 +134,8 @@ export default function DocsPage() {
                       Jump-start your projects with our professionally designed, fully functional website templates.
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div className="space-y-4 px-14 mb-4">
+                  <CardContent className="space-y-6 md:px-14 px-3">
+                    <div className="space-y-4  mb-4">
                       <h3 className="text-xl font-semibold text-white">Template Categories</h3>
                       <ul className="list-disc list-inside text-zinc-400 space-y-2">
                         <li>Landing Pages - Perfect for product launches and marketing</li>
@@ -146,7 +146,7 @@ export default function DocsPage() {
                       </ul>
                     </div>
 
-                    <div className="space-y-4 px-14">
+                    <div className="space-y-4 ">
                       <h3 className="text-xl font-semibold text-white">Template Benefits</h3>
                       <div className="text-zinc-400 space-y-2">
                         <p>Our templates provide numerous advantages:</p>
@@ -161,7 +161,7 @@ export default function DocsPage() {
                     </div>
 
 
-                    <div className="space-y-8 px-14">
+                    <div className="space-y-8 ">
                       <h3 className="text-2xl font-bold text-white">How to Use</h3>
                       <div className="text-zinc-300 space-y-6">
                         <p className="text-lg">Get started with our templates in just a few simple steps:</p>
@@ -188,7 +188,7 @@ export default function DocsPage() {
                       </div>
                     </div>
 
-                    <div className="space-y-4 px-14">
+                    <div className="space-y-4 ">
                       <h3 className="text-xl font-semibold text-white">Using Our Templates</h3>
                       <div className="text-zinc-400 space-y-4">
                         <p>Each template comes with:</p>

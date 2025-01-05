@@ -21,7 +21,7 @@ export default function TemplatesPage() {
   )
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen overflow-x-hidden bg-black">
       {/* Purple gradient spotlight effect */}
       <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 via-transparent to-blue-500/20 pointer-events-none" />
       
@@ -31,7 +31,7 @@ export default function TemplatesPage() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80"
+            className="text-2xl sm:text-4xl md:text-6xl  font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80"
           >
             Discover Our Cutting-Edge
             <br />
@@ -41,7 +41,7 @@ export default function TemplatesPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-zinc-400 mb-8 max-w-2xl mx-auto"
+            className="text-md md:text-xl text-zinc-400 mb-8 max-w-2xl mx-auto"
           >
             Explore our curated selection of modern, responsive website templates
             built with React, Next.js, and Tailwind CSS. Perfect for your next project.
@@ -51,7 +51,7 @@ export default function TemplatesPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex justify-center gap-8 mb-16"
+            className="flex justify-center gap-3 md:gap-8 mb-16"
           >
             <StatsCard label="Free Templates" value="4" />
             <StatsCard label="Premium Templates" value="14" />
@@ -61,13 +61,13 @@ export default function TemplatesPage() {
 
         <section className="mb-16 relative">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-3xl font-semibold text-white">Featured Templates</h2>
+            <h2 className="text-xl md:text-3xl font-semibold text-white">Featured Templates</h2>
             <div className="flex items-center gap-4">
               <div className="relative">
                 <Input
                   type="search"
                   placeholder="Search templates..."
-                  className="w-64 bg-zinc-900/50 border-zinc-800 text-white placeholder-zinc-400 rounded-full"
+                  className="w-40 md:w-64 bg-zinc-900/50 border-zinc-800 text-white placeholder-zinc-400 rounded-full"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
