@@ -44,17 +44,15 @@ export function FeaturedTemplateCard({ name, description, price, image, stack = 
               </div>
             </CardContent>
             <CardFooter className="p-6 flex gap-4 flex-row pt-0">
-            <  Button className="w-full bg-zinc-800 text-white hover:bg-zinc-700" asChild>
-                <a href={link} className="flex items-center text-gray-50/50 justify-center gap-2">
+            <Button variant="outline" className="flex-1 text-white" asChild>
+                <a href={link} className="flex items-center hover:text-gray-50 text-gray-50/50 justify-center gap-2">
                   View Demo
-                  <ChevronRight className="h-4 w-4" />
                 </a>
               </Button>
               
-              <Button className="w-full bg-zinc-800 text-white hover:bg-zinc-700" asChild>
+              <Button className="flex-1 bg-zinc-800 text-white hover:bg-zinc-700" asChild>
                 <a href={repo} className="flex items-center text-gray-50/50 justify-center gap-2">
                   Get Template
-                  <ChevronRight className="h-4 w-4" />
                 </a>
               </Button>
             </CardFooter>
@@ -98,10 +96,10 @@ export function FeaturedTemplateCard({ name, description, price, image, stack = 
               </div>
             </CardContent>
             <CardFooter className="p-6 pt-0 flex gap-4">
-              <Button variant="outline" className="flex-1" asChild>
+              <Button variant="outline" className="flex-1 text-white" asChild>
                 <a href={link}>Demo</a>
               </Button>
-              <Button className="flex-1 bg-zinc-800 hover:bg-zinc-700" asChild>
+              <Button className="flex-1 bg-zinc-800 text-white hover:bg-zinc-700" asChild>
                 <a href={repo}>
                   {price === 0 ? 'Download' : 'Purchase'}
                 </a>

@@ -1290,15 +1290,6 @@ export const testComponentPacks = [
 
 export const featuredTemplates: TemplatesType[] = [
   {
-    name: "Pro Dashboard",
-    description: "A modern and responsive admin dashboard with dark mode support and comprehensive analytics.",
-    price: 0,
-    image: "/",
-    link: 'https://dashboard-ui-forest.vercel.app/',
-    repo: 'https://github.com/ake144/dashboard',
-    stack: ['Next.js', 'React', 'Tailwind CSS']
-  },
-  {
     name: "E-commerce Plus",
     description: "Complete e-commerce solution with cart, checkout, and inventory management.",
     price: 5,
@@ -1321,10 +1312,19 @@ export const featuredTemplates: TemplatesType[] = [
     description: "A complete SaaS starter kit with user management, billing, and subscription features.",
     price: 0,
     image: "/saas.png",
-    link: 'next-saas-starter1.vercel.app',
+    link: 'https://next-saas-starter1.vercel.app/',
     repo: 'https://github.com/ake144/saas-starter',
     stack: ['Next.js', 'React', 'Tailwind CSS']
-  }
+  },
+  {
+    name: "Pro Dashboard",
+    description: "A modern and responsive admin dashboard with dark mode support and comprehensive analytics.",
+    price: 0,
+    image: "/",
+    link: 'https://dashboard-ui-forest.vercel.app/',
+    repo: 'https://github.com/ake144/dashboard',
+    stack: ['Next.js', 'React', 'Tailwind CSS']
+  },
 ]
 
 export const allTemplates: TemplatesType[] = [

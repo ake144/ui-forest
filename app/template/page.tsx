@@ -61,13 +61,13 @@ export default function TemplatesPage() {
 
         <section className="mb-16 relative">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-xl md:text-3xl font-semibold text-white">Featured Templates</h2>
+            <h2 className="hidden md:text-3xl font-semibold text-white">Featured Templates</h2>
             <div className="flex items-center gap-4">
               <div className="relative">
                 <Input
                   type="search"
                   placeholder="Search templates..."
-                  className="w-40 md:w-64 bg-zinc-900/50 border-zinc-800 text-white placeholder-zinc-400 rounded-full"
+                  className="w-64 bg-zinc-900/50 border-zinc-800 text-white placeholder-zinc-400 rounded-full"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
@@ -137,9 +137,9 @@ function StatsCard({ label, value }: { label: string; value: string }) {
   return (
     <motion.div 
       whileHover={{ y: -5 }}
-      className="px-8 py-4 rounded-xl bg-zinc-900/50 border border-zinc-800/50 backdrop-blur-sm"
+      className="md:px-8 px-2 py-4 rounded-xl bg-zinc-900/50 border border-zinc-800/50 backdrop-blur-sm"
     >
-      <div className="text-3xl font-bold text-white mb-1">{value}</div>
+      <div className="sm:text-xl text-md md:text-3xl font-bold text-white mb-1">{value}</div>
       <div className="text-sm text-zinc-400">{label}</div>
     </motion.div>
   )
