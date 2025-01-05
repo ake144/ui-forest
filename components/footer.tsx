@@ -34,13 +34,13 @@ const Footer = () => {
               className="flex justify-center md:justify-start items-center space-x-4"
             >
               <a
-                href="mailto:hi@cursor.com"
+                href="mailto:hi@ui-forest.com"
                 className="text-white hover:text-zinc-300 transition-colors duration-200"
               >
                 <Mail size={20} />
               </a>
               <a
-                href="https://twitter.com/cursor"
+                href="https://twitter.com/uiforest"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-zinc-300 transition-colors duration-200"
@@ -48,7 +48,7 @@ const Footer = () => {
                 <Twitter size={20} />
               </a>
               <a
-                href="https://github.com/cursor"
+                href="https://github.com/uiforest"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-zinc-300 transition-colors duration-200"
