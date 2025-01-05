@@ -49,7 +49,7 @@ export function Sidebar() {
   return (
     <motion.div 
       className={cn(
-        "flex flex-col z-100 h-screen bg-zinc-900 text-white border-r border-zinc-800 overflow-hidden",
+        "flex flex-col z-50 h-full bg-zinc-900 text-white border-r border-zinc-800 overflow-hidden",
         isOpen ? "items-start" : "items-center"
       )}
       initial="open"
