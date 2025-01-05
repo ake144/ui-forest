@@ -18,7 +18,8 @@ import { cn } from "@/lib/utils";
 const navItems = [
   { name: "Templates", href: "/template" },
   { name: "Components", href: "/components" },
-  { name: "Docs", href: "/docs" },
+  { name: "Docs", href: "/docs"},
+  {name:"Pricing", href:"/pricing"},
   { name: "Blog", href: "/blog" },
 ];
 
