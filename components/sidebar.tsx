@@ -16,7 +16,7 @@ const components = [
   {name:"NavBar", icon:Layers},
   { name: "Footer", icon: LayoutGrid },
   { name: "Floating CTA Banner", icon: Layers },
-  { name: "Product Carousel", icon: LayoutGrid },
+  // { name: "Product Carousel", icon: LayoutGrid },
   { name: "Testimonial Slider", icon: Layers },
   { name: "Feature Comparison Table", icon: LayoutGrid },
   { name: "Animated Stats Counter", icon: Cpu },
@@ -26,7 +26,7 @@ const components = [
   { name: "Morphing Search Bar", icon: Search },
   { name: "Interactive Timeline", icon: LayoutGrid },
   { name: "Animated Skill Bars", icon: Cpu },
-  { name: "Animated Card Carousel", icon: Cpu },
+  // { name: "Animated Card Carousel", icon: Cpu },
  ]
 
  
