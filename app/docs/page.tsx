@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Book, Layers, ArrowRight } from 'lucide-react'
+import { Book, Layers, ArrowRight, Terminal } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from 'next/link'
 
@@ -38,28 +38,28 @@ export default function DocsPage() {
 
         <section className="mb-16 relative">
           <Tabs defaultValue="components" className="w-full" onValueChange={(value) => setActiveTab(value)}>
-            <TabsList className="bg-zinc-900/50 border border-zinc-800/50 text-gray-100 backdrop-blur-sm w-fit mb-8">
-              <TabsTrigger value="components" className="data-[state=active]:bg-zinc-800">
+           <TabsList className="bg-zinc-900/50 border border-zinc-800/50 text-gray-100 backdrop-blur-sm w-fit mb-8 p-1 rounded-full">
+              <TabsTrigger value="components" className="data-[state=active]:bg-purple-600 data-[state=active]:text-white px-6 py-2 rounded-full transition-colors">
                 <Book className="w-5 h-5 mr-2" />
                 Components
               </TabsTrigger>
-              <TabsTrigger value="templates" className="data-[state=active]:bg-zinc-800">
+              <TabsTrigger value="templates" className="data-[state=active]:bg-purple-600 data-[state=active]:text-white px-6 py-2 rounded-full transition-colors">
                 <Layers className="w-5 h-5 mr-2" />
                 Templates
               </TabsTrigger>
-            </TabsList>
+             </TabsList>
             
             <TabsContent value="components">
-              <div className="grid gap-8">
+              <div className="grid gap-12">
                 <Card className="bg-zinc-900/50 border-zinc-800/50 text-white">
-                  <CardHeader>
+                  <CardHeader className='px-14'>
                     <CardTitle className="text-2xl">What are UI Forest Components?</CardTitle>
                     <CardDescription className="text-zinc-400 text-lg">
                       Our components are carefully crafted, reusable UI elements that help you build consistent and beautiful interfaces.
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div className="space-y-4">
+                  <CardContent className="space-y- px-14">
+                    <div className="space-y-4 mb-7">
                       <h3 className="text-xl font-semibold text-white">Key Features</h3>
                       <ul className="list-disc list-inside text-zinc-400 space-y-2">
                         <li>Built with React and Next.js for optimal performance</li>
@@ -83,7 +83,7 @@ export default function DocsPage() {
                       </div>
                     </div>
 
-                    <div className="space-y-4">
+                    <div className="space-y-4 my-8">
                       <h3 className="text-xl font-semibold text-white">How to Use</h3>
                       <div className="text-zinc-400 space-y-4">
                         <p>To use our components just follow this simple steps</p>
@@ -102,7 +102,7 @@ export default function DocsPage() {
                       </Button>
                     </div>
 
-                    <div className="space-y-4">
+                    <div className="space-y-7 ">
                       <h3 className="text-xl font-semibold text-white">Getting Started</h3>
                       <div className="text-zinc-400 space-y-4">
                         <p>To start using our components, visit our components page where you can:</p>
@@ -128,14 +128,14 @@ export default function DocsPage() {
             <TabsContent value="templates">
               <div className="grid gap-8">
                 <Card className="bg-zinc-900/50 border-zinc-800/50 text-white">
-                  <CardHeader>
+                  <CardHeader className='px-14'>
                     <CardTitle className="text-2xl">About Our Templates</CardTitle>
                     <CardDescription className="text-zinc-400 text-lg">
                       Jump-start your projects with our professionally designed, fully functional website templates.
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-6">
-                    <div className="space-y-4">
+                    <div className="space-y-4 px-14 mb-4">
                       <h3 className="text-xl font-semibold text-white">Template Categories</h3>
                       <ul className="list-disc list-inside text-zinc-400 space-y-2">
                         <li>Landing Pages - Perfect for product launches and marketing</li>
@@ -146,7 +146,7 @@ export default function DocsPage() {
                       </ul>
                     </div>
 
-                    <div className="space-y-4">
+                    <div className="space-y-4 px-14">
                       <h3 className="text-xl font-semibold text-white">Template Benefits</h3>
                       <div className="text-zinc-400 space-y-2">
                         <p>Our templates provide numerous advantages:</p>
@@ -161,36 +161,34 @@ export default function DocsPage() {
                     </div>
 
 
-                <div className="space-y-4">
-                      <h3 className="text-xl font-semibold text-white">How to Use</h3>
-                      <div className="text-zinc-400 space-y-4">
-                        <p>To use our templates, follow these steps:</p>
-                        <ol className="list-decimal list-inside text-zinc-200">
-                            <li className="mb-2">Clone the repository:
-                            <br />
-                            <code className="bg-zinc-600 px-2 py-1 rounded">git clone https://github.com/ake144/ui-forest.git</code>
-                            </li>
-                            <li className="mb-2">Navigate to the project directory:
-                            <br />
-                            <code className="bg-zinc-600 px-2 py-1 rounded">cd ui-forest</code>
-                            </li>
-                            <li className="mb-2">Install dependencies:
-                            <br />
-                            <code className="bg-zinc-600 px-2 py-1 rounded">npm install</code>
-                            </li>
-                            <li className="mb-2">Start the development server:
-                            <br />
-                            <code className="bg-zinc-600 px-2 py-1 rounded">npm run dev</code>
-                            </li>
-                            <li>Open your browser and visit <code className="bg-zinc-600 px-2 py-1 rounded">
-                                http://localhost:3000</code>
-                                
-                            </li>
-                        </ol>
+                    <div className="space-y-8 px-14">
+                      <h3 className="text-2xl font-bold text-white">How to Use</h3>
+                      <div className="text-zinc-300 space-y-6">
+                        <p className="text-lg">Get started with our templates in just a few simple steps:</p>
+                        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                          {[
+                            { step: 1, title: "Clone Repository", code: "git clone https://github.com/ake144/ui-forest.git" },
+                            { step: 2, title: "Navigate to Project", code: "cd ui-forest" },
+                            { step: 3, title: "Install Dependencies", code: "npm install" },
+                            { step: 4, title: "Start Dev Server", code: "npm run dev" },
+                            { step: 5, title: "Open in Browser", code: "http://localhost:3000" },
+                          ].map((item) => (
+                            <div key={item.step} className="bg-zinc-800/50 rounded-lg p-6 border border-zinc-700/50 hover:border-purple-500/50 transition-colors">
+                              <div className="text-purple-400 font-bold mb-2">Step {item.step}</div>
+                              <h4 className="text-lg font-semibold text-white mb-3">{item.title}</h4>
+                              <div className="relative">
+                                <Terminal className="absolute top-3 left-3 text-zinc-500" size={16} />
+                                <code className="block bg-black/50 text-indigo-400 font-mono p-3 pl-8 rounded text-sm overflow-x-auto">
+                                  {item.code}
+                                </code>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
 
-                    <div className="space-y-4">
+                    <div className="space-y-4 px-14">
                       <h3 className="text-xl font-semibold text-white">Using Our Templates</h3>
                       <div className="text-zinc-400 space-y-4">
                         <p>Each template comes with:</p>
@@ -215,10 +213,10 @@ export default function DocsPage() {
           </Tabs>
         </section>
 
-        <section className="mb-16">
-          <h2 className="text-3xl font-semibold text-white mb-4">Getting Support</h2>
+        <section className="mb-16 ">
+          <h2 className="text-3xl font-semibold text-white mx-14  mb-4">Getting Support</h2>
           <Card className="bg-zinc-900/50 border-zinc-800/50 text-white">
-            <CardContent className="pt-6 space-y-4">
+            <CardContent className="pt-6 space-y-4 px-14">
               <p className="text-zinc-400">
                 We're here to help you make the most of our components and templates. Here's how you can get support:
               </p>
