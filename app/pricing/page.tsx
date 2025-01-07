@@ -68,13 +68,14 @@ export default function PricingPage() {
             <p className="text-zinc-400 mb-4">
               Join thousands of developers and designers who trust UI Forest for their projects
             </p>
+            <Link href='t.me/AkeTame'>
             <Button 
                 variant="outline" 
                 className="w-full border-purple-800 hover:text-md sm:w-auto"
                 >
                 Purchase
                 </Button>
-
+           </Link>
           </CardFooter>
         </Card>
       </div>
