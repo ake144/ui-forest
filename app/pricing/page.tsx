@@ -75,12 +75,11 @@ export default function PricingPage() {
                   href="https://uiforest.gumroad.com/l/wrfiea"
                 
               >
-                  <Button
-                       variant="outline" 
-                    className="w-full border border-purple-800 hover:text-md sm:w-auto inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-purple-800 hover:bg-purple-100">
+                  <Button variant="outline" 
+             className="w-full border border-purple-800 hover:text-md sm:w-auto inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-purple-800 hover:bg-purple-100">
                       Purchase
                  </Button>
-              </Lik>
+              </Link>
 
           </CardFooter>
         </Card>
