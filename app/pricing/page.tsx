@@ -46,7 +46,7 @@ export default function PricingPage() {
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="text-center">
-              <span className="md:text-5xl sm:text-2xl text-xl font-bold">$299</span>
+              <span className="md:text-5xl sm:text-2xl text-xl font-bold">$200</span>
               <span className="text-zinc-400 ml-2">one-time payment</span>
             </div>
             <Button className="w-full text-lg py-6" size="lg">
