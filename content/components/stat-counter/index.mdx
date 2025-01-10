@@ -1,3 +1,25 @@
+
+### MDX for Morphing Search Bar
+
+```mdx
+---
+slug: "animated-stats-counter"
+name: "Animated Stats Counter"
+description: "A dynamic Animated Stats Counter with configurable options."
+pro: false
+---
+
+
+import { MorphingSearchBar } from "@/components/ui/morphing-search-bar";
+
+## Morphing Search Bar Component
+
+A morphing search bar with dynamic expansion, customizable styles, and integrated search functionality.
+
+<MorphingSearchBar onSearch={(query) => console.log(query)} />
+
+#### Code
+```jsx
 "use client"
 
 import { useState, useEffect, useRef } from 'react'
@@ -56,4 +78,3 @@ export function AnimatedStatsCounter() {
     </div>
   )
 }
-

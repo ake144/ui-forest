@@ -1,4 +1,6 @@
 "use client";
+
+
 import { useScroll, useTransform } from "framer-motion";
 import React from "react";
 import { GoogleGeminiEffect } from "./ui/google-gemini-effect";
@@ -6,7 +8,7 @@ import { LampContainer } from "./ui/lamp";
 import { motion } from "framer-motion";
 
 
-export function BuildText() {
+export default function BuildText() {
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,

@@ -12,7 +12,8 @@ interface TemplateSectionProps {
   price: number
   image: string
   techStack: Array<{ icon: string; label: string }>
-  isActive: boolean
+  isActive: boolean,
+  link:string;
 }
 
 export function TemplateSection({ 
@@ -21,6 +22,7 @@ export function TemplateSection({
   price, 
   image, 
   techStack,
+  link,
   isActive
 }: TemplateSectionProps) {
   return (
@@ -51,7 +53,7 @@ export function TemplateSection({
               </Button>
               
               <Button variant="outline" className="text-purple-400 border-purple-400 hover:bg-purple-400/10">
-                <span> <Link href='/template'>Live Preview</Link></span>
+                <span> <Link href={link}>Live Preview</Link></span>
                 <svg
                   className="ml-2 h-4 w-4"
                   fill="none"

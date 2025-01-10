@@ -1,0 +1,75 @@
+---
+slug: "progress-bar"
+name: "Animated Skill Bars"
+description: "A component displaying skill levels with animated progress bars."
+pro: false
+---
+
+import { AnimatedSkillBars } from "@/components/ui/animated-skill-bars";
+
+## Animated Skill Bars Component
+
+A visually appealing skill bar component with smooth animations to showcase expertise levels dynamically.
+
+<AnimatedSkillBars
+  skills={[
+    { name: "JavaScript", level: 90, color: "#f7df1e" },
+    { name: "React", level: 85, color: "#61dafb" },
+    { name: "CSS", level: 80, color: "#264de4" },
+  ]}
+/>
+
+#### Code
+
+```jsx
+"use client";
+
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+interface Skill {
+  name: string;
+  level: number;
+  color: string;
+}
+
+interface AnimatedSkillBarsProps {
+  skills: Skill[];
+  barHeight?: string;
+  animationDuration?: number;
+}
+
+export function AnimatedSkillBars({
+  skills,
+  barHeight = "h-6",
+  animationDuration = 1,
+}: AnimatedSkillBarsProps) {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div className="w-full max-w-md mx-auto space-y-4">
+      {skills.map((skill, index) => (
+        <div key={index} className="relative">
+          <div className="flex justify-between mb-1">
+            <span className="text-sm font-medium">{skill.name}</span>
+            <span className="text-sm font-medium">{skill.level}%</span>
+          </div>
+          <div className={`w-full bg-gray-200 rounded-full ${barHeight} overflow-hidden`}>
+            <motion.div
+              className={`${barHeight} rounded-full`}
+              style={{ backgroundColor: skill.color }}
+              initial={{ width: 0 }}
+              animate={isVisible ? { width: `${skill.level}%` } : { width: 0 }}
+              transition={{ duration: animationDuration, delay: index * 0.2 }}
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}

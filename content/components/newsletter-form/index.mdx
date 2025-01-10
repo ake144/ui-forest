@@ -1,0 +1,57 @@
+---
+slug: "newsletter-form"
+name: "Newsletter Form"
+description: "A form for subscribing to newsletters with validation and animations."
+pro: false
+---
+
+import { NewsletterForm } from "@/components/ui/newsletter-form";
+
+## Newsletter Form Component
+
+A dynamic newsletter subscription form with email validation and success/error feedback.
+
+<NewsletterForm />
+
+#### Code
+
+```jsx
+"use client";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Check, AlertCircle } from "lucide-react";
+
+export function NewsletterForm() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("idle");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    setTimeout(() => {
+      if (email.includes("@")) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    }, 1500);
+  };
+
+  return (
+    <div className="bg-gradient-to-r from-purple-600 to-blue-600 py-16">
+      <div className="max-w-3xl mx-auto px-4">
+        <h2 className="text-3xl font-bold text-white text-center mb-8">Stay Updated with Our Newsletter</h2>
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
+          <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" className="flex-grow" disabled={status !== "idle"} />
+          <Button type="submit" disabled={status !== "idle"}>{status === "loading" ? "Subscribing..." : "Subscribe"}</Button>
+        </form>
+        {status === "success" && <motion.p className="mt-4 text-green-300">Successfully subscribed!</motion.p>}
+        {status === "error" && <motion.p className="mt-4 text-red-300">Please enter a valid email address.</motion.p>}
+      </div>
+    </div>
+  );
+}

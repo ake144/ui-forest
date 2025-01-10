@@ -8,7 +8,7 @@ import { testComponentPacks } from "@/lib/data"
 
 
 
-export function ComponentPacks() {
+export default function ComponentPacks() {
   return (
     <section className="bg-gradient-to-b from-black to-zinc-900 py-24">
       <div className="container mx-auto px-4">

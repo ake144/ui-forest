@@ -72,7 +72,7 @@ const ReviewCard = ({
   )
 }
 
-export function Testimonials() {
+export default function Testimonials() {
   const rows = [
     reviews.slice(0, Math.ceil(reviews.length / 3)),
     reviews.slice(Math.ceil(reviews.length / 3), Math.ceil((2 * reviews.length) / 3)),

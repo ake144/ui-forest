@@ -1,0 +1,59 @@
+---
+slug: "faq-accordion"
+name: "FAQ Accordion"
+description: "An interactive accordion to present frequently asked questions."
+pro: false
+---
+
+import { FAQAccordion } from "@/components/ui/faq-accordion";
+
+## FAQ Accordion Component
+
+An interactive accordion to present frequently asked questions with smooth animations.
+
+<FAQAccordion />
+
+#### Code
+
+```jsx
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+
+const faqs = [
+  { question: "How do I place an order?", answer: "To place an order, simply browse our products..." },
+  { question: "What payment methods do you accept?", answer: "We accept major credit cards..." },
+  { question: "How long does shipping take?", answer: "Shipping times vary depending on your location..." },
+  { question: "What is your return policy?", answer: "We offer a 30-day return policy for most items..." },
+];
+
+export function FAQAccordion() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  return (
+    <div className="py-16 bg-gray-50">
+      <div className="max-w-3xl mx-auto px-4">
+        <h2 className="text-3xl text-gray-700 font-bold text-center mb-8">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          {faqs.map((faq, index) => (
+            <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
+              <button className="flex justify-between w-full p-4 text-left bg-white hover:bg-gray-50" onClick={() => setActiveIndex(activeIndex === index ? null : index)}>
+                <span className="text-lg text-gray-600">{faq.question}</span>
+                <ChevronDown className={`w-5 h-5 transform transition-transform ${activeIndex === index ? "rotate-180" : ""}`} />
+              </button>
+              <AnimatePresence initial={false}>
+                {activeIndex === index && (
+                  <motion.div initial="collapsed" animate="open" exit="collapsed" variants={{ open: { opacity: 1, height: "auto" }, collapsed: { opacity: 0, height: 0 } }} transition={{ duration: 0.3 }}>
+                    <div className="p-4 bg-gray-50">{faq.answer}</div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}

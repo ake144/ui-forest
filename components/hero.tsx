@@ -76,13 +76,13 @@ export default function Hero() {
               {/* Browse Components Button */}
               <a
                 href="/components"
-                className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium text-white transition-all bg-black rounded-lg shadow-lg group"
+                className="relative  inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium text-white transition-all bg-black rounded-lg shadow-lg group"
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-purple-500 group-hover:opacity-50"></span>
                 <span className="absolute right-0 w-8 h-32 -translate-x-12 translate-y-3 rotate-12 bg-white opacity-10"></span>
                 <span className="relative">Browse Components</span>
                 <svg
-                  className="w-5 h-5 ml-2 text-white"
+                  className="md:w-5 w-3  md:h-5 h-3  md:ml-2 ml-1 text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -101,7 +101,7 @@ export default function Hero() {
                 <span className="absolute right-0 w-8 h-32 -translate-x-12 translate-y-3 rotate-12 bg-black opacity-5"></span>
                 <span className="relative">Browse Templates</span>
                 <svg
-                  className="w-5 h-5 ml-2 text-black"
+                  className="md:w-5 w-3  md:h-5 h-3 ml-2 text-black"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"

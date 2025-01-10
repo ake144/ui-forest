@@ -103,12 +103,12 @@ const CodePreview = () => {
         <br />
         <span className="text-pink-500">Just Copy and Paste</span>
       </h1>
-    <div className="grid grid-cols-1 md:grid-cols-2 min-h-screen bg-black text-white h-screen">
+    <div className="grid grid-cols-1 gap-7 md:gap-0 md:grid-cols-2 min-h-screen bg-black text-white h-screen">
      
         
      
       {/* Left Side: Code */}
-      <div className="p-6 overflow-auto">
+      <div className="md:p-6   overflow-auto">
         <h2 className="text-2xl mb-4 font-bold">Code</h2>
         <SyntaxHighlighter
           language="javascript"
@@ -131,6 +131,8 @@ const CodePreview = () => {
           Celebrate!
         </button>
       </div>
+
+      
     </div>
     </div>
   );

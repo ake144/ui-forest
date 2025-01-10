@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { ArrowRight, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -12,8 +12,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { cn } from "@/lib/utils";
+import { ModernButton } from "./button";
 
 const navItems = [
   { name: "Templates", href: "/template" },
@@ -95,12 +95,13 @@ export default function Navbar() {
 
           {/* Sign-In/Sign-Out */}
           <div className="hidden md:flex text-gray-50 items-center space-x-4">
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
+             <Link href='/template'>
+        
+                  <ModernButton>
+                     Start Now
+                  </ModernButton>
+             </Link>
+             
           </div>
         </div>
       </div>

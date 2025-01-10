@@ -9,6 +9,8 @@ import {  Search,  Grid, List } from 'lucide-react'
 import { cn } from "@/lib/utils"
 import { allTemplates, featuredTemplates } from '@/lib/data'
 import { FeaturedTemplateCard, TemplateCard } from '@/components/template/templates-page-card'
+import { ContactWidget } from '@/components/component-widget'
+
 
 
 export default function TemplatesPage() {
@@ -128,6 +130,8 @@ export default function TemplatesPage() {
             </TabsContent>
           </Tabs>
         </section>
+
+        <ContactWidget  />
       </div>
     </div>
   )

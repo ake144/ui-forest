@@ -339,8 +339,8 @@ export function FloatingCTABanner() {
       ]
   },
   {
-      slug: 'product-carousel',
-      name: "Product Carousel",
+      slug: 'button',
+      name: "Button",
       description: "A sleek product showcase with smooth transitions between items.",
       pro: false,
       code: `"use client"
@@ -1289,22 +1289,32 @@ export const testComponentPacks = [
 
 
 export const featuredTemplates: TemplatesType[] = [
+  
+  {
+    name: "SuperCharge your app",
+    description: "A professional faster, scale smarter platform designed for solo developers and enterprises. Build powerful content management systems with our SDK wrapper and extensive customization options.",
+    price: 15,
+    image: "/supercharge.png",
+    stack: ['Next.js', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
+    repo:"/",
+    link:'https://supercharge1.vercel.app'
+  },
   {
     name: "E-commerce Plus",
     description: "Complete e-commerce solution with cart, checkout, and inventory management.",
-    price: 5,
+    price: 14,
     image: "/e-commerce.png",
     link: 'https://e-commerce-plus-next.vercel.app/',
-    repo: 'https://github.com/ake144/e-commerce',
-    stack: ['Next.js', 'React','Wix', 'Tailwind CSS']
+    repo: 'https://uiforest.gumroad.com/l/uiforest-e-commerce',
+    stack: ['Next.js', 'React','Wix', 'Tailwind CSS', 'api']
   },
   {
     name: "Dashboard",
     description: "Modern admin dashboard with dark mode and real-time analytics.",
     price: 0,
     image: "/dashboard.png",
-    link: '',
-    repo: '',
+    link: 'https://dashboard-ui-forest.vercel.app/',
+    repo: 'https://github.com/ake144/dashboard',
     stack: ['Next.js', 'React', 'Rechart', 'Shadcn', 'Tailwind CSS']
   },
   {
@@ -1317,17 +1327,27 @@ export const featuredTemplates: TemplatesType[] = [
     stack: ['Next.js', 'React', 'Tailwind CSS']
   },
   {
-    name: "Pro Dashboard",
-    description: "A modern and responsive admin dashboard with dark mode support and comprehensive analytics.",
+    name: "Personal Portfolio",
+    description: "A modern and responsive portfolio template for showcasing your work.",
     price: 0,
-    image: "/",
-    link: 'https://dashboard-ui-forest.vercel.app/',
-    repo: 'https://github.com/ake144/dashboard',
-    stack: ['Next.js', 'React', 'Tailwind CSS']
+    image: "/portfolio1.png",
+    link: 'https://akanji-dev.vercel.app/',
+    repo: 'https://github.com/ake144/portfolio-project',
+    stack: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion']
   },
+ 
 ]
 
 export const allTemplates: TemplatesType[] = [
+  {
+    name: "SuperCharge your app",
+    description: "A professional faster, scale smarter platform designed for solo developers and enterprises. Build powerful content management systems with our SDK wrapper and extensive customization options.",
+    price: 15,
+    image: "/supercharge.png",
+    stack: ['Next.js', 'React', 'NextAuth', 'Prisma', 'Supabase'],
+    repo:"/",
+    link:'https://supercharge1.vercel.app'
+  },
   {
     name: "Dashboard",
     description: "Modern admin dashboard with dark mode and real-time analytics.",

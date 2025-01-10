@@ -12,7 +12,7 @@ export function SiteHeader() {
         {/* Logo Section */}
         <div className="flex items-center space-x-3">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="font-bold text-white text-lg md:text-xl">UIFOREST</span>
+            <span className="font-bold text-white text-lg md:text-xl">UI-FOREST</span>
             <Badge variant="secondary" className="rounded-sm px-1 font-normal">
               Beta
             </Badge>

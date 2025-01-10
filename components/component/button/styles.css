@@ -1,0 +1,48 @@
+.group {
+    position: relative;
+  }
+  
+  .group:hover .absolute {
+    opacity: 1;
+  }
+  
+  .bg-gradient-to-r {
+    background: linear-gradient(to right, #FF3BFF, #ECBFBF, #5C24FF);
+  }
+  
+  .bg-clip-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  
+  .bg-dark {
+    background-color: rgba(26, 23, 39, 0.5);
+  }
+  
+  .border-purple-500-10 {
+    border: 1px solid rgba(128, 0, 128, 0.1);
+  }
+  
+  .border-purple-500-30:hover {
+    border-color: rgba(128, 0, 128, 0.3);
+  }
+  
+  .text-transparent {
+    color: transparent;
+  }
+  
+  .transition-all {
+    transition: all 0.3s ease;
+  }
+  
+  .duration-300 {
+    transition-duration: 300ms;
+  }
+  
+  .focus\:ring-2:focus {
+    ring-width: 2px;
+  }
+  
+  .focus\:ring-purple-500-20:focus {
+    ring-color: rgba(128, 0, 128, 0.2);
+  }

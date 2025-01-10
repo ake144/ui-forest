@@ -1,22 +1,30 @@
 'use client'
 
 
-import {Testimonials} from "@/components/testimonials"
-
-import Footer from "@/components/footer"
+import dynamic from "next/dynamic"
+// import {Testimonials} from "@/components/testimonials"
+// import Footer from "@/components/footer"
 import { motion } from "framer-motion"
-import Hero from "@/components/hero"
-import { H1Text } from "@/components/texth1"
+// import Hero from "@/components/hero"
+// import { H1Text } from "@/components/texth1"
 
-import { BuildText } from "@/components/buildwith"
+// import { BuildText } from "@/components/buildwith"
 // import { TemplateShowcase } from "@/components/slides"
-import { ComponentPacks } from "@/components/component/component-packs"
+// import { ComponentPacks } from "@/components/component/component-packs"
+// import Navbar from "@/components/main-nav"
 
-import Navbar from "@/components/main-nav"
-import CodePreview from "@/components/link-preview"
+import CodePreview from "@/components/code-preview"
 import { Spotlight } from "@/components/ui/Spotlight"
 import { ExploreButton } from "@/components/explorebutton"
 import { TemplatesShowcase } from "@/components/template/homepage/template-showcase"
+TemplatesShowcase
+const Navbar = dynamic(()=> import("@/components/main-nav"), {ssr:false})
+const Footer = dynamic(()=> import("@/components/footer"), {ssr:false})
+const Hero = dynamic(()=> import("@/components/hero"), {ssr:false})
+const BuildText  = dynamic(()=> import("@/components/buildwith"), {ssr:false})
+const H1Text = dynamic(()=> import("@/components/texth1"), {ssr:false})
+const Testimonials = dynamic(()=>import("@/components/testimonials"),{ssr:false})
+const ComponentPacks = dynamic(()=>import("@/components/component/component-packs"),{ssr:false})
 
 
 

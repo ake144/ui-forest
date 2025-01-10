@@ -34,7 +34,7 @@ const Footer = () => {
               className="flex justify-center md:justify-start items-center space-x-4"
             >
               <a
-                href="mailto:hi@ui-forest.com"
+                href="mailto:tamiratake@gmail.com"
                 className="text-white hover:text-zinc-300 transition-colors duration-200"
               >
                 <Mail size={20} />

@@ -1,0 +1,99 @@
+---
+name: Button
+description: Interactive buttons with multiple variants for various use cases.
+pro: false
+---
+
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
+import { Copy } from "lucide-react";
+
+export const PrimaryButtonPreview = () => (
+  <button className="primary-button">Primary Button</button>
+);
+
+export const SecondaryButtonPreview = () => (
+  <button className="secondary-button">Secondary Button</button>
+);
+
+## Button Component
+
+Interactive buttons with multiple variants for different use cases. Choose the type of button that fits your needs.
+
+<Tabs defaultValue="primary-preview">
+  <TabsList>
+    <TabsTrigger value="primary-preview">Primary Button</TabsTrigger>
+    <TabsTrigger value="secondary-preview">Secondary Button</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="primary-preview">
+    ### Primary Button Preview
+
+    <PrimaryButtonPreview />
+
+    #### Code
+    ```jsx
+    const PrimaryButton = () => (
+      <button className="primary-button">Primary Button</button>
+    );
+    ```
+
+    #### CSS
+    ```css
+    .primary-button {
+      padding: 0.75rem 1.5rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .primary-button:hover {
+      background-color: #0056b3;
+    }
+    ```
+
+    #### HTML
+    ```html
+    <button class="primary-button">Primary Button</button>
+    ```
+  </TabsContent>
+
+  <TabsContent value="secondary-preview">
+    ### Secondary Button Preview
+
+    <SecondaryButtonPreview />
+
+    #### Code
+    ```jsx
+    const SecondaryButton = () => (
+      <button className="secondary-button">Secondary Button</button>
+    );
+    ```
+
+    #### CSS
+    ```css
+    .secondary-button {
+      padding: 0.75rem 1.5rem;
+      background-color: #6c757d;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .secondary-button:hover {
+      background-color: #5a6268;
+    }
+    ```
+
+    #### HTML
+    ```html
+    <button class="secondary-button">Secondary Button</button>
+    ```
+  </TabsContent>
+</Tabs>
