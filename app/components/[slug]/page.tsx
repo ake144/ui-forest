@@ -5,10 +5,6 @@ import ComponentLayout from "@/components/component/ComponentContentLayout";
 import { ComponentDetails } from "@/lib/types";
 
 
-type Params = {
-  slug: string;
-};
-
 // type PageDetails = {
 //   section_name?: string;
 //   name: string;
@@ -23,7 +19,7 @@ type Params = {
 //   }[];
 // };
 
-type tParams = { slug: string };
+type tParams = { params: Promise<{ slug: string }>};
 
 // export async function generateStaticParams() {
 //   return components.map((item) => ({
@@ -67,8 +63,8 @@ type tParams = { slug: string };
 // }
 
 
-export async function generateMetadata(props: { params: tParams }) {
-  const { slug } = await props.params;
+export async function generateMetadata({params}: tParams) {
+  const slug  = (await params).slug;
 
   const componentData:any = await getComponentData(slug);
 
@@ -100,9 +96,10 @@ export async function generateMetadata(props: { params: tParams }) {
 
 
 
-export default async function Page(props: { params: tParams }) {
+export default async function Page({params}: tParams) {
   try {
-    const { slug } = await props.params;
+    const  slug  = (await params).slug;
+
    
     // console.log('slugs',slug)
 
