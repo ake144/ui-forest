@@ -9,7 +9,7 @@ interface ModernButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement
   className?: string
 }
 
-export function ModernButton({ children, className, ...props }: ModernButtonProps) {
+export default function ModernButton({ children, className, ...props }: ModernButtonProps) {
   return (
     <button
       className={cn(

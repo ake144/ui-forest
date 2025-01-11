@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-export function AnimatedSkillBars() {
+export default function AnimatedSkillBars() {
   const sampleSkills = [
     { name: "JavaScript", level: 85, color: "#f7df1e" },
     { name: "React", level: 90, color: "#61dafb" },

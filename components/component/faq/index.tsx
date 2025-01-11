@@ -23,7 +23,7 @@ const faqs = [
   },
 ]
 
-export function FAQAccordion() {
+export default function FAQAccordion() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   return (

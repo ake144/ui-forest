@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from 'lucide-react'
 
-export function AnimatedCTA() {
+export default function AnimatedCTA() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 

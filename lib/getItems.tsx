@@ -1,6 +1,8 @@
 'use server'
 
 import { components } from '@/components/component/data'
+import { serialize } from 'next-mdx-remote/serialize';
+
 // import { ComponentSlug } from './components';
 
 
@@ -11,7 +13,14 @@ export async function getComponentData(slug: ComponentSlug) {
   if (!component) {
     throw new Error(`Component with slug ${slug} not found`);
   }
-  return component;
+
+  // const mdxSource = component.preview
+  // ? await serialize(component.preview)
+  // : null;
+
+
+  return {component
+  }
 }
 
 

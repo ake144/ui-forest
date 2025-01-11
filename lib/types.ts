@@ -27,6 +27,8 @@ export type TemplateType = {
     pro: boolean;
     code: ComponentCode;
     documentation: string; // MDX content if needed
+    preview?:any;
+    mdx?:any
   };
   
 

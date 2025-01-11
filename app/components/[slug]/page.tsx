@@ -69,8 +69,8 @@ export async function generateStaticParams() {
 // }
 
 
-export async function generateMetadata({ params }: { params: tParams }) {
-  const { slug } = params;
+export async function generateMetadata(props: { params: tParams }) {
+  const { slug } = await props.params;
 
   const pageDetails = components.find((item) => item.slug === slug) || null;
 
@@ -107,11 +107,13 @@ export default async function Page(props: { params: tParams }) {
     // console.log('slugs',slug)
 
     
-    const componentData:ComponentDetails = await getComponentData(slug);
+    const componentData:any = await getComponentData(slug);
     
+//  console.log(componentData)
+
     // console.log(componentData)
 
-    return    <ComponentLayout component={componentData} />
+    return    <ComponentLayout component={componentData.component} />
   
   } catch (err) {
     return <div>Component not found</div>;

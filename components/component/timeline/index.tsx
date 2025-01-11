@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 
-export function InteractiveTimeline() {
+export default function InteractiveTimeline() {
   const sampleEvents = [
     { date: "2024-01-01", title: "Event 1", description: "Description for event 1" },
     { date: "2024-02-01", title: "Event 2", description: "Description for event 2" },

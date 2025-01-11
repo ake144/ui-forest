@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 
-export function FloatingCTABanner() {
+export default function FloatingCTABanner() {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 3000)
+    const timer = setTimeout(() => setIsVisible(true), 1000)
     return () => clearTimeout(timer)
   }, [])
 

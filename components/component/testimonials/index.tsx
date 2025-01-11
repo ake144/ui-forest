@@ -28,7 +28,7 @@ const testimonials = [
   },
 ]
 
-export function TestimonialSlider() {
+export default function TestimonialSlider() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
