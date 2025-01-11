@@ -1,7 +1,6 @@
 
-import { components } from "@/lib/data";
+// import { components } from "@/lib/data";
 import {getComponentData } from "@/lib/getItems";
-import { ComponentSlug } from "@/lib/components";
 import ComponentLayout from "@/components/component/ComponentContentLayout";
 import { ComponentDetails } from "@/lib/types";
 
@@ -32,10 +31,9 @@ type tParams = { slug: string };
 //   }));
 // }
 
-export async function generateStaticParams() {
-  return components.map((component) => ({ slug: component.slug }));
-}
-
+// export async function generateStaticParams() {
+//   return components.map((component) => ({ slug: component.slug }));
+// }
 
 // export async function generateMetadata( props: { params: tParams }) {
 //   const { slug } = await props.params;
@@ -72,7 +70,9 @@ export async function generateStaticParams() {
 export async function generateMetadata(props: { params: tParams }) {
   const { slug } = await props.params;
 
-  const pageDetails = components.find((item) => item.slug === slug) || null;
+  const componentData:any = await getComponentData(slug);
+
+     const pageDetails = componentData.component 
 
   return {
     metadataBase: new URL("https://ui-forest.com"),
