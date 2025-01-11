@@ -1296,7 +1296,7 @@ export const featuredTemplates: TemplatesType[] = [
     price: 15,
     image: "/supercharge.png",
     stack: ['Next.js', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
-    repo:"/",
+    repo:"https://uiforest.gumroad.com/l/npspa",
     link:'https://supercharge1.vercel.app'
   },
   {

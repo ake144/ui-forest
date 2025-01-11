@@ -33,7 +33,7 @@ const templates = [
       { icon: "TS", label: "TypeScript" },
       { icon: "☁️", label: "Tailwindcss" }
     ],
-    link:'/'
+    link: 'https://e-commerce-plus-next.vercel.app/',
   },
   {
     title: "one profile",
@@ -50,19 +50,19 @@ const templates = [
     link:'/'
   },
   {
-    title: "Mail for Developers",
-    description: "Enterprise-grade email solution at an affordable price. Built for developers who need reliable, scalable email infrastructure with powerful APIs and comprehensive documentation.",
-    price: 79,
-    image: "/placeholder.svg?height=800&width=1200",
+    title: "SaaS Starter",
+    description: "A complete SaaS starter kit with user management, billing, and subscription features.",
+    price: 0,
+    image: "/saas.png",
+    link: 'https://next-saas-starter1.vercel.app/',
     techStack: [
-      { icon: "📧", label: "Email" },
+      { icon: "⚛", label: "Nextjs" },
+      { icon: "🐍", label: "React" },
       { icon: "⚡", label: "API" },
-      { icon: "🔒", label: "Security" },
-      { icon: "☁️", label: "Cloud" },
-      { icon: "📊", label: "Analytics" }
+      { icon: "TS", label: "TypeScript" },
+      { icon: "☁️", label: "Tailwindcss" }
     ],
-    link:'/'
-  }
+  },
 ]
 
 export function TemplatesShowcase() {
