@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {  Search,  Grid, List } from 'lucide-react'
 import { cn } from "@/lib/utils"
-import { allTemplates, featuredTemplates } from '@/lib/data'
+import {  featuredTemplates } from '@/lib/data'
 import { FeaturedTemplateCard, TemplateCard } from '@/components/template/templates-page-card'
 import { ContactWidget } from '@/components/component-widget'
 
@@ -17,7 +17,7 @@ export default function TemplatesPage() {
   const [searchTerm, setSearchTerm] = useState('')
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
 
-  const filteredTemplates = allTemplates.filter(template =>
+  const filteredTemplates = featuredTemplates.filter(template =>
     template.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     template.description.toLowerCase().includes(searchTerm.toLowerCase())
   )
