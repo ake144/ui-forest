@@ -1300,6 +1300,15 @@ export const featuredTemplates: TemplatesType[] = [
     link:'https://supercharge1.vercel.app'
   },
   {
+    name: "DesignAgency",
+    description: "A complete SaaS starter for design agency business .",
+    price: 12,
+    image: "/design1.png",
+    link: 'https://design-agency-wpfl.vercel.app/',
+    stack: ['Next.js', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
+    repo: 'https://uiforest.gumroad.com/l/design-agency'
+  },
+  {
     name: "E-commerce Plus",
     description: "Complete e-commerce solution with cart, checkout, and inventory management.",
     price: 14,

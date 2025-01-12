@@ -50,6 +50,20 @@ const templates = [
     link:'/'
   },
   {
+    title: "DesignAgency",
+    description: "A complete SaaS starter for design agency business .",
+    price: 12,
+    image: "/design1.png",
+    link: 'https://design-agency-wpfl.vercel.app/',
+    techStack: [
+      { icon: "⚛", label: "Nextjs" },
+      { icon: "🐍", label: "React" },
+      { icon: "⚡", label: "Framer-motion" },
+      { icon: "TS", label: "TypeScript" },
+      { icon: "☁️", label: "Tailwindcss" }
+    ],
+  },
+  {
     title: "SaaS Starter",
     description: "A complete SaaS starter kit with user management, billing, and subscription features.",
     price: 0,
