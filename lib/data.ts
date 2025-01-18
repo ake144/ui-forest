@@ -1302,11 +1302,11 @@ export const featuredTemplates: TemplatesType[] = [
   {
     name: "DesignAgency",
     description: "A complete SaaS starter for design agency business .",
-    price: 12,
+    price: 14,
     image: "/design1.png",
     link: 'https://design-agency-wpfl.vercel.app/',
     stack: ['Next.js', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
-    repo: 'https://uiforest.gumroad.com/l/design-agency'
+    repo: 'https://uiforest.gumroad.com/l/ahyimf'
   },
   {
     name: "FileVault",
@@ -1315,7 +1315,7 @@ export const featuredTemplates: TemplatesType[] = [
     image: "/filevaluet.png",
     link: 'https://filevault-79w9.vercel.app/',
     stack:['Next.js', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
-    repo:''
+    repo:'https://uiforest.gumroad.com/l/ixxvd'
   },
   {
     name: "E-commerce Plus",
