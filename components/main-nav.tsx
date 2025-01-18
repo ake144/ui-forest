@@ -94,7 +94,7 @@ export default function Navbar() {
           </Sheet>
 
           {/* Sign-In/Sign-Out */}
-          <div className="hidden md:flex text-gray-50 items-center space-x-4">
+          {/* <div className="hidden md:flex text-gray-50 items-center space-x-4">
              <Link href='/template'>
         
                   <ModernButton>
@@ -102,7 +102,7 @@ export default function Navbar() {
                   </ModernButton>
              </Link>
              
-          </div>
+          </div> */}
         </div>
       </div>
     </motion.header>

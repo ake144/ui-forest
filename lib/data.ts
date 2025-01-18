@@ -1309,6 +1309,15 @@ export const featuredTemplates: TemplatesType[] = [
     repo: 'https://uiforest.gumroad.com/l/design-agency'
   },
   {
+    name: "FileVault",
+    description: "A complete SaaS starter for file management.",
+    price: 14,
+    image: "/filevaluet.png",
+    link: 'https://filevault-79w9.vercel.app/',
+    stack:['Next.js', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
+    repo:''
+  },
+  {
     name: "E-commerce Plus",
     description: "Complete e-commerce solution with cart, checkout, and inventory management.",
     price: 14,

@@ -24,7 +24,7 @@ export function ModernButton({  className, ...props }: ModernButtonProps) {
       {...props}
     >
       <span className="relative z-10 bg-gradient-to-r from-[#FF3BFF] via-[#ECBFBF] to-[#5C24FF] bg-clip-text text-transparent">
-        Click Me!!
+       
         <ArrowRight className="translate-x-0 duration-300 group-hover:translate-x-2 ml-2 h-4 w-4 inline-block stroke-[#FF3BFF]" />
 
       </span>

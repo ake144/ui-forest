@@ -64,6 +64,20 @@ const templates = [
     ],
   },
   {
+    title: "FileVault",
+    description: "A complete SaaS starter for file management.",
+    price: 14,
+    image: "/filevaluet.png",
+    link: 'https://filevault-79w9.vercel.app/',
+    techStack: [
+      { icon: "⚛", label: "Nextjs" },
+      { icon: "🐍", label: "React" },
+      { icon: "⚡", label: "Framer-motion" },
+      { icon: "TS", label: "TypeScript" },
+      { icon: "☁️", label: "Tailwindcss" }
+    ],
+  },
+  {
     title: "SaaS Starter",
     description: "A complete SaaS starter kit with user management, billing, and subscription features.",
     price: 0,
