@@ -1,55 +1,129 @@
-import { Check, X } from 'lucide-react'
+"use client"
 
-const features = [
-  { name: "Unlimited Projects", basic: true, pro: true, enterprise: true },
-  { name: "24/7 Support", basic: false, pro: true, enterprise: true },
-  { name: "Custom Integrations", basic: false, pro: false, enterprise: true },
-  { name: "Analytics Dashboard", basic: false, pro: true, enterprise: true },
-  { name: "Team Collaboration", basic: false, pro: true, enterprise: true },
-  { name: "API Access", basic: false, pro: false, enterprise: true },
+import { motion } from "framer-motion"
+import { Check, X } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+
+const plans = [
+  {
+    name: "Free",
+    price: "$0/mo",
+    description: "Best for 1-5 users",
+    features: [
+      { name: "One workspace", included: true },
+      { name: "Email support", included: true },
+      { name: "1 day data retention", included: false },
+      { name: "Custom roles", included: false },
+      { name: "Priority support", included: false },
+      { name: "SSO", included: false },
+    ],
+    cta: "Get started free",
+    ctaVariant: "outline" as const,
+  },
+  {
+    name: "Pro",
+    price: "$79/mo",
+    description: "Best for 5-50 users",
+    features: [
+      { name: "Five workspaces", included: true },
+      { name: "Email support", included: true },
+      { name: "7 day data retention", included: true },
+      { name: "Custom roles", included: true },
+      { name: "Priority support", included: false },
+      { name: "SSO", included: false },
+    ],
+    cta: "14-day free trial",
+    ctaVariant: "default" as const,
+    popular: true,
+  },
+  {
+    name: "Enterprise",
+    price: "Contact us",
+    description: "Best for 50+ users",
+    features: [
+      { name: "Unlimited workspaces", included: true },
+      { name: "Email support", included: true },
+      { name: "30 day data retention", included: true },
+      { name: "Custom roles", included: true },
+      { name: "Priority support", included: true },
+      { name: "SSO", included: true },
+    ],
+    cta: "Contact us",
+    ctaVariant: "outline" as const,
+  },
 ]
 
-export default function FeatureComparisonTable() {
+export function Pricing() {
   return (
-    <div className="py-16 bg-gray-50">
+    <section id="pricing" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-12">Compare Plans</h2>
-        <div className="mt-12 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
-          {["Basic", "Pro", "Enterprise"].map((plan) => (
-            <div key={plan} className="relative p-8 bg-white border border-gray-200 rounded-2xl shadow-sm flex flex-col">
-              <div className="flex-1">
-                <h3 className="text-xl font-semibold text-gray-900">{plan}</h3>
-                {plan === "Pro" && (
-                  <p className="absolute top-0 py-1.5 px-4 bg-blue-500 text-white rounded-full transform -translate-y-1/2">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+            Pricing
+          </h2>
+          <p className="mt-4 text-lg text-gray-400">
+            Use it for free for yourself, upgrade when your team needs advanced control.
+          </p>
+        </motion.div>
+
+        <div className="mt-20 grid gap-8 md:grid-cols-3">
+          {plans.map((plan, index) => (
+            <motion.div
+              key={plan.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={`relative p-8 rounded-2xl bg-gradient-to-b from-white/[0.08] to-transparent border backdrop-blur-sm transition-colors duration-300 ${
+                plan.popular
+                  ? "border-fuchsia-500"
+                  : "border-white/[0.08] hover:border-fuchsia-500/50"
+              }`}
+            >
+              {plan.popular && (
+                <div className="absolute -top-4 left-0 right-0 flex justify-center">
+                  <div className="px-3 py-1 text-sm font-medium text-white bg-fuchsia-500 rounded-full">
                     Most Popular
-                  </p>
-                )}
-                <p className="mt-4 flex items-baseline text-gray-900">
-                  <span className="text-5xl font-extrabold tracking-tight">
-                    {plan === "Basic" ? "$19" : plan === "Pro" ? "$39" : "$99"}
-                  </span>
-                  <span className="ml-1 text-xl font-semibold">/month</span>
-                </p>
-                <p className="mt-6 text-gray-500">The perfect plan for getting started with our platform.</p>
+                  </div>
+                </div>
+              )}
+              <div className="text-center">
+                <h3 className="text-lg font-semibold">{plan.name}</h3>
+                <div className="mt-2 text-4xl font-bold">{plan.price}</div>
+                <p className="mt-2 text-sm text-gray-400">{plan.description}</p>
               </div>
 
-              <ul role="list" className="mt-6 space-y-6">
-                {features.map((feature) => (
-                  <li key={feature.name} className="flex">
-                    {feature[plan.toLowerCase() as 'basic' | 'pro' | 'enterprise'] ? (
-                      <Check className="flex-shrink-0 w-6 h-6 text-green-500" />
+              <ul className="mt-8 space-y-4">
+                {plan.features.map((feature) => (
+                  <li key={feature.name} className="flex items-center gap-3">
+                    {feature.included ? (
+                      <Check className="w-5 h-5 text-fuchsia-500" />
                     ) : (
-                      <X className="flex-shrink-0 w-6 h-6 text-red-500" />
+                      <X className="w-5 h-5 text-gray-600" />
                     )}
-                    <span className="ml-3 text-gray-500">{feature.name}</span>
+                    <span className={feature.included ? "text-gray-200" : "text-gray-400"}>
+                      {feature.name}
+                    </span>
                   </li>
                 ))}
               </ul>
-            </div>
+
+              <div className="mt-8">
+                <Button variant={plan.ctaVariant} className="w-full" size="lg">
+                  {plan.cta}
+                </Button>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

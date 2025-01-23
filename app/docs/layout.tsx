@@ -1,7 +1,5 @@
 import Navbar from "@/components/main-nav";
-import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'UI Forest Documentation',
@@ -14,7 +12,8 @@ export default function DocsLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className={inter.className}>
+ 
+    <div >
       <div className="min-h-screen bg-black overflow-x-hidden relative">
         {/* Base gradient background that covers the entire viewport */}
         <div className="fixed inset-0 bg-gradient-to-tr from-purple-500/20 via-transparent to-blue-500/20 pointer-events-none" />

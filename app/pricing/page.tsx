@@ -11,9 +11,7 @@ export default function PricingPage() {
     "Unlimited access to all UI components",
     "Full source code and design files",
     "Regular updates and new component releases",
-    "Premium email support",
     "Access to private GitHub repository",
-    "Custom theme generator",
     "Integration with popular frameworks (React, Vue, Angular)",
     "Advanced component customization options",
     "Performance optimization tools",
@@ -21,7 +19,6 @@ export default function PricingPage() {
     "Early access to beta features",
     "Personalized onboarding session",
     "Priority feature request system",
-    "Downloadable design assets (Figma, Sketch)",
     "API access for dynamic component generation",
   ]
 
@@ -49,7 +46,7 @@ export default function PricingPage() {
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="text-center">
-              <span className="md:text-5xl sm:text-2xl text-xl font-bold">$200</span>
+              <span className="md:text-5xl sm:text-2xl text-xl font-bold">$100</span>
               <span className="text-zinc-400 ml-2">one-time payment</span>
             </div>
             <Button className="w-full text-lg py-6" size="lg">

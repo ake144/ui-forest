@@ -29,6 +29,16 @@ function getPreview(componentPath: string): string {
 
 
 export const components: ComponentDetails[] = [
+  
+  {
+    name: 'Pricing',
+    description: 'An interactive pricing component with configurable options.',
+    slug: 'pricing2',
+    pro: false,
+    code: getComponentCode(path.join(dirname, 'pricing2')),
+    documentation: '',
+    preview: 'pricing2',
+  },
   {
     name: 'Button',
     description: 'A customizable button component.',
@@ -38,6 +48,26 @@ export const components: ComponentDetails[] = [
     documentation: '',
 
     preview: 'button',
+  },
+
+  {
+    name: 'ContactWidget',
+    description: 'An interactive contact widget with a form and social links.',
+    slug: 'contact-widget',
+    pro: false,
+    code: getComponentCode(path.join(dirname, 'contact-widget')),
+    documentation: '',
+    preview: 'contact-widget',
+  },
+  {
+    name: 'Form',
+    description: 'A customizable and ready to use  sign-in form to start your project.',
+    slug: 'form',
+    pro: false,
+    code: getComponentCode(path.join(dirname, 'form')),
+    documentation: '',
+
+    preview: 'form',
   },
   {
     name: 'Animated Hero',
