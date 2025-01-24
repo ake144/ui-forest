@@ -1,72 +1,107 @@
 "use client"
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown } from 'lucide-react'
+import { motion } from "framer-motion"
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 const faqs = [
   {
-    question: "How do I place an order?",
-    answer: "To place an order, simply browse our products, add items to your cart, and proceed to checkout. Follow the prompts to enter your shipping and payment information."
+    question: "How long does it typically take to complete a website project?",
+    answer: "Project timelines vary based on complexity and scope. A basic website might take 4-6 weeks, while more complex platforms could take 3-4 months. We'll provide a detailed timeline during our initial consultation based on your specific requirements."
   },
   {
-    question: "What payment methods do you accept?",
-    answer: "We accept major credit cards (Visa, MasterCard, American Express), PayPal, and Apple Pay for your convenience."
+    question: "Do you provide ongoing support after the website launch?",
+    answer: "Yes, we offer comprehensive post-launch support packages. This includes regular maintenance, security updates, content updates, and technical support. We can customize a support plan based on your needs."
   },
   {
-    question: "How long does shipping take?",
-    answer: "Shipping times vary depending on your location. Typically, domestic orders arrive within 3-5 business days, while international orders may take 7-14 business days."
+    question: "What sets your design agency apart from others?",
+    answer: "We combine cutting-edge technology with creative design thinking. Our approach focuses on data-driven decisions, user-centric design, and scalable solutions. We're not just designers – we're strategic partners in your digital success."
   },
   {
-    question: "What is your return policy?",
-    answer: "We offer a 30-day return policy for most items. Products must be in their original condition with tags attached. Please refer to our Returns page for more details."
+    question: "Can you help with rebranding my existing website?",
+    answer: "We specialize in website redesigns and rebranding. We'll analyze your current site, identify areas for improvement, and create a modern, effective design while preserving your brand's core values and existing customer base."
   },
+  {
+    question: "Do you handle e-commerce website development?",
+    answer: "Yes, we have extensive experience in e-commerce development. We work with various platforms and can create custom solutions, implement payment gateways, inventory management systems, and ensure your online store is secure and user-friendly."
+  },
+  {
+    question: "What is your design process like?",
+    answer: "Our design process follows a systematic approach: Discovery & Research → Strategy & Planning → Design & Prototyping → Development → Testing → Launch → Post-Launch Support. We maintain clear communication and regular updates throughout each phase."
+  }
 ]
 
-export default function FAQAccordion() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
-
+export default function FAQ() {
   return (
-    <div className="py-16 bg-gray-50">
-      <div className="max-w-3xl mx-auto px-4">
-        <h2 className="text-3xl text-gray-700 font-bold text-center mb-8">Frequently Asked Questions</h2>
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
-              <button
-                className="flex justify-between items-center w-full p-4 text-left bg-white hover:bg-gray-50 transition-colors"
-                onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-              >
-                <span className="text-lg text-gray-600 font-medium">{faq.question}</span>
-                <ChevronDown
-                  className={`w-5 h-5 transition-transform ${
-                    activeIndex === index ? 'transform rotate-180' : ''
-                  }`}
-                />
-              </button>
-              <AnimatePresence initial={false}>
-                {activeIndex === index && (
-                  <motion.div
-                    initial="collapsed"
-                    animate="open"
-                    exit="collapsed"
-                    variants={{
-                      open: { opacity: 1, height: "auto" },
-                      collapsed: { opacity: 0, height: 0 }
-                    }}
-                    transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
-                  >
-                    <div className="p-4 bg-gray-50">
-                      <p className="text-gray-700">{faq.answer}</p>
+    <section className="py-24 ">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Everything you need to know about our web design and development services. Can&apos;t find the answer you&apos;re looking for? Feel free to contact us.
+          </p>
+        </motion.div>
+
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="border border-white/[0.08] rounded-lg backdrop-blur-sm px-6 py-2 data-[state=open]:bg-white/[0.02]"
+                >
+                  <AccordionTrigger className="hover:no-underline">
+                    <div className="flex items-center gap-6 text-left">
+                      <div className="flex-1 text-lg font-medium">{faq.question}</div>
                     </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ))}
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="pt-4 pb-2 text-gray-400"
+                    >
+                      {faq.answer}
+                    </motion.div>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-center mt-12"
+          >
+            <p className="text-gray-400">
+              Still have questions? {" "}
+              <a href="#contact" className="text-purple-500 hover:text-purple-400 font-medium">
+                Contact our support team
+              </a>
+            </p>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
-

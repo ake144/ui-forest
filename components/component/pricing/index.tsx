@@ -1,124 +1,126 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Check, X } from 'lucide-react'
+import { Check } from 'lucide-react'
 import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 
-const plans = [
+interface PricingTier {
+  name: string
+  price: string
+  description: string
+  features: string[]
+  isPopular?: boolean
+}
+
+const tiers: PricingTier[] = [
   {
-    name: "Free",
-    price: "$0/mo",
-    description: "Best for 1-5 users",
+    name: "Basic plan",
+    price: "$12",
+    description: "Perfect for small businesses and freelancers just getting started.",
     features: [
-      { name: "One workspace", included: true },
-      { name: "Email support", included: true },
-      { name: "1 day data retention", included: false },
-      { name: "Custom roles", included: false },
-      { name: "Priority support", included: false },
-      { name: "SSO", included: false },
+      "Curabitur faucibus",
+      "massa ut pretium maximus",
+      "Sed posuere nisi",
+      "Pellentesque eu nibh et neque",
+      "Suspendisse a leo",
+      "Praesent quis venenatis ipsum",
+      "Duis non diam vel tortor",
     ],
-    cta: "Get started free",
-    ctaVariant: "outline" as const,
   },
   {
-    name: "Pro",
-    price: "$79/mo",
-    description: "Best for 5-50 users",
+    name: "Startup",
+    price: "$35",
+    description: "Great for growing businesses that need more features and flexibility.",
     features: [
-      { name: "Five workspaces", included: true },
-      { name: "Email support", included: true },
-      { name: "7 day data retention", included: true },
-      { name: "Custom roles", included: true },
-      { name: "Priority support", included: false },
-      { name: "SSO", included: false },
+      "Curabitur faucibus",
+      "massa ut pretium maximus",
+      "Sed posuere nisi",
+      "Pellentesque eu nibh et neque",
+      "Suspendisse a leo",
+      "Praesent quis venenatis ipsum",
+      "Duis non diam vel tortor",
     ],
-    cta: "14-day free trial",
-    ctaVariant: "default" as const,
-    popular: true,
+    isPopular: true,
   },
   {
     name: "Enterprise",
-    price: "Contact us",
-    description: "Best for 50+ users",
+    price: "$60",
+    description: "Advanced features and support for larger organizations.",
     features: [
-      { name: "Unlimited workspaces", included: true },
-      { name: "Email support", included: true },
-      { name: "30 day data retention", included: true },
-      { name: "Custom roles", included: true },
-      { name: "Priority support", included: true },
-      { name: "SSO", included: true },
+      "Curabitur faucibus",
+      "massa ut pretium maximus",
+      "Sed posuere nisi",
+      "Pellentesque eu nibh et neque",
+      "Suspendisse a leo",
+      "Praesent quis venenatis ipsum",
+      "Duis non diam vel tortor",
     ],
-    cta: "Contact us",
-    ctaVariant: "outline" as const,
   },
 ]
 
-export function Pricing() {
+export default function Pricing() {
   return (
-    <section id="pricing" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-[#000000]">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-            Pricing
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+            Pricing for all sizes
           </h2>
-          <p className="mt-4 text-lg text-gray-400">
-            Use it for free for yourself, upgrade when your team needs advanced control.
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam efficitur consequat nunc.
           </p>
         </motion.div>
 
-        <div className="mt-20 grid gap-8 md:grid-cols-3">
-          {plans.map((plan, index) => (
+        <div className="grid md:grid-cols-3 gap-8">
+          {tiers.map((tier, index) => (
             <motion.div
-              key={plan.name}
+              key={index}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative p-8 rounded-2xl bg-gradient-to-b from-white/[0.08] to-transparent border backdrop-blur-sm transition-colors duration-300 ${
-                plan.popular
-                  ? "border-fuchsia-500"
-                  : "border-white/[0.08] hover:border-fuchsia-500/50"
-              }`}
             >
-              {plan.popular && (
-                <div className="absolute -top-4 left-0 right-0 flex justify-center">
-                  <div className="px-3 py-1 text-sm font-medium text-white bg-fuchsia-500 rounded-full">
-                    Most Popular
+              <Card className="relative h-full bg-gradient-to-b from-white/[0.08] to-transparent border-white/[0.08] backdrop-blur-sm hover:border-purple-500/50 transition-colors duration-300">
+                {tier.isPopular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <div className="bg-purple-500 text-white px-3 py-1 rounded-full text-sm">
+                      Most popular
+                    </div>
                   </div>
-                </div>
-              )}
-              <div className="text-center">
-                <h3 className="text-lg font-semibold">{plan.name}</h3>
-                <div className="mt-2 text-4xl font-bold">{plan.price}</div>
-                <p className="mt-2 text-sm text-gray-400">{plan.description}</p>
-              </div>
-
-              <ul className="mt-8 space-y-4">
-                {plan.features.map((feature) => (
-                  <li key={feature.name} className="flex items-center gap-3">
-                    {feature.included ? (
-                      <Check className="w-5 h-5 text-fuchsia-500" />
-                    ) : (
-                      <X className="w-5 h-5 text-gray-600" />
-                    )}
-                    <span className={feature.included ? "text-gray-200" : "text-gray-400"}>
-                      {feature.name}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-8">
-                <Button variant={plan.ctaVariant} className="w-full" size="lg">
-                  {plan.cta}
-                </Button>
-              </div>
+                )}
+                <CardHeader className="pt-8 pb-4">
+                  <h3 className="text-xl font-semibold mb-2 text-white">{tier.name}</h3>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-4xl font-bold text-white">{tier.price}</span>
+                    <span className="text-gray-400">/mo</span>
+                  </div>
+                  <p className="text-sm text-gray-400 mt-4">{tier.description}</p>
+                </CardHeader>
+                <CardContent className="pb-4">
+                  <Button 
+                    variant="outline" 
+                    className="w-full bg-white/5 border-white/10 hover:bg-white/10 text-white"
+                  >
+                    Get Started
+                  </Button>
+                </CardContent>
+                <CardFooter className="flex flex-col gap-4">
+                  <div className="text-sm font-semibold text-white">Features</div>
+                  <ul className="space-y-3">
+                    {tier.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center gap-3 text-gray-400">
+                        <Check className="w-5 h-5 text-purple-500" />
+                        <span className="text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardFooter>
+              </Card>
             </motion.div>
           ))}
         </div>
@@ -126,4 +128,3 @@ export function Pricing() {
     </section>
   )
 }
-

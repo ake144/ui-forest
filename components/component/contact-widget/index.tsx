@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Zap } from "lucide-react";
 
-export function ContactWidget() {
+export default function ContactWidget() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

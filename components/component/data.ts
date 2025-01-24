@@ -33,11 +33,11 @@ export const components: ComponentDetails[] = [
   {
     name: 'Pricing',
     description: 'An interactive pricing component with configurable options.',
-    slug: 'pricing2',
+    slug: 'pricing',
     pro: false,
-    code: getComponentCode(path.join(dirname, 'pricing2')),
+    code: getComponentCode(path.join(dirname, 'pricing')),
     documentation: '',
-    preview: 'pricing2',
+    preview: 'pricing',
   },
   {
     name: 'Button',
@@ -48,17 +48,6 @@ export const components: ComponentDetails[] = [
     documentation: '',
 
     preview: 'button',
-  },
-
-  {
-    name: 'Blog Section',
-    description: 'A customizable and ready to use blog post page',
-    slug: 'blog-page',
-    pro: false,
-    code: getComponentCode(path.join(dirname, 'blog-page')),
-    documentation: '',
-
-    preview: 'blog-page',
   },
 
   {
@@ -99,23 +88,36 @@ export const components: ComponentDetails[] = [
     preview: 'newsletter-form',
   },
   {
-    name: 'Animated Skill Bars',
-    description: 'A component displaying skill levels with animated progress bars.',
-    slug: 'progress-bar',
+    name: 'Stats',
+    description: 'A component displaying stats',
+    slug: 'stats',
     pro: false,
-    code: getComponentCode(path.join(dirname, 'progress-bar')),
+    code: getComponentCode(path.join(dirname, 'stats')),
     documentation: '',
-    preview: 'progress-bar',
+    preview: 'stats',
+  },
+ 
+  {
+    name: 'Text',
+    description: 'A customizable text component with typography options.',
+    slug: 'text',
+    pro: false,
+    code: getComponentCode(path.join(dirname, 'text')),
+    documentation: '',
+
+    preview: 'text',
   },
   {
-    name: 'Animated CTA',
-    description: 'A dynamic Animated Call to Action with configurable options',
-    slug: 'cta',
+    name: 'Text Effect',
+    description: 'A customizable styled text with modern features',
+    slug: 'text2',
     pro: false,
-    code: getComponentCode(path.join(dirname, 'cta')),
+    code: getComponentCode(path.join(dirname, 'text2')),
     documentation: '',
-    preview: 'cta',
+
+    preview: 'text2',
   },
+
   {
     name: 'Navbar',
     description: 'A responsive navigation bar with links and a mobile-friendly menu.',
@@ -144,15 +146,6 @@ export const components: ComponentDetails[] = [
     preview: 'search-bar',
   },
   {
-    name: 'Interactive Timeline',
-    description: 'An interactive, horizontal timeline to show progress or milestones.',
-    slug: 'timeline',
-    pro: false,
-    code: getComponentCode(path.join(dirname, 'timeline')),
-    documentation: '',
-    preview: 'timeline',
-  },
-  {
     name: 'FAQ',
     description: 'An interactive FAQ component with collapsible answers.',
     slug: 'faq',
@@ -161,14 +154,15 @@ export const components: ComponentDetails[] = [
     documentation: '',
     preview: 'faq',
   },
+  
   {
-    name: 'Pricing Calculator',
-    description: 'A dynamic pricing calculator with configurable options.',
-    slug: 'pricing',
+    name: 'Notifications',
+    description: 'A modern notification component with customizable options.',
+    slug: 'notifications',
     pro: false,
-    code: getComponentCode(path.join(dirname, 'pricing')),
+    code: getComponentCode(path.join(dirname, 'notifications')),
     documentation: '',
-    preview: 'pricing',
+    preview: 'notifications',
   },
   {
     name: 'Testimonials',
