@@ -51,6 +51,17 @@ export const components: ComponentDetails[] = [
   },
 
   {
+    name: 'Blog Section',
+    description: 'A customizable and ready to use blog post page',
+    slug: 'blog-page',
+    pro: false,
+    code: getComponentCode(path.join(dirname, 'blog-page')),
+    documentation: '',
+
+    preview: 'blog-page',
+  },
+
+  {
     name: 'ContactWidget',
     description: 'An interactive contact widget with a form and social links.',
     slug: 'contact-widget',
