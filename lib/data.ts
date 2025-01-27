@@ -1291,6 +1291,15 @@ export const testComponentPacks = [
 export const featuredTemplates: TemplatesType[] = [
   
   {
+    name: "Recharge",
+    description: "A professional faster, scale smarter platform designed for solo developers and enterprises. Build powerful content management systems with our SDK wrapper and extensive customization options.",
+    price: 15,
+    image: "/recharge.png",
+    stack: ['Next.js', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
+    repo:"https://uiforest.gumroad.com/l/aubqnd",
+    link:'https://recharger-gamma.vercel.app/'
+  },
+  {
     name: "SuperCharge your app",
     description: "A professional faster, scale smarter platform designed for solo developers and enterprises. Build powerful content management systems with our SDK wrapper and extensive customization options.",
     price: 15,

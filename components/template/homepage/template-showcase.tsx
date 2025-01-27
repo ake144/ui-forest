@@ -7,6 +7,21 @@ import { TemplateSection } from './template-section'
 
 const templates = [
   {
+    title: "Recharge",
+    description: "A professional faster, scale smarter platform designed for solo developers and enterprises. Build powerful content management systems with our SDK wrapper and extensive customization options.",
+    price: 15,
+    image: "/recharge.png",
+    techStack: [
+      { icon: "N", label: "Next.js" },
+      { icon: "⚛", label: "React" },
+      { icon: "TS", label: "TypeScript" },
+      { icon: "~", label: "Tailwind" },
+      { icon: "M", label: "MDX" },
+      { icon: "⚡", label: "API" }
+    ],
+    link:'https://recharger-gamma.vercel.app/'
+  },
+  {
     title: "SuperCharge your app",
     description: "A professional faster, scale smarter platform designed for solo developers and enterprises. Build powerful content management systems with our SDK wrapper and extensive customization options.",
     price: 15,

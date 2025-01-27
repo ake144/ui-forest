@@ -51,6 +51,15 @@ export const components: ComponentDetails[] = [
   },
 
   {
+    name: 'Tabs',
+    description: 'A responsive navigation tabs component with animated transitions.',
+    slug: 'tabs',
+    pro: false,
+    code: getComponentCode(path.join(dirname, 'tabs')),
+    documentation: '',
+    preview: 'tabs',
+  },
+  {
     name: 'ContactWidget',
     description: 'An interactive contact widget with a form and social links.',
     slug: 'contact-widget',
