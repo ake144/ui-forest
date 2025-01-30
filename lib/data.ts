@@ -1318,6 +1318,25 @@ export const featuredTemplates: TemplatesType[] = [
     repo: 'https://uiforest.gumroad.com/l/ahyimf'
   },
   {
+    name: "Horizone",
+    description: "A complete SaaS starter hotel and tourism related stuff",
+    price: 12,
+    image: "/hotel.png",
+    link: 'https://design-agency-wpfl.vercel.app/',
+    stack:['Next.js', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
+    repo:''
+  },
+ 
+  {
+    name: "E-commerce Plus",
+    description: "Complete e-commerce solution with cart, checkout, and inventory management.",
+    price: 14,
+    image: "/e-commerce.png",
+    link: 'https://e-commerce-plus-next.vercel.app/',
+    repo: 'https://uiforest.gumroad.com/l/uiforest-e-commerce',
+    stack: ['Next.js', 'React','Wix', 'Tailwind CSS', 'api']
+  },
+  {
     name: "FileVault",
     description: "A complete SaaS starter for file management.",
     price: 14,
@@ -1327,13 +1346,13 @@ export const featuredTemplates: TemplatesType[] = [
     repo:'https://uiforest.gumroad.com/l/ixxvd'
   },
   {
-    name: "E-commerce Plus",
-    description: "Complete e-commerce solution with cart, checkout, and inventory management.",
-    price: 14,
-    image: "/e-commerce.png",
-    link: 'https://e-commerce-plus-next.vercel.app/',
-    repo: 'https://uiforest.gumroad.com/l/uiforest-e-commerce',
-    stack: ['Next.js', 'React','Wix', 'Tailwind CSS', 'api']
+    name: "Streamline Logistics",
+    description: "A complete SaaS starter for  logistics and transportation business.",
+    price: 12,
+    image: "/logistic.png",
+    link: 'https://logistics-sooty-phi.vercel.app/',
+    stack: ['Next.js', 'React', 'Rechart', 'Shadcn', 'Tailwind CSS'],
+    repo:''
   },
   {
     name: "Dashboard",

@@ -79,11 +79,39 @@ const templates = [
     ],
   },
   {
+    title: "Horizone",
+    description: "A complete SaaS starter hotel and tourism related stuff",
+    price: 12,
+    image: "/hotel.png",
+    link: 'https://design-agency-wpfl.vercel.app/',
+    techStack: [
+      { icon: "⚛", label: "Nextjs" },
+      { icon: "🐍", label: "React" },
+      { icon: "⚡", label: "Framer-motion" },
+      { icon: "TS", label: "TypeScript" },
+      { icon: "☁️", label: "Tailwindcss" }
+    ],
+  },
+  {
     title: "FileVault",
     description: "A complete SaaS starter for file management.",
     price: 14,
     image: "/filevaluet.png",
     link: 'https://filevault-79w9.vercel.app/',
+    techStack: [
+      { icon: "⚛", label: "Nextjs" },
+      { icon: "🐍", label: "React" },
+      { icon: "⚡", label: "Framer-motion" },
+      { icon: "TS", label: "TypeScript" },
+      { icon: "☁️", label: "Tailwindcss" }
+    ],
+  },
+  {
+    title: "Streamline Logistics",
+    description: "A complete SaaS starter for  logistics and transportation business.",
+    price: 12,
+    image: "/logistic.png",
+    link: 'https://logistics-sooty-phi.vercel.app/',
     techStack: [
       { icon: "⚛", label: "Nextjs" },
       { icon: "🐍", label: "React" },
