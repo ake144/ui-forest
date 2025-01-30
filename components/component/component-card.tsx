@@ -21,7 +21,7 @@ interface ComponentCardProps {
 export function ComponentCard({ title, description, imageUrl, count, price }: ComponentCardProps) {
   return (
     // <CardSpotlight className="w-full">
-      <CardContainer className="flex flex-col h-full">
+      <CardContainer className="flex flex-col h-full px-5 mx-12 md:px-0 md:mx-0">
         <CardBody className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden flex-1 flex flex-col">
           <CardItem
             translateZ="100"
