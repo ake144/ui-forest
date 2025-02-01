@@ -1331,9 +1331,9 @@ export const featuredTemplates: TemplatesType[] = [
     description: "A complete SaaS starter hotel and tourism related stuff",
     price: 12,
     image: "/hotel.png",
-    link: 'https://design-agency-wpfl.vercel.app/',
+    link: 'https://hotel-x2.vercel.app/',
     stack:['Next.js', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
-    repo:''
+    repo:'https://uiforest.gumroad.com/l/yzlyei'
   },
  
   {
