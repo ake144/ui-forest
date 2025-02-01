@@ -7,7 +7,6 @@ import { ExploreButton } from "../explorebutton"
 import { testComponentPacks } from "@/lib/data"
 
 
-
 export default function ComponentPacks() {
   return (
     <section className="bg-gradient-to-b from-black to-zinc-900 py-24 overflow-hidden ">

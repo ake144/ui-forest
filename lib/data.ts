@@ -1300,6 +1300,15 @@ export const featuredTemplates: TemplatesType[] = [
     link:'https://recharger-gamma.vercel.app/'
   },
   {
+    name: "Keento",
+    description: "A complete solution for building modern ai agent for business with full customization options.",
+    price: 20,
+    image: "/ai.png",
+    stack: ['Next.js', 'React', 'shadcn', 'framer-motion', 'Tailwind css', 'React Hook form'],
+    link:'https://keento1.vercel.app/',
+    repo:'https://uiforest.gumroad.com/l/ypdaf'
+  },
+  {
     name: "SuperCharge your app",
     description: "A professional faster, scale smarter platform designed for solo developers and enterprises. Build powerful content management systems with our SDK wrapper and extensive customization options.",
     price: 15,

@@ -50,20 +50,21 @@ const templates = [
     ],
     link: 'https://e-commerce-plus-next.vercel.app/',
   },
-  // {
-  //   title: "one profile",
-  //   description: "A complete solution for building a modern prfile with modern features and templates.build effortlessly your profile and improve your online presence.",
-  //   price: 15,
-  //   image: "/profile.png",
-  //   techStack: [
-  //     { icon: "⚛", label: "Nextjs" },
-  //     { icon: "🐍", label: "React" },
-  //     { icon: "⚡", label: "API" },
-  //     { icon: "TS", label: "TypeScript" },
-  //     { icon: "☁️", label: "Tailwindcss" }
-  //   ],
-  //   link:'/'
-  // },
+  {
+    title: "Keento",
+    description: "A complete solution for building modern ai agent for business with full customization options.",
+    price: 20,
+    image: "/ai.png",
+    techStack: [
+      { icon: "⚛", label: "Nextjs" },
+      { icon: "🐍", label: "React" },
+      { icon: "⚡", label: "React Hook Form" },
+      { icon: "TS", label: "TypeScript" },
+      { icon: "☁️", label: "Tailwindcss" },
+
+    ],
+    link:'https://keento1.vercel.app/'
+  },
   {
     title: "DesignAgency",
     description: "A complete SaaS starter for design agency business .",
