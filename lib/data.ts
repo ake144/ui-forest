@@ -1346,6 +1346,16 @@ export const featuredTemplates: TemplatesType[] = [
     stack: ['Next.js', 'React','Wix', 'Tailwind CSS', 'api']
   },
   {
+    name: "PlantX",
+    description: "A complete starter templates for plant and agriculture business.",
+    price: 12,
+    image: "/plantx.png",
+    link: 'https://plantx-swart.vercel.app/',
+    stack: ['Next.js', 'React', 'Rechart', 'Shadcn', 'Tailwind CSS'],
+    repo: 'https://uiforest.gumroad.com/l/brdbc'
+  },
+
+  {
     name: "FileVault",
     description: "A complete SaaS starter for file management.",
     price: 14,

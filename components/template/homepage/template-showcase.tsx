@@ -94,6 +94,22 @@ const templates = [
     ],
   },
   {
+    title: "PlantX",
+    description: "A complete starter templates for plant and agriculture business.",
+    price: 12,
+    image: "/plantx.png",
+    link: 'https://plantx-swart.vercel.app/',
+    techStack: [
+      { icon: "⚛", label: "Nextjs" },
+      { icon: "🐍", label: "React" },
+      { icon: "⚡", label: "Framer-motion" },
+      { icon: "TS", label: "TypeScript" },
+      { icon: "☁️", label: "Tailwindcss" }
+    ],
+  },
+
+  
+  {
     title: "FileVault",
     description: "A complete SaaS starter for file management.",
     price: 14,
