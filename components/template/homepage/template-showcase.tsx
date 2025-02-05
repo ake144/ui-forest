@@ -154,52 +154,46 @@ const templates = [
 ]
 
 export function TemplatesShowcase() {
-  const [activeTemplate, setActiveTemplate] = useState(0)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  })
+  const [activeTemplate, setActiveTemplate] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end start"] });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${(templates.length - 1) * 100}%`])
+  const totalWidth = (templates.length + 2) * 100; // Total width based on number of templates
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${totalWidth - 100}%`]);
 
   useEffect(() => {
     const handleScroll = () => {
       if (containerRef.current) {
-        const scrollPosition = window.scrollY
-        const containerHeight = containerRef.current.clientHeight
-        const windowHeight = window.innerHeight
-        const scrollPercentage = scrollPosition / (containerHeight - windowHeight)
-        const newActiveTemplate = Math.floor(scrollPercentage * templates.length)
-        setActiveTemplate(Math.min(newActiveTemplate, templates.length - 1))
+        const scrollPosition = window.scrollY;
+        const containerHeight = containerRef.current.clientHeight;
+        const windowHeight = window.innerHeight;
+        const scrollPercentage = scrollPosition / (containerHeight - windowHeight);
+        const newActiveTemplate = Math.floor(scrollPercentage * templates.length);
+        setActiveTemplate(Math.min(newActiveTemplate, templates.length - 1));
       }
-    }
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <div ref={containerRef} className="relative  min-h-[300vh]">
+    <div ref={containerRef} className="relative min-h-[300vh]">
       <div className="sticky top-0 h-screen overflow-hidden">
-        <motion.div
-          className="flex h-full"
-          style={{ x }}
-        >
+        <motion.div className="flex h-full" style={{ x }}>
           {templates.map((template, index) => (
             <motion.div
               key={index}
-              className="w-screen flex-shrink-0"
+              className="flex-shrink-0 w-[90vw] h-full" // Adjust width if needed
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <TemplateSection {...template} isActive={activeTemplate === index} />
+              <TemplateSection {...template} />
             </motion.div>
           ))}
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
-

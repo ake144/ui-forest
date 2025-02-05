@@ -1252,7 +1252,7 @@ export const testComponentPacks = [
   {
     title: "Logo Clouds",
     description: "Animated logo clouds with micro-interactions",
-    imageUrl: "/placeholder.svg?height=300&width=400",
+    imageUrl: "/logo1.png",
     count: 3,
     price: 5,
   },

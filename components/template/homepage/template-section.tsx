@@ -12,7 +12,7 @@ interface TemplateSectionProps {
   price: number
   image: string
   techStack: Array<{ icon: string; label: string }>
-  isActive: boolean,
+  // isActive: boolean,
   link:string;
 }
 
@@ -23,7 +23,7 @@ export function TemplateSection({
   image, 
   techStack,
   link,
-  isActive
+
 }: TemplateSectionProps) {
   return (
     <div className="h-screen w-screen flex items-center justify-center p-4">
