@@ -69,16 +69,6 @@ export const components: ComponentDetails[] = [
     preview: 'contact-widget',
   },
   {
-    name: 'Form',
-    description: 'A customizable and ready to use  sign-in form to start your project.',
-    slug: 'form',
-    pro: false,
-    code: getComponentCode(path.join(dirname, 'form')),
-    documentation: '',
-
-    preview: 'form',
-  },
-  {
     name: 'Animated Hero',
     description: 'A dynamic hero section with a mouse-following gradient background',
     slug: 'hero',

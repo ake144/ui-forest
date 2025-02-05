@@ -16,7 +16,7 @@ export function Sidebar() {
   const [searchTerm, setSearchTerm] = useState("");
   const [isComponentsOpen, setIsComponentsOpen] = useState(true);
   const [components, setComponents] = useState<any>([]);
-  const pathname = usePathname();
+ 
 
   // Fetch components data
   useEffect(() => {
