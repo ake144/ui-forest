@@ -1,5 +1,3 @@
-'use client'
-
 import { cn } from "@/lib/utils"
 import { Marquee } from "./ui/marquee"
 import { motion } from "framer-motion"
@@ -35,7 +33,36 @@ const reviews = [
     body: "The attention to detail in this product is unparalleled. Bravo!",
     img: "https://avatar.vercel.sh/mike",
   },
-  // Add more reviews to have enough for 5 columns
+  {
+    name: "Emily",
+    username: "@emily",
+    body: "A game changer for my projects. So easy to use!",
+    img: "https://avatar.vercel.sh/emily",
+  },
+  {
+    name: "Chris",
+    username: "@chris",
+    body: "The templates are not only beautiful but also highly functional.",
+    img: "https://avatar.vercel.sh/chris",
+  },
+  {
+    name: "Sarah",
+    username: "@sarah",
+    body: "Best UI library I've ever used! Highly recommend to everyone.",
+    img: "https://avatar.vercel.sh/sarah",
+  },
+  {
+    name: "Tom",
+    username: "@tom",
+    body: "Absolutely love the design and ease of integration!",
+    img: "https://avatar.vercel.sh/tom",
+  },
+  {
+    name: "Anna",
+    username: "@anna",
+    body: "The variety of templates saved me so much time. Thank you, UiForest!",
+    img: "https://avatar.vercel.sh/anna",
+  },
 ]
 
 const ReviewCard = ({
@@ -76,9 +103,7 @@ export default function Testimonials() {
   const rows = [
     reviews.slice(0, Math.ceil(reviews.length / 3)),
     reviews.slice(Math.ceil(reviews.length / 3), Math.ceil((2 * reviews.length) / 3)),
-    reviews.slice(Math.ceil(reviews.length / 3), Math.ceil((2 * reviews.length) / 3)),
-    reviews.slice(0, Math.ceil(reviews.length / 3)),
-
+    reviews.slice(Math.ceil((2 * reviews.length) / 3)),
   ]
 
   return (
@@ -112,4 +137,3 @@ export default function Testimonials() {
     </section>
   )
 }
-

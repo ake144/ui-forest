@@ -2,16 +2,7 @@
 
 
 import dynamic from "next/dynamic"
-// import {Testimonials} from "@/components/testimonials"
-// import Footer from "@/components/footer"
 import { motion } from "framer-motion"
-// import Hero from "@/components/hero"
-// import { H1Text } from "@/components/texth1"
-
-// import { BuildText } from "@/components/buildwith"
-// import { TemplateShowcase } from "@/components/slides"
-// import { ComponentPacks } from "@/components/component/component-packs"
-// import Navbar from "@/components/main-nav"
 
 import CodePreview from "@/components/code-preview"
 import { Spotlight } from "@/components/ui/Spotlight"

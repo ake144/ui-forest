@@ -25,8 +25,8 @@ export default async function ComponentsPage() {
             <Tabs defaultValue="all" className="w-full">
               <TabsList className="bg-zinc-900/80 border border-zinc-800 backdrop-blur-sm">
                 <TabsTrigger value="all" className="data-[state=active]:bg-zinc-800 data-[state=active]:text-white">All Components</TabsTrigger>
-                <TabsTrigger value="free" className="data-[state=active]:bg-zinc-800 data-[state=active]:text-white">Free</TabsTrigger>
-                <TabsTrigger value="pro" className="data-[state=active]:bg-zinc-800 data-[state=active]:text-white">Pro</TabsTrigger>
+                {/* <TabsTrigger value="free" className="data-[state=active]:bg-zinc-800 data-[state=active]:text-white">Free</TabsTrigger> */}
+                {/* <TabsTrigger value="pro" className="data-[state=active]:bg-zinc-800 data-[state=active]:text-white">Pro</TabsTrigger> */}
               </TabsList>
               <TabsContent value="all" className="mt-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -69,12 +69,13 @@ function ComponentCard({ name, description, pro = false, slug }: { name: string;
       <CardContent className="grid gap-2.5 p-6">
         <div className="flex items-center justify-between gap-4">
           <CardTitle className="text-lg text-white">{name}</CardTitle>
-          {pro && (
+          {/* {pro && (
             <div className="bg-zinc-800 text-zinc-300 gap-1 flex items-center rounded px-2 py-1">
               <Lock className="h-3 w-3" />
               <span>Pro</span>
             </div>
-          )}
+          )} */}
+
         </div>
         <CardDescription className="line-clamp-2 text-sm text-zinc-400">{description}</CardDescription>
       </CardContent>
@@ -90,7 +91,8 @@ function ComponentCard({ name, description, pro = false, slug }: { name: string;
           }}
         >
           <Link href={`/components/${slug}`} className="flex items-center justify-center gap-2">
-            {pro ? 'Upgrade to Pro' : 'View Component'}
+            {/* {pro ? 'Upgrade to Pro' : 'View Component'} */}
+           {'View Component'}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </Button>

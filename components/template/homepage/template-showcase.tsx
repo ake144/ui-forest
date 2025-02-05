@@ -184,7 +184,7 @@ export function TemplatesShowcase() {
           {templates.map((template, index) => (
             <motion.div
               key={index}
-              className="flex-shrink-0 w-[90vw] h-full" // Adjust width if needed
+              className="flex-shrink-0 w-[90vw] h-full"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}

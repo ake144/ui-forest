@@ -26,9 +26,9 @@ export function TemplateSection({
 
 }: TemplateSectionProps) {
   return (
-    <div className="h-screen w-screen flex items-center justify-center p-4">
+    <div className="h-screen w-screen flex  items-center justify-center p-4">
       <div className="max-w-6xl w-full">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 px-5 items-center">
           <motion.div 
             className="space-y-6"
             initial={{ opacity: 0, x: -50 }}
