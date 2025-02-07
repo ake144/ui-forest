@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/main-nav";
 import metatag from "./metatag";
 import { ClerkProvider } from "@clerk/nextjs";
 import Loglib from "@loglib/tracker/react";

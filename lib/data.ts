@@ -1,14 +1,5 @@
 import { TemplatesType } from "./types";
 
-const transition = (currentIndex:number, index:number) => {
-  return `absolute transition-opacity duration-500 ${currentIndex === index ? 'opacity-100' : 'opacity-0'}`;
-}
-
-
-
-
-
-
 export const testComponentPacks = [
   {
     title: "Hero Sections",

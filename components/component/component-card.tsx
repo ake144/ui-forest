@@ -3,11 +3,7 @@
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card"
-import dynamic from "next/dynamic";
 
-const CardSpotlight = dynamic(() => import("../ui/card-spootlight").then((mod) => mod.CardSpotlight), {
-  ssr: false,
-});
 
 interface ComponentCardProps {
   title: string

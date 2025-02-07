@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils"
 import { Marquee } from "./ui/marquee"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 const reviews = [
   {
@@ -88,7 +89,7 @@ const ReviewCard = ({
       )}
     >
       <div className="flex flex-row items-center gap-3">
-        <img className="rounded-full" width="48" height="48" alt="" src={img} />
+        <Image className="rounded-full" width="48" height="48" alt="" src={img} />
         <div className="flex flex-col">
           <figcaption className="text-lg font-semibold text-white">{name}</figcaption>
           <p className="text-sm font-medium text-zinc-400">{username}</p>

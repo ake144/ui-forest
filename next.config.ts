@@ -1,30 +1,51 @@
 import type { NextConfig } from "next";
-import createMDX from '@next/mdx'
-
-const nextConfig: NextConfig = {
-  /* config options here */
-  output: 'standalone',
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  pageExtensions: ['jsx', 'js', 'ts', 'tsx', 'mdx', 
-    'md', 'html', 'htm', 'mjs'],
+import createMDX from "@next/mdx";
+import withBundleAnalyzerFn from "@next/bundle-analyzer";
 
 
-  images: {
-    domains: [
-      "api.microlink.io", // Microlink Image Preview
-    ],
-    unoptimized: true 
-  },
-};
-
-const withMDX = createMDX({
-  extension: /\.mdx?$/
+const withBundleAnalyzer = withBundleAnalyzerFn({
+  enabled: process.env.ANALYZE === "true",
 });
 
 
-export default withMDX(nextConfig)
-// export default nextConfig;
+const withMDX = createMDX({
+  extension: /\.mdx?$/,
+});
+
+const nextConfig: NextConfig = {
+  output: "standalone",
+
+  swcMinify: true,
+  experimental: {
+    turbo: {
+      resolveExtensions: [".mdx", ".tsx", ".ts", ".jsx", ".js", ".mjs", ".json"],
+      
+    },
+    // optimizePackageImports: ['icon-library'],
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  pageExtensions: ["jsx", "js", "ts", "tsx", "mdx", "md", "html", "htm", "mjs"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "api.microlink.io",
+      },
+      {
+        hostname :"avatar.vercel.sh",
+        protocol: "https",
+      }
+    ],
+  },
+  webpack(config) {
+    return config;
+  },
+};
 
 
+export default withMDX(withBundleAnalyzer(nextConfig));

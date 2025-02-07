@@ -1,14 +1,11 @@
 'use client'
 
-
 import dynamic from "next/dynamic"
 import { motion } from "framer-motion"
 
-import CodePreview from "@/components/code-preview"
-import { Spotlight } from "@/components/ui/Spotlight"
-import { ExploreButton } from "@/components/explorebutton"
-import { TemplatesShowcase } from "@/components/template/homepage/template-showcase"
-TemplatesShowcase
+
+const CodePreview = dynamic(()=> import("@/components/code-preview"), {ssr:false})
+const  TemplatesShowcase = dynamic(()=>import("@/components/template/homepage/template-showcase").then((mode)=>mode.TemplatesShowcase),{ssr:false})
 const Navbar = dynamic(()=> import("@/components/main-nav"), {ssr:false})
 const Footer = dynamic(()=> import("@/components/footer"), {ssr:false})
 const Hero = dynamic(()=> import("@/components/hero"), {ssr:false})
@@ -16,6 +13,8 @@ const BuildText  = dynamic(()=> import("@/components/buildwith"), {ssr:false})
 const H1Text = dynamic(()=> import("@/components/texth1"), {ssr:false})
 const Testimonials = dynamic(()=>import("@/components/testimonials"),{ssr:false})
 const ComponentPacks = dynamic(()=>import("@/components/component/component-packs"),{ssr:false})
+const  Spotlight = dynamic(()=>import("@/components/ui/Spotlight").then((mode)=>mode.Spotlight),{ssr:false})
+const  ExploreButton = dynamic(()=>import("@/components/explorebutton").then((mode)=>mode.ExploreButton),{ssr:false})
 
 
 

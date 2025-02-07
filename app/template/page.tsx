@@ -10,6 +10,8 @@ import { cn } from "@/lib/utils"
 import {  featuredTemplates } from '@/lib/data'
 import { FeaturedTemplateCard, TemplateCard } from '@/components/template/templates-page-card'
 import { ContactWidget } from '@/components/component-widget'
+import { ModernButton } from '@/components/button'
+import Link from 'next/link'
 
 
 
@@ -131,6 +133,13 @@ export default function TemplatesPage() {
           </Tabs>
         </section>
 
+      <Link href='/pricing' className='items-center justify-center flex '>
+          <ModernButton >
+             Get LifeTime Access
+         </ModernButton>
+      
+      </Link>
+         
         <ContactWidget  />
       </div>
     </div>

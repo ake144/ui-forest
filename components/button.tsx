@@ -5,11 +5,18 @@ import { ArrowRight } from 'lucide-react'
 import { cn } from "@/lib/utils"
 
 interface ModernButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode
-
+  children?: React.ReactNode; // Optional text
+  className?: string;
+  preview?: boolean; // Preview mode
 }
 
-export function ModernButton({  className, ...props }: ModernButtonProps) {
+
+export function ModernButton({
+  children,
+  className,
+  preview = false,
+  ...props
+}: ModernButtonProps)  {
   return (
     <button
       className={cn(
@@ -24,7 +31,7 @@ export function ModernButton({  className, ...props }: ModernButtonProps) {
       {...props}
     >
       <span className="relative z-10 bg-gradient-to-r from-[#FF3BFF] via-[#ECBFBF] to-[#5C24FF] bg-clip-text text-transparent">
-       
+      {children || "Join Now"} {/* Default text if no children provided */}
         <ArrowRight className="translate-x-0 duration-300 group-hover:translate-x-2 ml-2 h-4 w-4 inline-block stroke-[#FF3BFF]" />
 
       </span>

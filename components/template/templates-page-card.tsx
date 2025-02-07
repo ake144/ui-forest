@@ -4,9 +4,9 @@ import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ChevronRight} from 'lucide-react'
 import { cn } from "@/lib/utils"
 import { TemplatesType } from '@/lib/types'
+import Image from 'next/image'
 
 
 
@@ -23,7 +23,7 @@ export function FeaturedTemplateCard({ name, description, price, image, stack = 
           <CardHeader className={cn("p-0", viewMode === 'list' && "w-1/3")}>
             <div className="aspect-video relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 via-transparent to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <img src={image} alt={name} className="w-full h-full object-cover transition-transform group-hover:scale-105" />
+              <Image src={image} alt={name} className="w-full h-full object-cover transition-transform group-hover:scale-105" height={80} width={80} />
             </div>
           </CardHeader>
           <div className={cn(viewMode === 'list' && "w-2/3")}>
@@ -73,10 +73,10 @@ export function FeaturedTemplateCard({ name, description, price, image, stack = 
           viewMode === 'list' && "flex"
         )}>
           <CardHeader className={cn("p-0", viewMode === 'list' && "w-1/3")}>
-            <div className="aspect-video relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <img src={image} alt={name} className="w-full h-full object-cover transition-transform group-hover:scale-105" />
-            </div>
+             <div className="aspect-video relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 via-transparent to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <img src={image} alt={name} className="w-full h-full object-cover transition-transform group-hover:scale-105"  loading="lazy"/>
+              </div>
           </CardHeader>
           <div className={cn(viewMode === 'list' && "w-2/3")}>
             <CardContent className="p-6">

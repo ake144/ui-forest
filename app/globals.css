@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.cl-internal-1wqfrat {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  

@@ -12,14 +12,14 @@ export default function PricingPage() {
     "Full source code and design files",
     "Regular updates and new component releases",
     "Access to private GitHub repository",
-    "Integration with popular frameworks (React, Vue, Angular)",
+    "Integration with popular frameworks (React, Vue, Nextjs)",
     "Advanced component customization options",
     "Performance optimization tools",
     "Exclusive workshops and webinars",
     "Early access to beta features",
     "Personalized onboarding session",
     "Priority feature request system",
-    "API access for dynamic component generation",
+    // "API access for dynamic component generation",
   ]
 
   return (

@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { ModernButton } from "./button";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 const navItems = [
   { name: "Templates", href: "/template" },
@@ -93,16 +94,19 @@ export default function Navbar() {
             </SheetContent>
           </Sheet>
 
-          {/* Sign-In/Sign-Out */}
-          {/* <div className="hidden md:flex text-gray-50 items-center space-x-4">
-             <Link href='/template'>
-        
+          <div className="hidden md:flex text-gray-50 items-center space-x-4">
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
+              <SignedOut>
+                {/* Signed out users get sign in button */}
+                <SignInButton mode="modal">
                   <ModernButton>
-                     Start Now
+                    Join Uiforest
                   </ModernButton>
-             </Link>
-             
-          </div> */}
+                </SignInButton>
+              </SignedOut>
+            </div>
         </div>
       </div>
     </motion.header>
