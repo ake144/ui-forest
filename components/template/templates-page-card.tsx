@@ -23,7 +23,12 @@ export function FeaturedTemplateCard({ name, description, price, image, stack = 
           <CardHeader className={cn("p-0", viewMode === 'list' && "w-1/3")}>
             <div className="aspect-video relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 via-transparent to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <Image src={image} alt={name} className="w-full h-full object-cover transition-transform group-hover:scale-105" height={80} width={80} />
+              <Image src={image} alt={name} className="w-full h-full object-cover transition-transform group-hover:scale-105" 
+               
+               objectFit='cover'
+               layout='fill'
+                loading="lazy"
+              />
             </div>
           </CardHeader>
           <div className={cn(viewMode === 'list' && "w-2/3")}>
