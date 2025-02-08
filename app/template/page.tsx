@@ -12,6 +12,7 @@ import { FeaturedTemplateCard, TemplateCard } from '@/components/template/templa
 import { ContactWidget } from '@/components/component-widget'
 import { ModernButton } from '@/components/button'
 import Link from 'next/link'
+import CTASection from '@/components/ctasection'
 
 
 
@@ -133,13 +134,14 @@ export default function TemplatesPage() {
           </Tabs>
         </section>
 
-      <Link href='/pricing' className='items-center justify-center flex '>
+      <Link href='/pricing' className='items-center justify-center flex  my-9 pb-11'>
           <ModernButton >
              Get LifeTime Access
          </ModernButton>
       
       </Link>
-         
+         <CTASection  />
+
         <ContactWidget  />
       </div>
     </div>
