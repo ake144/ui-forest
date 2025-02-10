@@ -77,6 +77,24 @@ export const featuredTemplates: TemplatesType[] = [
     link:'https://supercharge1.vercel.app'
   },
   {
+    name: "OneProfile",
+    description: "A complete sites with full customization options and with modern technologies",
+    price: 20,
+    image: "/oneprofile.png",
+    link: 'https://profile-builder-hmrf.vercel.app/',
+    stack: ['Next.js','Ai-Sdk','prisma','clerk', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
+    repo: '/'
+  },
+  {
+    name: "DigitalStudio",
+    description: "A complete web templates for digital industry related stuff with modern technologies",
+    price: 20,
+    image: "/digitalstudio.png",
+    link: 'https://digital-studio1.vercel.app/',
+    stack: ['Next.js','Ai-Sdk','prisma','clerk', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
+    repo: '/'
+  },
+  {
     name: "DesignAgency",
     description: "A complete SaaS starter for design agency business .",
     price: 14,

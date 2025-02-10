@@ -51,6 +51,31 @@ const templates = [
     link: 'https://e-commerce-plus-next.vercel.app/',
   },
   {
+    title: "OneProfile",
+    description: "A complete sites with full customization options and with modern technologies",
+    price: 20,
+    image: "/oneprofile.png",
+    link: 'https://profile-builder-hmrf.vercel.app/',
+    techStack: [{icon: "⚛", label: "Nextjs"},
+      {icon: "⚛",label:'Ai-Sdk'},{icon: "⚛",label:'prisma'},{icon: "",label:'clerk'}, {icon: "⚛",label:'React'}, {icon: "⚛",label:'shadcn'}, {icon: "⚛",label:'framer-motion'}, 
+      {icon: "⚛",label:'Tailwind css'}],
+  },
+  {
+    title: "DigitalStudio",
+    description: "A complete web templates for digital industry related stuff with modern technologies",
+    price: 15,
+    image: "/digitalstudio.png",
+    link: 'https://digital-studio1.vercel.app/',
+    techStack: [
+      { icon: "⚛", label: "Nextjs" },
+      { icon: "🐍", label: "React" },
+      { icon: "⚡", label: "API" },
+      { icon: "TS", label: "TypeScript" },
+      { icon: "☁️", label: "Tailwindcss" }
+    ],
+  },
+  
+  {
     title: "Keento",
     description: "A complete solution for building modern ai agent for business with full customization options.",
     price: 20,

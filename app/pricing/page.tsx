@@ -22,6 +22,12 @@ export default function PricingPage() {
     // "API access for dynamic component generation",
   ]
 
+  const currentPrice = 39
+  const oldPrice = 100
+  const discountPercentage = Math.round(((oldPrice - currentPrice) / oldPrice) * 100)
+
+
+
   return (
     <div className="h-full overflow-x-hidden bg-black text-white py-20 relative">
       <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-purple-500/20 rounded-full blur-[128px] pointer-events-none" />        {/* <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[128px] pointer-events-none" />
@@ -45,9 +51,13 @@ export default function PricingPage() {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
-            <div className="text-center">
-              <span className="md:text-5xl sm:text-2xl text-xl font-bold">$50</span>
+          <div className="text-center">
+              <span className="md:text-5xl sm:text-2xl text-xl font-bold">${currentPrice}</span>
               <span className="text-zinc-400 ml-2">one-time payment</span>
+              <div className="mt-2">
+                <span className="text-zinc-400 line-through mr-2">${oldPrice}</span>
+                <span className="text-green-500 font-semibold">{discountPercentage}% off</span>
+              </div>
             </div>
             <Button className="w-full text-lg py-6" size="lg">
               Get Lifetime Access
