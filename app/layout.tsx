@@ -31,14 +31,14 @@ export const metadata = {
         url: ogImage,
       },
     ],
-    url: "https://farmui.com",
+    url: "https://uiforest.dev",
   },
   twitter: {
     card: "summary_large_image",
     title,
     description: desc,
     images: [ogImage],
-    creator: "@farmui",
+    creator: "@uiforest",
   },
 };
 
