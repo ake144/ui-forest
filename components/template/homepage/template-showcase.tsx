@@ -74,7 +74,6 @@ const templates = [
       { icon: "☁️", label: "Tailwindcss" }
     ],
   },
-  
   {
     title: "Keento",
     description: "A complete solution for building modern ai agent for business with full customization options.",
@@ -132,8 +131,6 @@ const templates = [
       { icon: "☁️", label: "Tailwindcss" }
     ],
   },
-
-  
   {
     title: "FileVault",
     description: "A complete SaaS starter for file management.",

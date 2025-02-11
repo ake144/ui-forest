@@ -76,7 +76,7 @@ export default function Hero() {
               {/* Browse Components Button */}
               <a
                 href="/components"
-                className="relative  inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium text-white transition-all bg-black rounded-lg shadow-lg group"
+                className="relative  inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium text-white transition-all bg-black rounded-full shadow-lg group"
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-purple-500 group-hover:opacity-50"></span>
                 <span className="absolute right-0 w-8 h-32 -translate-x-12 translate-y-3 rotate-12 bg-white opacity-10"></span>
@@ -95,7 +95,7 @@ export default function Hero() {
               {/* Browse Templates Button */}
               <a
                 href="template"
-                className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium text-black transition-all bg-white border border-blue-500 rounded-lg shadow-lg group"
+                className="relative rounded-full inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium text-black transition-all bg-white border border-blue-500  shadow-lg group"
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-purple-500 group-hover:opacity-20"></span>
                 <span className="absolute right-0 w-8 h-32 -translate-x-12 translate-y-3 rotate-12 bg-black opacity-5"></span>
@@ -133,13 +133,16 @@ export default function Hero() {
               <span className="hidden md:flex">React</span>
             </div>
             <div className="flex items-center gap-2">
-              <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
+              {/* <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
                 <path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c2.4,0,4.8,0.9,7.2,2.7c-0.7-3.2-2.7-4.8-5.9-4.8z"/>
+              </svg> */}
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="26" viewBox="0 0 48 48">
+                <path fill="#00acc1" d="M24,9.604c-6.4,0-10.4,3.199-12,9.597c2.4-3.199,5.2-4.398,8.4-3.599 c1.826,0.456,3.131,1.781,4.576,3.247C27.328,21.236,30.051,24,36,24c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.6 c-1.825-0.456-3.13-1.781-4.575-3.247C32.672,12.367,29.948,9.604,24,9.604L24,9.604z M12,24c-6.4,0-10.4,3.199-12,9.598 c2.4-3.199,5.2-4.399,8.4-3.599c1.825,0.457,3.13,1.781,4.575,3.246c2.353,2.388,5.077,5.152,11.025,5.152 c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.599c-1.826-0.456-3.131-1.781-4.576-3.246C20.672,26.764,17.949,24,12,24 L12,24z"></path>
               </svg>
               <span className="hidden md:flex">TailwindCSS</span>
             </div>
             <div className="flex items-center gap-2">
-              <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
+              <svg viewBox="0 0 24 24" className="w-6 h-6 ">
                 <path d="M16.934 8.519a1.044 1.044 0 0 1 .303.23l2.349-1.045-2.192-2.495-.491 3.31zM12.478 14.524l-3.467 3.946b2.706 4.17 6.173-3.074.317-1.23-4.479-3.813zM7.666 18.747l.212.382a.5.5 0 0 0 .84-.11l.333-.944-1.385.672zm7.405-13.502h3.087c.2 0 .4.2.4.4v5.167a.4.4 0 0 1-.4.4h-3.087a.4.4 0 0 1-.4-.4V5.645a.4.4 0 0 1 .4-.4zm-.6 7.1h3.087c.2 0 .4.2.4.4v5.167a.4.4 0 0 1-.4.4h-3.087a.4.4 0 0 1-.4-.4V12.345a.4.4 0 0 1 .4-.4zm-6.4-7.1h3.087c.2 0 .4.2.4.4v5.167a.4.4 0 0 1-.4.4H8.071a.4.4 0 0 1-.4-.4V5.645a.4.4 0 0 1 .4-.4zm-.6 7.1h3.087c.2 0 .4.2.4.4v5.167a.4.4 0 0 1-.4.4H7.471a.4.4 0 0 1-.4-.4V12.345a.4.4 0 0 1 .4-.4z"/>
               </svg>
               <span className="hidden md:flex" >Framer Motion</span>

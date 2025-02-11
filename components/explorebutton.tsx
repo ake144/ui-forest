@@ -19,7 +19,7 @@ export function ExploreButton({link}:{link:string}) {
     <Button
       size="lg"
       onClick={() => handleClick(link)}
-      className="relative rounded-lg  overflow-hidden bg-gradient-to-r from-indigo-500 to-purple-600 text-white hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 ease-out transform hover:scale-105 focus:ring-2 focus:ring-indigo-400 focus:outline-none dark:focus:ring-indigo-700"
+      className="relative rounded-full  overflow-hidden bg-gradient-to-r from-indigo-500 to-purple-600 text-white hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 ease-out transform hover:scale-105 focus:ring-2 focus:ring-indigo-400 focus:outline-none dark:focus:ring-indigo-700"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

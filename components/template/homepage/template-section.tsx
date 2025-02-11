@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -12,8 +12,7 @@ interface TemplateSectionProps {
   price: number
   image: string
   techStack: Array<{ icon: string; label: string }>
-  // isActive: boolean,
-  link:string;
+  link: string
 }
 
 export function TemplateSection({ 
@@ -23,12 +22,11 @@ export function TemplateSection({
   image, 
   techStack,
   link,
-
 }: TemplateSectionProps) {
   return (
-    <div className="h-screen w-screen flex  items-center justify-center p-4">
+    <div className="h-screen w-screen flex items-center justify-center p-4">
       <div className="max-w-6xl w-full">
-        <div className="grid lg:grid-cols-2 gap-12 px-5 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 sm:gap-6 px-5 items-center">
           <motion.div 
             className="space-y-6"
             initial={{ opacity: 0, x: -50 }}
@@ -47,7 +45,7 @@ export function TemplateSection({
               </p>
             </div>
             
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <Button className="bg-purple-600 hover:bg-purple-700 text-white">
                 Get Access - ${price} USD
               </Button>
@@ -95,7 +93,7 @@ export function TemplateSection({
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <div className="relative rounded-lg overflow-hidden border border-gray-700 aspect-video">
+            <div className="relative rounded-lg overflow-hidden border border-gray-700 aspect-video w-full">
               <Image
                 src={image}
                 alt={`${title} Preview`}
@@ -110,4 +108,3 @@ export function TemplateSection({
     </div>
   )
 }
-
