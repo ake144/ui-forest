@@ -88,7 +88,7 @@ export const featuredTemplates: TemplatesType[] = [
   {
     name: "DigitalStudio",
     description: "A complete web templates for digital industry related stuff with modern technologies",
-    price: 20,
+    price: 15,
     image: "/digitalstudio.png",
     link: 'https://digital-studio1.vercel.app/',
     stack: ['Next.js','Ai-Sdk','prisma','clerk', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
