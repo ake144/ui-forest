@@ -78,6 +78,15 @@ export const components: ComponentDetails[] = [
     preview: 'hero',
   },
   {
+    name: 'Stars on Github',
+    description: 'An interactive contact widget with a form and social links.',
+    slug: 'star-button',
+    pro: false,
+    code: getComponentCode(path.join(dirname, 'star-button')),
+    documentation: '',
+    preview: 'star-button',
+  },
+  {
     name: 'Newsletter Form',
     description: 'A form for subscribing to newsletters with validation and animations.',
     slug: 'newsletter-form',
@@ -116,7 +125,25 @@ export const components: ComponentDetails[] = [
 
     preview: 'text2',
   },
+  {
+    name: 'Gradual Spacing',
+    description: 'Text animation that increases letter spacing gradually.',
+    slug: 'gradual-spacing',
+    pro: false,
+    code: getComponentCode(path.join(dirname, 'gradual-spacing')),
+    documentation: '',
+    preview: 'gradual-spacing',
+  },
 
+  {
+    name: 'Wavy Text',
+    description: 'Text animation where the text moves in a wavy motion.',
+    slug: 'wavy-text',
+    pro: false,
+    code: getComponentCode(path.join(dirname, 'wavy-text')),
+    documentation: '',
+    preview: 'wavy-text',
+  },
   {
     name: 'Navbar',
     description: 'A responsive navigation bar with links and a mobile-friendly menu.',
