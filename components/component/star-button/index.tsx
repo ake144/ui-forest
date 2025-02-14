@@ -37,7 +37,7 @@ function StarButton() {
           ></path>
         </svg>
         <span className="font-display inline-block font-medium tabular-nums tracking-wider text-white">
-          1.6k
+          2.6k
         </span>
       </div>
     </a>
