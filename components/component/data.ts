@@ -200,6 +200,15 @@ export const components: ComponentDetails[] = [
     preview: 'testimonials',
   },
   {
+    name: 'Password Torch',
+    description: 'An interactive password input with a torch effect.',
+    slug: 'password-torch',
+    pro: false,
+    code: getComponentCode(path.join(dirname, 'password-torch')),
+    documentation: '',
+    preview: 'password-torch',
+  },
+  {
     name: 'Floating CTA Banner',
     description: 'A dynamic CTA that drives user to take some action ',
     slug: 'floating-cta',
