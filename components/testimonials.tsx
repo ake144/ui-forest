@@ -5,27 +5,27 @@ import Image from "next/image"
 
 const reviews = [
   {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
+    name: "MK",
+    username: "@bubutales.net",
+    body: "Hello! First of all I like your website name: Ui-Forest. It sounds like somethig you want to click. The landing page is nice. I like colours and elements you displayed",
     img: "https://avatar.vercel.sh/jack",
   },
   {
-    name: "Jill",
-    username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
+    name: "plcIOsim",
+    username: "@plcIOsim",
+    body: "This is really cool! I've used many component libraries in the past (Bootstrap, MUI, Chakra, Amplify) but I haven't seen components like yours on any of them.",
     img: "https://avatar.vercel.sh/jill",
   },
   {
-    name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
+    name: "EasyContent",
+    username: "@easycontent",
+    body: "The first thing I like about Ui-Forest is that it solves a real problem many developers face – wasting time designing and searching for the right components. Instead of spending hours tweaking CSS or scrolling through endless template pages, here you have everything in one place, well-organized and ready to use.",
     img: "https://avatar.vercel.sh/john",
   },
   {
-    name: "Jane",
-    username: "@jane",
-    body: "This product has completely transformed my workflow. Incredible!",
+    name: "Teddy Thibodeau",
+    username: "@Teddy",
+    body: "Wow I think this is really cool, it would be perfect for someone who wants a unique site without relying on those ugly premade sites from GoDaddy. As a UI/UX developer I think it looks really good and professional!",
     img: "https://avatar.vercel.sh/jane",
   },
   {
@@ -35,9 +35,9 @@ const reviews = [
     img: "https://avatar.vercel.sh/mike",
   },
   {
-    name: "Emily",
-    username: "@emily",
-    body: "A game changer for my projects. So easy to use!",
+    name: "Muhammet Can",
+    username: "@Muhammet",
+    body: "Hi, I love this type of work a lot, you frontend guru's make the life a lot easier for us, backend plebs. ",
     img: "https://avatar.vercel.sh/emily",
   },
   {
@@ -47,15 +47,15 @@ const reviews = [
     img: "https://avatar.vercel.sh/chris",
   },
   {
-    name: "Sarah",
-    username: "@sarah",
-    body: "Best UI library I've ever used! Highly recommend to everyone.",
+    name: "Samuel May",
+    username: "@Samuel",
+    body: "Very crisp and polished site design, which immediately gives me faith in the quality of the UI templates/components I'd potentially be buying.",
     img: "https://avatar.vercel.sh/sarah",
   },
   {
-    name: "Tom",
-    username: "@tom",
-    body: "Absolutely love the design and ease of integration!",
+    name: "Ari Nakos",
+    username: "@Ari",
+    body: "It's a brilliant implementation of an oft encountered problem as an indie full-stack developer, namely the creation of components, some of which may be new.",
     img: "https://avatar.vercel.sh/tom",
   },
   {

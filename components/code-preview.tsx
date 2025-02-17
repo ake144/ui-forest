@@ -108,8 +108,8 @@ const CodePreview = () => {
         
      
       {/* Left Side: Code */}
-      <div className="md:p-6   overflow-auto">
-        <h2 className="text-2xl mb-4 font-bold">Code</h2>
+      <div className="md:px-6   overflow-auto">
+      
         <SyntaxHighlighter
           language="javascript"
           style={oneDark}

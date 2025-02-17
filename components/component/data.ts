@@ -180,6 +180,15 @@ export const components: ComponentDetails[] = [
     documentation: '',
     preview: 'faq',
   },
+  {
+    name: 'Buttons ',
+    description: 'A collection of buttons with different styles and animations.',
+    slug: 'buttons',
+    pro: false,
+    code: getComponentCode(path.join(dirname, 'buttons')),
+    documentation: '',
+    preview: 'buttons',
+  },
   
   {
     name: 'Notifications',
