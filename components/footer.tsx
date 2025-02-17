@@ -8,63 +8,68 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { title: "Product", links: ["Pricing", "Downloads", "Integrations", "Features"] },
-    { title: "Company", links: ["About", "Careers", "Press", "News"] },
-    { title: "Resources", links: ["Blog", "Newsletter", "Events", "Help center"] },
+    {
+      title: "Product",
+      links: [
+        { name: "Pricing", path: "/pricing" },
+        { name: "templates", path: "/template" },
+        { name: "components", path: "/components" },
+      ],
+    },
+    {
+      title: "Company",
+      links: [
+        { name: "About Us", path: "/about-us" },
+        { name: "Privacy Policy", path: "/privacy-policy" },
+        { name: "Refund Policy", path: "/refund-policy" },
+        { name: "Contact", path: "/contact" },
+      ],
+    },
+    {
+      title: "Resources",
+      links: [
+        { name: "Blog", path: "/blog" },
+        { name: "Newsletter", path: "/" },
+        { name: "Events", path: "/" },
+        { name: "Help Center", path: "/" },
+      ],
+    },
   ];
 
   return (
     <footer className="bg-gradient-to-b from-black to-zinc-900 text-zinc-400 py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center text-center md:text-left md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 text-center md:text-left items-start">
           {/* Brand Section */}
-          <div className="lg:col-span-2 space-y-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-2xl font-bold text-white">Ui Forest</h2>
-              <p className="mt-2 text-sm">Your #1 choice for customized UI</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex justify-center md:justify-start items-center space-x-4"
-            >
-              <a
-                href="mailto:tamiratake@gmail.com"
-                className="text-white hover:text-zinc-300 transition-colors duration-200"
-              >
-                <Mail size={20} />
-              </a>
-              <a
-                href="https://twitter.com/uiforest"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-zinc-300 transition-colors duration-200"
-              >
-                <Twitter size={20} />
-              </a>
-              <a
-                href="https://github.com/uiforest"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-zinc-300 transition-colors duration-200"
-              >
-                <Github size={20} />
-              </a>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-sm bg-zinc-800 inline-block px-3 py-1 rounded-full"
-            >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-2 space-y-6"
+          >
+            <h2 className="text-2xl font-bold text-white">Ui Forest</h2>
+            <p className="text-sm">Your #1 choice for customized UI</p>
+            <div className="flex justify-center md:justify-start space-x-4">
+              {[
+                { href: "mailto:tamiratake@gmail.com", icon: Mail },
+                { href: "https://twitter.com/uiforest", icon: Twitter },
+                { href: "https://github.com/uiforest", icon: Github },
+              ].map(({ href, icon: Icon }, idx) => (
+                <a
+                  key={idx}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-zinc-300 transition-colors duration-200"
+                >
+                  <Icon size={20} />
+                </a>
+              ))}
+            </div>
+            <div className="text-sm bg-zinc-800 inline-block px-3 py-1 rounded-full">
               ⚿ SOC 2 Certified
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
 
           {/* Links Sections */}
           {footerLinks.map((section, index) => (
@@ -77,13 +82,13 @@ const Footer = () => {
             >
               <h3 className="text-white font-semibold">{section.title}</h3>
               <ul className="space-y-2">
-                {section.links.map((link) => (
-                  <li key={link}>
+                {section.links.map(({ name, path }) => (
+                  <li key={name}>
                     <a
-                      href="#"
+                      href={path}
                       className="hover:text-white transition-colors duration-200 text-sm"
                     >
-                      {link}
+                      {name}
                     </a>
                   </li>
                 ))}
