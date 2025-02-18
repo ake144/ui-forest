@@ -21,7 +21,6 @@ const Footer = () => {
       links: [
         { name: "About Us", path: "/about-us" },
         { name: "Privacy Policy", path: "/privacy-policy" },
-        { name: "Refund Policy", path: "/refund-policy" },
         { name: "Contact", path: "/contact" },
       ],
     },
