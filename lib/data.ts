@@ -79,11 +79,11 @@ export const featuredTemplates: TemplatesType[] = [
   {
     name: "OneProfile",
     description: "A complete sites with full customization options and with modern technologies",
-    price: 20,
+    price: 15,
     image: "/oneprofile.png",
     link: 'https://profile-builder-hmrf.vercel.app/',
     stack: ['Next.js','Ai-Sdk','prisma','clerk', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
-    repo: '/'
+    repo: 'https://uiforest.gumroad.com/l/oirjq'
   },
   {
     name: "DigitalStudio",
@@ -92,7 +92,7 @@ export const featuredTemplates: TemplatesType[] = [
     image: "/digitalstudio.png",
     link: 'https://digital-studio1.vercel.app/',
     stack: ['Next.js','Ai-Sdk','prisma','clerk', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
-    repo: '/'
+    repo: 'https://uiforest.gumroad.com/l/smmxv'
   },
   {
     name: "DesignAgency",
