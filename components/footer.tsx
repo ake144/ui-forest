@@ -12,8 +12,8 @@ const Footer = () => {
       title: "Product",
       links: [
         { name: "Pricing", path: "/pricing" },
-        { name: "templates", path: "/template" },
-        { name: "components", path: "/components" },
+        { name: "Templates", path: "/template" },
+        { name: "Components", path: "/components" },
       ],
     },
     {
@@ -38,6 +38,20 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-black to-zinc-900 text-zinc-400 py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        
+        {/* Embedding Code Section */}
+        <div className="flex justify-center mb-4">
+          <a href="https://startupfa.me/s/ui-forest?utm_source=uiforest.dev" target="_blank" rel="noopener noreferrer">
+            <img 
+              src="https://startupfa.me/badges/featured-badge.webp" 
+              alt="Ui-Forest - Enhance Projects with Styled Components | Startup Fame" 
+              width="171" 
+              height="54" 
+              className="transition-transform duration-200 hover:scale-105" 
+            />
+          </a>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 text-center md:text-left items-start">
           {/* Brand Section */}
           <motion.div
