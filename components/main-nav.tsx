@@ -16,6 +16,7 @@ import {
 import { cn } from "@/lib/utils";
 import { ModernButton } from "./button";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import UiForestLogo from "./logo";
 
 const navItems = [
   { name: "Templates", href: "/template" },
@@ -49,18 +50,10 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
+
+        
           <Link href="/" className="flex items-center space-x-2">
-            <div className="h-9 w-10 rounded-lg flex items-center justify-center">
-              {/* <div className="h-6 w-6 bg-background rounded" /> */}
-              <Image
-                   src='/favicon.ico'
-                   alt='logo'
-                   height={60}
-                   className="rounded-full  "
-                   width={100}
-              />
-            </div>
-            <span className="font-bold text-gray-50 text-xl">Ui Forest</span>
+              <UiForestLogo  />
           </Link>
 
           {/* Desktop Navigation */}
