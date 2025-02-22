@@ -7,7 +7,7 @@ To get started with UiForest, follow these simple steps to run the development s
 
 1. Visit [https://uiforest.dev](https://uiforest.dev) and grab any UI components that you want.
    
-   ![Alt text](/uiforest.png)
+   ![Uiforest image](/uiforest.png)
 
 2. Once the server is running, open [http://localhost:3000](http://localhost:3000) in your browser to see the magic happen!
 
