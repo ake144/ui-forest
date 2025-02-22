@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Github, Twitter, Mail } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -40,15 +41,23 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
         {/* Embedding Code Section */}
-        <div className="flex justify-center mb-4">
+        <div className="flex gap-4 flex-row justify-center mb-4">
           <a href="https://startupfa.me/s/ui-forest?utm_source=uiforest.dev" target="_blank" rel="noopener noreferrer">
-            <img 
+            <Image 
               src="https://startupfa.me/badges/featured-badge.webp" 
               alt="Ui-Forest - Enhance Projects with Styled Components | Startup Fame" 
               width="171" 
               height="54" 
               className="transition-transform duration-200 hover:scale-105" 
             />
+          </a>
+          <a href="https://twelve.tools" target="_blank" rel="noopener noreferrer"> 
+             <Image src="https://twelve.tools/badge0-light.svg" 
+              alt="Featured on Twelve Tools"
+              width="200" 
+              height="54"
+              className="transition-transform duration-200 hover:scale-105" 
+                />
           </a>
         </div>
 
