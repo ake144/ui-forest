@@ -95,19 +95,19 @@ export default function Navbar() {
             </SheetContent>
           </Sheet>
 
-          <div className="hidden md:flex text-gray-50 items-center space-x-4">
+          {/* <div className="hidden md:flex text-gray-50 items-center space-x-4">
               <SignedIn>
                 <UserButton />
               </SignedIn>
               <SignedOut>
-                {/* Signed out users get sign in button */}
+              
                 <SignInButton mode="modal">
                   <ModernButton>
                     Join Uiforest
                   </ModernButton>
                 </SignInButton>
               </SignedOut>
-            </div>
+            </div> */}
         </div>
       </div>
     </motion.header>
