@@ -14,8 +14,6 @@ const withMDX = createMDX({
 
 const nextConfig: NextConfig = {
   output: "standalone",
-
-  swcMinify: true,
   experimental: {
     turbo: {
       resolveExtensions: [".mdx", ".tsx", ".ts", ".jsx", ".js", ".mjs", ".json"],

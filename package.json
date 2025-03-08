@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev  --turbopack",
-    "build": "next build",
+    "build": "next build && next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "analyze": "ANALYZE=true next build"
+    "analyze": "ANALYZE=true next build",
+     "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.9.0",
@@ -42,6 +43,7 @@
     "lucide-react": "^0.468.0",
     "next": "15.0.3",
     "next-mdx-remote": "^5.0.0",
+    "next-sitemap": "^4.2.3",
     "qss": "^3.0.0",
     "react": "^18.3.1",
     "react-animated-numbers": "^1.0.0",

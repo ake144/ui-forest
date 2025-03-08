@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://uiforest.dev
+
+# Sitemaps
+Sitemap: https://uiforest.dev/sitemap.xml
