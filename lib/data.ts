@@ -101,7 +101,7 @@ export const featuredTemplates: TemplatesType[] = [
     image: "/ak_soft.png",
     link: 'https://ak-software.vercel.app/',
     stack: ['Next.js','React', 'shadcn', 'framer-motion', 'Tailwind css', 'typescript'],
-    repo: '/pricing'
+    repo: 'https://uiforest.gumroad.com/l/tijdv'
   },
   {
     name: "DesignAgency",
