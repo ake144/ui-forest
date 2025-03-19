@@ -22,7 +22,7 @@ export default function PricingPage() {
     // "API access for dynamic component generation",
   ]
 
-  const currentPrice = 29
+  const currentPrice = 20
   const oldPrice = 100
   const discountPercentage = Math.round(((oldPrice - currentPrice) / oldPrice) * 100)
 
