@@ -59,7 +59,7 @@ export default function TemplatesPage() {
             className="flex justify-center gap-3 md:gap-8 mb-16"
           >
             <StatsCard label="Free Templates" value="4" />
-            <StatsCard label="Premium Templates" value="14" />
+            <StatsCard label="Premium Templates" value="13+" />
             <StatsCard label="Total Downloads" value="2.8k+" />
           </motion.div>
         </header>
