@@ -52,7 +52,7 @@ export const featuredTemplates: TemplatesType[] = [
   {
     name: "Recharge",
     description: "A professional faster, scale smarter platform designed for solo developers and enterprises. Build powerful content management systems with our SDK wrapper and extensive customization options.",
-    price: 15,
+    price: 10,
     image: "/recharge.png",
     stack: ['Next.js', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
     repo:"https://uiforest.gumroad.com/l/aubqnd",
@@ -61,7 +61,7 @@ export const featuredTemplates: TemplatesType[] = [
   {
     name: "Keento",
     description: "A complete solution for building modern ai agent for business with full customization options.",
-    price: 20,
+    price: 10,
     image: "/ai.png",
     stack: ['Next.js', 'React', 'shadcn', 'framer-motion', 'Tailwind css', 'React Hook form'],
     link:'https://keento1.vercel.app/',
@@ -70,7 +70,7 @@ export const featuredTemplates: TemplatesType[] = [
   {
     name: "SuperCharge your app",
     description: "A professional faster, scale smarter platform designed for solo developers and enterprises. Build powerful content management systems with our SDK wrapper and extensive customization options.",
-    price: 15,
+    price: 10,
     image: "/supercharge.png",
     stack: ['Next.js', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
     repo:"https://uiforest.gumroad.com/l/npspa",
@@ -79,7 +79,7 @@ export const featuredTemplates: TemplatesType[] = [
   {
     name: "OneProfile",
     description: "A complete sites with full customization options and with modern technologies",
-    price: 15,
+    price: 10,
     image: "/oneprofile.png",
     link: 'https://profile-builder-hmrf.vercel.app/',
     stack: ['Next.js','Ai-Sdk','prisma','clerk', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
@@ -88,16 +88,25 @@ export const featuredTemplates: TemplatesType[] = [
   {
     name: "DigitalStudio",
     description: "A complete web templates for digital industry related stuff with modern technologies",
-    price: 15,
+    price: 10,
     image: "/digitalstudio.png",
     link: 'https://digital-studio1.vercel.app/',
     stack: ['Next.js','Ai-Sdk','prisma','clerk', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
     repo: 'https://uiforest.gumroad.com/l/smmxv'
   },
   {
+    name: "AKSoftware",
+    description: "A complete sites with full customization options and built with modern tech stacks, reasponsive and fast",
+    price: 9,
+    image: "/ak_soft.png",
+    link: 'https://ak-software.vercel.app/',
+    stack: ['Next.js','React', 'shadcn', 'framer-motion', 'Tailwind css', 'typescript'],
+    repo: '/pricing'
+  },
+  {
     name: "DesignAgency",
     description: "A complete SaaS starter for design agency business .",
-    price: 14,
+    price: 10,
     image: "/design1.png",
     link: 'https://design-agency-wpfl.vercel.app/',
     stack: ['Next.js', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
@@ -106,7 +115,7 @@ export const featuredTemplates: TemplatesType[] = [
   {
     name: "Horizone",
     description: "A complete SaaS starter hotel and tourism related stuff",
-    price: 12,
+    price: 10,
     image: "/hotel.png",
     link: 'https://hotel-x2.vercel.app/',
     stack:['Next.js', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
@@ -116,7 +125,7 @@ export const featuredTemplates: TemplatesType[] = [
   {
     name: "E-commerce Plus",
     description: "Complete e-commerce solution with cart, checkout, and inventory management.",
-    price: 14,
+    price: 10,
     image: "/e-commerce.png",
     link: 'https://e-commerce-plus-next.vercel.app/',
     repo: 'https://uiforest.gumroad.com/l/uiforest-e-commerce',
@@ -125,7 +134,7 @@ export const featuredTemplates: TemplatesType[] = [
   {
     name: "PlantX",
     description: "A complete starter templates for plant and agriculture business.",
-    price: 12,
+    price: 10,
     image: "/plantx.png",
     link: 'https://plantx-swart.vercel.app/',
     stack: ['Next.js', 'React', 'Rechart', 'Shadcn', 'Tailwind CSS'],
@@ -135,7 +144,7 @@ export const featuredTemplates: TemplatesType[] = [
   {
     name: "FileVault",
     description: "A complete SaaS starter for file management.",
-    price: 14,
+    price: 10,
     image: "/filevaluet.png",
     link: 'https://filevault-79w9.vercel.app/',
     stack:['Next.js', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
@@ -144,7 +153,7 @@ export const featuredTemplates: TemplatesType[] = [
   {
     name: "Streamline Logistics",
     description: "A complete SaaS starter for  logistics and transportation business.",
-    price: 12,
+    price: 10,
     image: "/logistic.png",
     link: 'https://logistics-sooty-phi.vercel.app/',
     stack: ['Next.js', 'React', 'Rechart', 'Shadcn', 'Tailwind CSS'],
