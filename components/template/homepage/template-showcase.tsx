@@ -9,7 +9,7 @@ const templates = [
   {
     title: "Recharge",
     description: "A professional faster, scale smarter platform designed for solo developers and enterprises. Build powerful content management systems with our SDK wrapper and extensive customization options.",
-    price: 10,
+    price: 5,
     image: "/recharge.png",
     techStack: [
       { icon: "N", label: "Next.js" },
@@ -24,7 +24,7 @@ const templates = [
   {
     title: "SuperCharge your app",
     description: "A professional faster, scale smarter platform designed for solo developers and enterprises. Build powerful content management systems with our SDK wrapper and extensive customization options.",
-    price: 10,
+    price: 5,
     image: "/supercharge.png",
     techStack: [
       { icon: "N", label: "Next.js" },
@@ -53,7 +53,7 @@ const templates = [
   {
     title: "OneProfile",
     description: "A complete sites with full customization options and with modern technologies",
-    price: 14,
+    price: 5,
     image: "/oneprofile.png",
     link: 'https://profile-builder-hmrf.vercel.app/',
     techStack: [{icon: "⚛", label: "Nextjs"},
@@ -63,7 +63,7 @@ const templates = [
   {
     title: "DigitalStudio",
     description: "A complete web templates for digital industry related stuff with modern technologies",
-    price: 10,
+    price: 5,
     image: "/digitalstudio.png",
     link: 'https://digital-studio1.vercel.app/',
     techStack: [
@@ -77,7 +77,7 @@ const templates = [
   {
     title: "Keento",
     description: "A complete solution for building modern ai agent for business with full customization options.",
-    price: 10,
+    price: 5,
     image: "/ai.png",
     techStack: [
       { icon: "⚛", label: "Nextjs" },
@@ -92,7 +92,7 @@ const templates = [
   {
     title: "AKSoftware",
     description: "A complete sites with full customization options and built with modern tech stacks, reasponsive and fast",
-    price: 9,
+    price: 5,
     image: "/ak_soft.png",
     link: 'https://ak-software.vercel.app/',
     techStack: [
@@ -106,7 +106,7 @@ const templates = [
   {
     title: "DesignAgency",
     description: "A complete SaaS starter for design agency business .",
-    price: 10,
+    price: 5,
     image: "/design1.png",
     link: 'https://design-agency-wpfl.vercel.app/',
     techStack: [
@@ -120,7 +120,7 @@ const templates = [
   {
     title: "Horizone",
     description: "A complete SaaS starter hotel and tourism related stuff",
-    price: 10,
+    price: 5,
     image: "/hotel.png",
     link: 'https://hotel-x2.vercel.app/',
     techStack: [
@@ -134,7 +134,7 @@ const templates = [
   {
     title: "PlantX",
     description: "A complete starter templates for plant and agriculture business.",
-    price: 10,
+    price: 5,
     image: "/plantx.png",
     link: 'https://plantx-swart.vercel.app/',
     techStack: [
@@ -148,7 +148,7 @@ const templates = [
   {
     title: "FileVault",
     description: "A complete SaaS starter for file management.",
-    price: 10,
+    price: 5,
     image: "/filevaluet.png",
     link: 'https://filevault-79w9.vercel.app/',
     techStack: [
@@ -162,7 +162,7 @@ const templates = [
   {
     title: "Streamline Logistics",
     description: "A complete SaaS starter for  logistics and transportation business.",
-    price: 10,
+    price: 5,
     image: "/logistic.png",
     link: 'https://logistics-sooty-phi.vercel.app/',
     techStack: [
