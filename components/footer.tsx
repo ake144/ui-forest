@@ -51,6 +51,17 @@ const Footer = () => {
               className="transition-transform duration-200 hover:scale-105" 
             />
           </a>
+
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6502159796783362"
+                   crossOrigin="anonymous"></script>
+            <ins className="adsbygoogle display:block"
+                          data-ad-client="ca-pub-6502159796783362"
+                          data-ad-slot="7897086138"
+                          data-ad-format="auto"
+                          data-full-width-responsive="true"></ins>
+                      <script>
+                          (adsbygoogle = window.adsbygoogle || []).push({});
+                      </script>
           <a href="https://twelve.tools" target="_blank" rel="noopener noreferrer"> 
              <Image src="https://twelve.tools/badge0-light.svg" 
               alt="Featured on Twelve Tools"
