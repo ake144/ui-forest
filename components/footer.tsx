@@ -1,9 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
+
+declare global {
+  interface Window {
+    adsbygoogle: any[];
+  }
+}
 import { motion } from "framer-motion";
 import { Github, Twitter, Mail } from "lucide-react";
 import Image from "next/image";
+import Script from 'next/script'
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -36,6 +44,17 @@ const Footer = () => {
     },
   ];
 
+  useEffect(() => {
+    try {
+      // Trigger AdSense
+      if (typeof window !== 'undefined') {
+        (window.adsbygoogle = window.adsbygoogle || []).push({})
+      }
+    } catch (e) {
+      console.error('Adsense error:', e)
+    }
+  }, [])
+
   return (
     <footer className="bg-gradient-to-b from-black to-zinc-900 text-zinc-400 py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -52,24 +71,21 @@ const Footer = () => {
             />
           </a>
 
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6502159796783362"
-                   crossOrigin="anonymous"></script>
-            <ins className="adsbygoogle display:block"
-                          data-ad-client="ca-pub-6502159796783362"
-                          data-ad-slot="7897086138"
-                          data-ad-format="auto"
-                          data-full-width-responsive="true"></ins>
-                      <script>
-                          (adsbygoogle = window.adsbygoogle || []).push({});
-                      </script>
-          <a href="https://twelve.tools" target="_blank" rel="noopener noreferrer"> 
-             <Image src="https://twelve.tools/badge0-light.svg" 
-              alt="Featured on Twelve Tools"
-              width="200" 
-              height="54"
-              className="transition-transform duration-200 hover:scale-105" 
-                />
-          </a>
+          <Script
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6502159796783362"
+        strategy="afterInteractive"
+        crossOrigin="anonymous"
+      />
+
+      {/* Ad container */}
+      <ins
+        className="adsbygoogle"
+        style={{ display: 'block' }}
+        data-ad-client="ca-pub-6502159796783362"
+        data-ad-slot="7897086138"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 text-center md:text-left items-start">
