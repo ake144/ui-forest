@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import { Github, Twitter, Mail } from "lucide-react";
 import Image from "next/image";
 import Script from 'next/script'
+import AdFooter from "./ads";
 
 
 const Footer = () => {
@@ -71,21 +72,7 @@ const Footer = () => {
             />
           </a>
 
-          <Script
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6502159796783362"
-        strategy="afterInteractive"
-        crossOrigin="anonymous"
-      />
-
-      {/* Ad container */}
-      <ins
-        className="adsbygoogle"
-        style={{ display: 'block' }}
-        data-ad-client="ca-pub-6502159796783362"
-        data-ad-slot="7897086138"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      />
+         <AdFooter />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 text-center md:text-left items-start">
