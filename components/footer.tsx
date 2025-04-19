@@ -12,6 +12,7 @@ import { Github, Twitter, Mail } from "lucide-react";
 import Image from "next/image";
 import Script from 'next/script'
 import AdFooter from "./ads";
+import AdBanner from "./AdBanner";
 
 
 const Footer = () => {
@@ -45,16 +46,6 @@ const Footer = () => {
     },
   ];
 
-  useEffect(() => {
-    try {
-      // Trigger AdSense
-      if (typeof window !== 'undefined') {
-        (window.adsbygoogle = window.adsbygoogle || []).push({})
-      }
-    } catch (e) {
-      console.error('Adsense error:', e)
-    }
-  }, [])
 
   return (
     <footer className="bg-gradient-to-b from-black to-zinc-900 text-zinc-400 py-16">
@@ -62,17 +53,11 @@ const Footer = () => {
         
         {/* Embedding Code Section */}
         <div className="flex gap-4 flex-row justify-center mb-4">
-          <a href="https://startupfa.me/s/ui-forest?utm_source=uiforest.dev" target="_blank" rel="noopener noreferrer">
-            <Image 
-              src="https://startupfa.me/badges/featured-badge.webp" 
-              alt="Ui-Forest - Enhance Projects with Styled Components | Startup Fame" 
-              width="171" 
-              height="54" 
-              className="transition-transform duration-200 hover:scale-105" 
-            />
-          </a>
-
-         <AdFooter />
+          <AdBanner
+                dataAdFormat="auto"
+                dataFullWidthResponsive={true}
+                dataAdSlot="7897086138"
+              />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 text-center md:text-left items-start">

@@ -4,6 +4,7 @@ import "./globals.css";
 import metatag from "./metatag";
 import { ClerkProvider } from "@clerk/nextjs";
 import Loglib from "@loglib/tracker/react";
+import AdSense from "@/components/AdSense";
 
 
 const geistSans = localFont({
@@ -51,9 +52,7 @@ export default function RootLayout({
     <ClerkProvider>
     <html lang="en">
       <head>
-              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6502159796783362"
-                      crossOrigin="anonymous">
-               </script>
+           <AdSense pId="6502159796783362"/>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
