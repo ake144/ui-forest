@@ -5,6 +5,7 @@ import metatag from "./metatag";
 import { ClerkProvider } from "@clerk/nextjs";
 import Loglib from "@loglib/tracker/react";
 import AdSense from "@/components/AdSense";
+import InfoLinksAds from "@/components/InfoLinks";
 
 
 const geistSans = localFont({
@@ -64,6 +65,7 @@ export default function RootLayout({
                     id: "ui-forest_vercel",
                 }}
             />
+            <InfoLinksAds  />
       </body>
     </html>
     </ClerkProvider>
