@@ -41,6 +41,9 @@ export const metadata = {
     images: [ogImage],
     creator: "@uiforest",
   },
+  other: {
+    'impact-site-verification': 'b52b9140-9d38-42fd-aa20-f136220e1d44',
+  },
 };
 
 export default function RootLayout({
@@ -52,7 +55,7 @@ export default function RootLayout({
     <ClerkProvider>
     <html lang="en">
       <head>
-      <meta name='impact-site-verification' content='b52b9140-9d38-42fd-aa20-f136220e1d44'></meta>
+      {/* <meta name="impact-site-verification" content="b52b9140-9d38-42fd-aa20-f136220e1d44" /> */}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
