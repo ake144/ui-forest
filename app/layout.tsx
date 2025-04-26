@@ -58,13 +58,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-         
+         <script src="https://ligheechoagool.com/88/tag.min.js" data-zone="144511" async data-cfasync="false"></script>
         {children}
-        <Loglib
+        {/* <Loglib
                 config={{
                     id: "ui-forest_vercel",
-                }}
-            />
+          }}
+            /> */}
            {/* <script src="https://ligheechoagool.com/88/tag.min.js" data-zone="144511" async data-cfasync="false"  ></script> */}
       </body>
     </html>
