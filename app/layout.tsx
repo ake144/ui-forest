@@ -52,6 +52,7 @@ export default function RootLayout({
     <ClerkProvider>
     <html lang="en">
       <head>
+      <meta name="monetag" content="c7995c8a7e84f1a6f522108d9ef5aaa2"></meta>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -63,6 +64,7 @@ export default function RootLayout({
                     id: "ui-forest_vercel",
                 }}
             />
+
       </body>
     </html>
     </ClerkProvider>
