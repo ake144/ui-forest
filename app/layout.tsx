@@ -52,21 +52,13 @@ export default function RootLayout({
     <ClerkProvider>
     <html lang="en">
       <head>
-      {/* <meta name="monetag" content="c7995c8a7e84f1a6f522108d9ef5aaa2"></meta>
-       */}
+    
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-         <script src="https://ligheechoagool.com/88/tag.min.js" data-zone="144511" async data-cfasync="false"></script>
         {children}
-        {/* <Loglib
-                config={{
-                    id: "ui-forest_vercel",
-          }}
-            /> */}
-           {/* <script src="https://ligheechoagool.com/88/tag.min.js" data-zone="144511" async data-cfasync="false"  ></script> */}
-      </body>
+     </body>
     </html>
     </ClerkProvider>
   );
