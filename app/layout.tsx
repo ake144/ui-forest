@@ -4,8 +4,7 @@ import "./globals.css";
 import metatag from "./metatag";
 import { ClerkProvider } from "@clerk/nextjs";
 import Loglib from "@loglib/tracker/react";
-import AdSense from "@/components/AdSense";
-import InfoLinksAds from "@/components/InfoLinks";
+
 
 
 const geistSans = localFont({
@@ -53,7 +52,6 @@ export default function RootLayout({
     <ClerkProvider>
     <html lang="en">
       <head>
-           <AdSense pId="6502159796783362"/>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -65,7 +63,6 @@ export default function RootLayout({
                     id: "ui-forest_vercel",
                 }}
             />
-            <InfoLinksAds  />
       </body>
     </html>
     </ClerkProvider>
