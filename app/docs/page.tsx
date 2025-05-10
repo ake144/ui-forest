@@ -12,7 +12,7 @@ export default function DocsPage() {
   const [activeTab, setActiveTab] = useState('components')
 
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen bg-black text-white">
       {/* Additional spotlight effect for the header area */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-purple-500/30 rounded-full blur-[128px] pointer-events-none opacity-80" />
       

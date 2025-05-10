@@ -13,20 +13,17 @@ export default function DocsLayout({
 }) {
   return (
  
-    <div >
-      <div className="min-h-screen bg-black overflow-x-hidden relative">
+      <div className="min-h-screen bg-black text-white overflow-x-hidden relative">
         {/* Base gradient background that covers the entire viewport */}
-        <div className="fixed inset-0 bg-gradient-to-tr from-purple-500/20 via-transparent to-blue-500/20 pointer-events-none" />
+        <div className="fixed inset-0 " />
         
         {/* Purple spotlight effect that follows the content */}
-        <div className="fixed inset-0 bg-gradient-to-b from-purple-900/50 to-transparent pointer-events-none" />
-        
+        <div className="fixed inset-0  pointer-events-none" />
         <Navbar />
         <main className="relative pt-16">
           {children}
         </main>
       </div>
-    </div>
   )
 }
 
