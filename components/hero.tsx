@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { GridPattern } from "./ui/grid-pattern"
 import { SparklesCore } from "./ui/sparkles"
+import Link from "next/link"
 
 export default function Hero() {
   return (
@@ -74,42 +75,21 @@ export default function Hero() {
             </Button> */}
           <div className="flex gap-4">
               {/* Browse Components Button */}
-              <a
-                href="/components"
-                className="relative  inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium text-white transition-all bg-black rounded-full shadow-lg group"
-              >
-                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-purple-500 group-hover:opacity-50"></span>
-                <span className="absolute right-0 w-8 h-32 -translate-x-12 translate-y-3 rotate-12 bg-white opacity-10"></span>
-                <span className="relative">Browse Components</span>
-                <svg
-                  className="md:w-5 w-3  md:h-5 h-3  md:ml-2 ml-1 text-white"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-
-              {/* Browse Templates Button */}
-              <a
-                href="template"
-                className="relative rounded-full inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium text-black transition-all bg-white border border-blue-500  shadow-lg group"
-              >
-                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-purple-500 group-hover:opacity-20"></span>
-                <span className="absolute right-0 w-8 h-32 -translate-x-12 translate-y-3 rotate-12 bg-black opacity-5"></span>
-                <span className="relative">Browse Templates</span>
-                <svg
-                  className="md:w-5 w-3  md:h-5 h-3 ml-2 text-black"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
+              <Link  href='/components'>
+             
+              <button className="px-12 py-4 rounded-full bg-[#1ED760] font-bold text-white tracking-widest uppercase transform hover:scale-105 hover:bg-[#21e065] transition-colors duration-200">
+                Browse Components
+              </button>
+               </Link>
+               <Link  href="/template">
+             
+              <button className="px-12 py-4 rounded-full bg-[#1e7ed7] font-bold text-white tracking-widest uppercase transform hover:scale-105 hover:bg-[#1e7ed9] transition-colors duration-200">
+                Browse Templates
+              </button>
+               </Link>
+               
+             
+            
             </div>
 
           </motion.div>
