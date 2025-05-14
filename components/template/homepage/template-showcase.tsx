@@ -36,20 +36,7 @@ const templates = [
     ],
     link:'https://supercharge1.vercel.app'
   },
-  {
-    title: "E-commerce site",
-    description: "A complete solution for building a modern e-commerce site. Includes a powerful CMS, payment gateway integration, and a customizable storefront.",
-    price: 10,
-    image: "/e-commerce.png",
-    techStack: [
-      { icon: "⚛", label: "Nextjs" },
-      { icon: "🐍", label: "React" },
-      { icon: "⚡", label: "API" },
-      { icon: "TS", label: "TypeScript" },
-      { icon: "☁️", label: "Tailwindcss" }
-    ],
-    link: 'https://e-commerce-plus-next.vercel.app/',
-  },
+  
   {
     title: "OneProfile",
     description: "A complete sites with full customization options and with modern technologies",
@@ -144,6 +131,20 @@ const templates = [
       { icon: "TS", label: "TypeScript" },
       { icon: "☁️", label: "Tailwindcss" }
     ],
+  },
+  {
+    title: "E-commerce site",
+    description: "A complete solution for building a modern e-commerce site. Includes a powerful CMS, payment gateway integration, and a customizable storefront.",
+    price: 10,
+    image: "/e-commerce.png",
+    techStack: [
+      { icon: "⚛", label: "Nextjs" },
+      { icon: "🐍", label: "React" },
+      { icon: "⚡", label: "API" },
+      { icon: "TS", label: "TypeScript" },
+      { icon: "☁️", label: "Tailwindcss" }
+    ],
+    link: 'https://e-commerce-plus-next.vercel.app/',
   },
   {
     title: "FileVault",

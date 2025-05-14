@@ -121,16 +121,7 @@ export const featuredTemplates: TemplatesType[] = [
     stack:['Next.js', 'React', 'shadcn', 'framer-motion', 'Tailwind css'],
     repo:'https://uiforest.gumroad.com/l/yzlyei'
   },
- 
-  {
-    name: "E-commerce Plus",
-    description: "Complete e-commerce solution with cart, checkout, and inventory management.",
-    price: 10,
-    image: "/e-commerce.png",
-    link: 'https://e-commerce-plus-next.vercel.app/',
-    repo: 'https://uiforest.gumroad.com/l/uiforest-e-commerce',
-    stack: ['Next.js', 'React','Wix', 'Tailwind CSS', 'api']
-  },
+
   {
     name: "PlantX",
     description: "A complete starter templates for plant and agriculture business.",
@@ -160,6 +151,15 @@ export const featuredTemplates: TemplatesType[] = [
     repo:''
   },
   {
+    name: "E-commerce Plus",
+    description: "Complete e-commerce solution with cart, checkout, and inventory management.",
+    price: 10,
+    image: "/e-commerce.png",
+    link: 'https://e-commerce-plus-next.vercel.app/',
+    repo: 'https://uiforest.gumroad.com/l/uiforest-e-commerce',
+    stack: ['Next.js', 'React','Wix', 'Tailwind CSS', 'api']
+  },
+  {
     name: "Dashboard",
     description: "Modern admin dashboard with dark mode and real-time analytics.",
     price: 0,
@@ -168,6 +168,7 @@ export const featuredTemplates: TemplatesType[] = [
     repo: 'https://github.com/ake144/dashboard',
     stack: ['Next.js', 'React', 'Rechart', 'Shadcn', 'Tailwind CSS']
   },
+  
   {
     name: "SaaS Starter",
     description: "A complete SaaS starter kit with user management, billing, and subscription features.",
