@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic"
 import { motion } from "framer-motion"
+import FAQ from "@/components/faq"
 
 
 const CodePreview = dynamic(()=> import("@/components/code-preview"), {ssr:false})
@@ -60,6 +61,8 @@ export default function Home() {
                     <ExploreButton  link="/template"/>
                   </div>
               </div>
+              
+              <FAQ  />
     
               <Testimonials />
             </main>
