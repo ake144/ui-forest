@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import Navbar from '@/components/main-nav'
 import Link from 'next/link'
+import TestimonialsSection from '@/components/pricing/testimonials'
 
 export default function PricingPage() {
   const features = [
@@ -90,6 +91,8 @@ export default function PricingPage() {
 
           </CardFooter>
         </Card>
+        
+        <TestimonialsSection  />
       </div>
     </div>
   )
