@@ -105,9 +105,9 @@ export default function TestimonialsSection() {
       </h2>
 
       {/* Testimonials grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 ">
         {testimonials.map((testimonial, index) => (
-          <div key={index} className="bg-zinc-900 rounded-lg p-6 flex flex-col">
+          <div key={index} className="bg-zinc-900 rounded  p-6 flex flex-col">
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 mr-4">
                 <Image

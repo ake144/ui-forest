@@ -77,13 +77,13 @@ export default function Hero() {
               {/* Browse Components Button */}
               <Link  href='/components'>
              
-              <button className="px-12 py-4 rounded-full bg-[#1ED760] font-bold text-white tracking-widest uppercase transform hover:scale-105 hover:bg-[#21e065] transition-colors duration-200">
+              <button className="px-3 py-4  rounded-full bg-[#1ED760] font-bold text-white tracking-widest uppercase transform hover:scale-105 hover:bg-[#21e065] transition-colors duration-200">
                 Browse Components
               </button>
                </Link>
                <Link  href="/template">
              
-              <button className="px-12 py-4 rounded-full bg-[#1e7ed7] font-bold text-white tracking-widest uppercase transform hover:scale-105 hover:bg-[#1e7ed9] transition-colors duration-200">
+              <button className="px-3 py-4 rounded-full bg-[#1e7ed7] font-bold text-white tracking-widest uppercase transform hover:scale-105 hover:bg-[#1e7ed9] transition-colors duration-200">
                 Browse Templates
               </button>
                </Link>
