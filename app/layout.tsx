@@ -56,7 +56,14 @@ export default function RootLayout({
     <html lang="en">
       <head>
       {/* <meta name="impact-site-verification" content="b52b9140-9d38-42fd-aa20-f136220e1d44" /> */}
-    <script
+   
+
+      </head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {/* <script async type="text/javascript" src="https://s0-greate.net/p/1625755"></script> */}
+         <script
       async
       data-cfasync="false"
       dangerouslySetInnerHTML={{
@@ -82,11 +89,6 @@ export default function RootLayout({
         `,
       }}
     ></script>
-
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
         {children}
      </body>
     </html>
