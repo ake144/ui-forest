@@ -92,7 +92,7 @@ export default function PricingPage() {
           </CardFooter>
         </Card>
         
-        <TestimonialsSection  />
+        {/* <TestimonialsSection  /> */}
       </div>
     </div>
   )
