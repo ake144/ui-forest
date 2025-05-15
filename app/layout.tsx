@@ -59,7 +59,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <script async type="text/javascript" src="https://s0-greate.net/p/1625755"></script>
+        {/* <script async type="text/javascript" src="https://s0-greate.net/p/1625755"></script> */}
          <script
       async
       data-cfasync="false"
